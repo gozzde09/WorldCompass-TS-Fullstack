@@ -31,7 +31,7 @@ app.get("/api/users", async (_req: Request, res: Response) => {
 // POST-REGISTER user
 app.post("/api/users", async (req: Request, res: Response) => {
   const { first_name, last_name, email, password }: User = req.body;
-  console.log(req.body);
+
   try {
     const query = `
       INSERT INTO users (first_name, last_name, email, password )
@@ -124,7 +124,6 @@ app.get("/api/bucketlist", async (_req: Request, res: Response) => {
 // POST - Lägg land till bucketlist
 app.post("/api/bucketlist", async (req: Request, res: Response) => {
   const { country_id, status_id, user_id, notes }: BucketList = req.body;
-  console.log(req.body);
   try {
     const query = `
       INSERT INTO BucketList (country_id, status_id, user_id, notes)
@@ -135,7 +134,6 @@ app.post("/api/bucketlist", async (req: Request, res: Response) => {
     const { rows } = await client.query<BucketList>(query, values);
     res.status(201).send(rows[0]);
   } catch (error) {
-    console.error(error);
     res.status(500).json({ error: "Error adding country to the bucketlist" });
   }
 });

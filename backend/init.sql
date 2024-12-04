@@ -12,7 +12,7 @@ CREATE TABLE countries (
     country_population INT,
     country_continent VARCHAR(50),
     country_language VARCHAR(50),
-    country_currency VARCHAR(50)
+    country_currency VARCHAR(50),
 );
 
 -- 2. Status Table
