@@ -1,0 +1,12 @@
+.env
+npm-debug.log
+node_modules
+Dockerfile
+.prettierrc
+.dockerignore
+dist
+data
+node_modules
+coverage
+cypress/screenshots
+cypress/videos
