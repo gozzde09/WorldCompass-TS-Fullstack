@@ -64,8 +64,8 @@ jobs:
         run: npm run type-check
 
       # Wait for frontend to be ready
-      - name: Wait for frontend to be ready
-        run: npx wait-on http://localhost
+      # - name: Wait for frontend to be ready
+      #   run: npx wait-on http://localhost
 
       # Kör Cypress End-to-End tests
       - name: Run Cypress E2E tests
