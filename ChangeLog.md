@@ -1,4 +1,4 @@
-### GitHub Riktigt Projekt Repo: https://github.com/gozzde09/BucketList-Countries-in-TS
+### GitHub Riktigt Privat Projekt Repo: https://github.com/gozzde09/BucketList-Countries-in-TS
 
 # 03/12
 
@@ -15,7 +15,7 @@ Skapade GitHub repo med en enkel layout, installerade nödvändiga paketer.Börj
 
 # 05/12
 
-Jobbade literally hela dagen för att fixa GitHub actions med `Docker compose + database`. Det känns som jag gör framsteg men också lite tidslöseri. Inget commit blir idag heller om test file. Men mina misslysckades tester ligger här, i en annan repo: https://github.com/gozzde09/BookList-Cypress/actions
+Jobbade literally hela dagen för att fixa GitHub actions med `Docker compose + database`. Det känns som jag gör framsteg men också lite tidslöseri. Inget commit blir idag heller om test file. Men mina misslysckades tester ligger här, i en annan repo- hundratals...: https://github.com/gozzde09/BookList-Cypress/actions
 
 Känner helt trött, inga mera CODE commit idag. kl.22.30
 
@@ -24,9 +24,10 @@ Känner helt trött, inga mera CODE commit idag. kl.22.30
 
 # 06/12
 
-Efter fyra dagar , löste jag GitHub actions. Har bara en commit men det tog mycket tid som ni kan se i mina test repo:t. Hundratals commit hände där :)
+Efter fyra dagar, löste jag GitHub actions. Har bara en commit men det tog mycket tid som ni kan se i mina test repo:t. :)
 
+- Bytte repo:t till privat
 - Updated Docker conf
-- Skapade test.yml
+- Skapade test.yml + skapade SECRETS i GitHub
 - Script justeringar
 - Rätta database och koppla den till frontend -- enkla fake tests

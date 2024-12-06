@@ -3,7 +3,7 @@ describe("template spec", () => {
     //VISIT THE PAGE
     cy.visit("/");
   });
-  it("fetches the countries from the database", () => {
+  it("fetches all the countries from the database", () => {
     cy.request("GET", "/api/countries").then((response) => {
       expect(response.status).to.eq(200); // response OK
       expect(response.body).to.be.an("array");
