@@ -6,7 +6,7 @@ services:
     container_name: frontend-country
     environment:
     - NODE_ENV=development
-    # - VITE_COVERAGE=true
+    - VITE_COVERAGE=true
     ports:
       - '80:80'
     depends_on:
@@ -30,7 +30,7 @@ services:
 
   database:
     image: postgres:latest
-    container_name: database-country
+    container_name: databasecountry
     environment:
       - POSTGRES_PASSWORD=${PASSWORD}
       - POSTGRES_DB=${DB_NAME}
@@ -48,8 +48,9 @@ services:
       - country-net
 
   cypress:
+    # the Docker image to use from https://github.com/cypress-io/cypress-docker-images
     image: "cypress/included:12.0.0"
-    container_name: cypresstests-country
+    container_name: cypresstestscountry
     depends_on:
       - frontend
     working_dir: /frontend
@@ -57,9 +58,9 @@ services:
       - CYPRESS_baseUrl=http://frontend-country
     volumes:
       - ./frontend:/frontend
-      # - ./coverage:/coverage
-      # - ./frontend/.nyc_output:/frontend/.nyc_output
-      # - ./coverage:/coverage
+      - ./coverage:/coverage
+      - ./frontend/.nyc_output:/frontend/.nyc_output
+      - ./coverage:/coverage
       - .:/app
     networks:
       - country-net
