@@ -15,7 +15,9 @@ Skapade GitHub repo med en enkel layout, installerade nödvändiga paketer.Börj
 
 # 05/12
 
-Jobbade literally hela dagen för att fixa GitHub actions med `Docker compose + database`. Det känns som jag gör framsteg men också lite tidslöseri. Inget commit blir idag heller om test file. Men mina misslysckades tester ligger här, i en annan repo- hundratals...: https://github.com/gozzde09/BookList-Cypress/actions
+Jobbade literally hela dagen för att fixa GitHub actions med `Docker compose + database`.
+Det känns som jag gör framsteg men också lite tidslöseri. Inget commit blir idag heller om test file.
+Men mina misslysckades tester ligger här, i en annan repo- hundratals...: https://github.com/gozzde09/BookList-Cypress/actions
 
 Känner helt trött, inga mera CODE commit idag. kl.22.30
 
@@ -24,7 +26,9 @@ Känner helt trött, inga mera CODE commit idag. kl.22.30
 
 # 06/12
 
-Efter fyra dagar, löste jag GitHub actions. Har bara en commit men det tog mycket tid som ni kan se i mina test repo:t. :)
+Efter fyra dagar, 10-12 timmar i dagen-- löste jag GitHub actions. Datorn crashar längre.
+Det tog mycket tid som ni kan se i mina test repo:t https://github.com/gozzde09/BookList-Cypress/actions
+:)
 
 - Bytte repo:t till privat
 - Updated Docker conf

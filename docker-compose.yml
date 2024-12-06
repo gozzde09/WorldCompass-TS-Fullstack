@@ -54,8 +54,6 @@ services:
     depends_on:
       - frontend
     working_dir: /frontend
-    environment:
-      - CYPRESS_baseUrl=http://frontend-country
     volumes:
       - ./frontend:/frontend
       - ./coverage:/coverage
