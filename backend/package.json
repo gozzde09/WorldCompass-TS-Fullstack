@@ -5,7 +5,8 @@
   "scripts": {
     "build": "npx tsc",
     "dev": "concurrently \"nodemon index.js\" \"npx tsc --watch\"",
-    "start": "node index.js"
+    "start": "node index.js",
+    "tsc": " npx tsc"
   },
   "keywords": [],
   "author": "",
