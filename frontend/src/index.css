@@ -6,3 +6,7 @@ body {
   min-height: 100vh;
   background-color: antiquewhite;
 }
+h1,
+h2 {
+  color: #5f0f40;
+}

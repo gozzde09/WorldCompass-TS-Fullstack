@@ -15,4 +15,11 @@ describe("Countries", () => {
       cy.contains("li", "Sverige");
     });
   });
+  // GET
+  it("fetches the list of users correctly", () => {
+    cy.request("GET", "/api/users").then((res) => {
+      expect(res.status).to.eq(200);
+      expect(res.body).to.have.length.greaterThan(0);
+    });
+  });
 });

@@ -123,5 +123,5 @@ export default function CountryList() {
     }
   }
 
-  return <div>Test ladda</div>;
+  return <p>Test ladda</p>;
 }

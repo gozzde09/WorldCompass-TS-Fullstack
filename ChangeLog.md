@@ -21,3 +21,12 @@ Känner helt trött, inga mera CODE commit idag. kl.22.30
 
 - Docker configurations
 - Skapade UML diagram by Mermaid.
+
+# 06/12
+
+Efter fyra dagar , löste jag GitHub actions. Har bara en commit men det tog mycket tid som ni kan se i mina test repo:t. Hundratals commit hände där :)
+
+- Updated Docker conf
+- Skapade test.yml
+- Script justeringar
+- Rätta database och koppla den till frontend -- enkla fake tests

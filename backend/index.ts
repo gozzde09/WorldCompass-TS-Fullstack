@@ -1,6 +1,6 @@
 import cors from "cors";
-import * as dotenv from "dotenv";
 import { Client } from "pg";
+import * as dotenv from "dotenv";
 import express, { Request, Response } from "express";
 import path from "path";
 
@@ -90,30 +90,30 @@ app.post("/api/countries", async (req: Request, res: Response) => {
   }
 });
 
-// GET -status
-app.get("/api/status", async (_req: Request, res: Response) => {
+// GET -visitstatus
+app.get("/api/visitstatus", async (_req: Request, res: Response) => {
   try {
-    const { rows } = await client.query<Country>(`SELECT * FROM status`);
+    const { rows } = await client.query<Country>(`SELECT * FROM visitstatus`);
     res.status(200).json(rows);
   } catch (error) {
-    res.status(500).json(error + "Error fetching status");
+    res.status(500).json(error + "Error fetching visitstatus");
   }
 });
 
-// GET - BucketList med alla tabeller
+// GET - bucketlist med alla tabeller
 app.get("/api/bucketlist", async (_req: Request, res: Response) => {
   try {
     const { rows } = await client.query<BucketList>(
       `SELECT
-          BucketList.bucketlist_id,
+          bucketlist.bucketlist_id,
           users.first_name,
           countries.country_name,
-          status.status_name,
-          BucketList.notes
+          visitstatus.status_name,
+          bucketlist.notes
       FROM bucketList
-      JOIN users ON BucketList.user_id = users.user_id
-      JOIN countries ON BucketList.country_id = countries.country_id
-      JOIN status ON BucketList.status_id = status.status_id;`
+      JOIN users ON bucketlist.user_id = users.user_id
+      JOIN countries ON bucketlist.country_id = countries.country_id
+      JOIN visitstatus ON bucketlist.status_id = visitstatus.status_id;`
     );
     res.status(200).json(rows);
   } catch (error) {
@@ -126,7 +126,7 @@ app.post("/api/bucketlist", async (req: Request, res: Response) => {
   const { country_id, status_id, user_id, notes }: BucketList = req.body;
   try {
     const query = `
-      INSERT INTO BucketList (country_id, status_id, user_id, notes)
+      INSERT INTO bucketlist (country_id, status_id, user_id, notes)
       VALUES ($1, $2, $3, $4)
       RETURNING *;
     `;
@@ -154,12 +154,12 @@ app.put(
     } catch (error) {
       res
         .status(500)
-        .json(error + "Error updating the status in the bucketlist");
+        .json(error + "Error updating the visitstatus in the bucketlist");
     }
   }
 );
 
-// DELETE - Ta bort ett land från BucketList
+// DELETE - Ta bort ett land från bucketlist
 app.delete(
   "/api/bucketlist/:id",
   async (req: Request<{ id: string }>, res: Response) => {

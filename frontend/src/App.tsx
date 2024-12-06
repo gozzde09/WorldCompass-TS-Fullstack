@@ -1,11 +1,11 @@
 import "./App.css";
-import CountryList from "../components/CountryList";
+import Countries from "../components/Countries";
 
 export default function App() {
   return (
     <>
       <h1>BucketList</h1>
-      <CountryList />
+      <Countries />
     </>
   );
 }
