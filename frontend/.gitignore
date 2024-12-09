@@ -7,8 +7,6 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-.nyc_output
-coverage
 cypress/screenshots
 cypress/videos
 node_modules

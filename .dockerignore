@@ -7,6 +7,5 @@ Dockerfile
 dist
 data
 node_modules
-coverage
 cypress/screenshots
 cypress/videos

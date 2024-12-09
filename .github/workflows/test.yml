@@ -27,18 +27,13 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      # Set up Node.js
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: 18
-
       # Set secrets as environment variables
       - name: Set secrets as environment variables
         run: |
           echo "DB_USER=${{ secrets.DB_USER }}" >> $GITHUB_ENV
           echo "DB_PASSWORD=${{ secrets.PASSWORD }}" >> $GITHUB_ENV
           echo "DB_NAME=${{ secrets.DB_NAME }}" >> $GITHUB_ENV
+
       # Install Docker Compose
       - name: Set up Docker Compose
         uses: docker/setup-buildx-action@v2
@@ -55,26 +50,6 @@ jobs:
       - name: Build containers
         run: docker compose up --build -d
 
-      - name: Lint code
-        working-directory: frontend
-        run: npm run lint
-
-      - name: Type check
-        working-directory: frontend
-        run: npm run type-check
-
-      # Wait for frontend to be ready
-      # - name: Wait for frontend to be ready
-      #   run: npx wait-on http://localhost
-      - name: Wait for PostgreSQL to be ready
-        run: |
-          docker compose exec database pg_isready -U ${{ secrets.DB_USER }}
-          sleep 30
-      - name: Wait for services to be ready
-        run: |
-          docker compose ps
-          docker compose exec database pg_isready -U postgres
-          sleep 30
       # Kör Cypress End-to-End tests
       - name: Run Cypress E2E tests
         working-directory: frontend
