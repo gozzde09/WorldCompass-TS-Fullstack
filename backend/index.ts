@@ -126,7 +126,7 @@ app.get("/api/travellist", async (_req: Request, res: Response) => {
           travellist.travellist_id,
           users.first_name,
           countries.country_name,
-          visitstatus.status_name,
+          visitstatus.status_name
       FROM travellist
       JOIN users ON travellist.user_id = users.user_id
       JOIN countries ON travellist.country_id = countries.country_id
@@ -134,7 +134,7 @@ app.get("/api/travellist", async (_req: Request, res: Response) => {
     );
     res.status(200).json(rows);
   } catch (error) {
-    res.status(500).json(error + "Error fetching bucket list");
+    res.status(500).json(error + "Error fetching travel list");
   }
 });
 

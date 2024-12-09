@@ -5,13 +5,14 @@
 Skapade GitHub repo med en enkel layout, installerade nödvändiga paketer.Började med VG kräven.
 
 - Fixade Code Coverage men jag ska pusha den sist, för att det blir för mycket push.
-- Jobbar med GitHub actions. Det blev för mycket misslyckades commits. Ska ha en TEST repo för detta. https://github.com/gozzde09/BucketList-TEST
+- Jobbar med GitHub actions. Det blev för mycket misslyckades commits. Ska ha en TEST repo för detta.
 
 # 04/12
 
 - Skapade tabeller.
 - Skrev alla endpoints med nödvändiga CRUD operations i Backend.
 - Hämtade static Countries data och gjorde POST alla länder i Frontend.
+- Skapade en riktigt repo från igårs commitar.
 
 # 05/12
 
@@ -35,3 +36,11 @@ Det tog mycket tid som ni kan se i mina test repo:t https://github.com/gozzde09/
 - Skapade test.yml + skapade SECRETS i GitHub
 - Script justeringar
 - Rätta database och koppla den till frontend -- enkla fake tests
+
+# 09/12
+
+Jag planerade att använda en karta för att visa besökt / ska besöka länder. Studerade och testade `leaflet`.
+Testade att fetcha länder från API till database tabellen. Det blev en hel del rättning kring POST funktioner. Jag hade problem med att values hade långa text. Det tog tid med mig idag.
+
+- Commitar database förbättringar idag.
+- TDD test en del med database

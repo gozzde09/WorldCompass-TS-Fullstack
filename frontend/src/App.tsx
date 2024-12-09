@@ -4,7 +4,7 @@ import Countries from "../components/Countries";
 export default function App() {
   return (
     <>
-      <h1>BucketList</h1>
+      <h1>Travel List</h1>
       <Countries />
     </>
   );
