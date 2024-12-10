@@ -1,0 +1,15 @@
+#root {
+  margin: 0 auto;
+  min-height: 90vh;
+  text-align: center;
+}
+main {
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+  flex: 1;
+}
+h1,
+h2 {
+  color: #5f0f40;
+}

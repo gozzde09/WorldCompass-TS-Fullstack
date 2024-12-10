@@ -53,15 +53,13 @@ jobs:
       # Kör Cypress End-to-End tests
       - name: Run Cypress E2E tests
         working-directory: frontend
-        run: |
-          docker compose up &
-          npm run test:e2e
+        run: npm run test:e2e
+
       #  Kör komponenttester med Cypress
       - name: Run Cypress Component Tests
         working-directory: frontend
-        run: |
-          docker compose up &
-          npm run test:component
+        run: npm run test:component
+
       # Stop and remove containers after tests
       - name: Stop and remove containers
         run: docker compose down

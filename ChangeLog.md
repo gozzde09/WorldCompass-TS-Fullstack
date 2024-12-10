@@ -1,4 +1,4 @@
-### GitHub Riktigt Privat Projekt Repo: https://github.com/gozzde09/BucketList-Countries-in-TS
+### GitHub Riktigt Privat Projekt Repo: https://github.com/gozzde09/TravelList-Countries-in-TS
 
 # 03/12
 
@@ -44,3 +44,11 @@ Testade att fetcha länder från API till database tabellen. Det blev en hel del
 
 - Commitar database förbättringar idag.
 - TDD test en del med database
+  Tester som failed i Cypress app, passed i GitHub actions. Galen!
+
+# 10/12
+
+- Router med `react-lazy-with-preload`
+- Pages -Home & Login-Register
+- Components NavBar & Footer
+- Mapp structure med pages-components-styles

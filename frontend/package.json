@@ -15,11 +15,14 @@
   },
   "dependencies": {
     "@types/bootstrap": "^5.2.10",
+    "@types/react-router-dom": "^5.3.3",
     "axios": "^1.7.9",
     "bootstrap": "^5.3.3",
     "react": "^18.2.0",
     "react-bootstrap": "^2.10.6",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-lazy-with-preload": "^2.2.1",
+    "react-router-dom": "^7.0.2"
   },
   "devDependencies": {
     "@types/react": "^18.2.15",

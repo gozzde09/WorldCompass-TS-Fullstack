@@ -6,11 +6,6 @@ body {
   min-height: 100vh;
   background-color: antiquewhite;
 }
-#root {
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
-}
 
 h1,
 h2 {
