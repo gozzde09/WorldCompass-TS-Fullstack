@@ -56,19 +56,29 @@ app.get("/api/countries", async (_req: Request, res: Response) => {
   }
 });
 // GET - ett land
-app.get("/api/countries/:name", async (req: Request, res: Response) => {
+app.get("/api/countries/details/:name", async (req: Request, res: Response) => {
   const { name } = req.params;
+  console.log(name);
+  // Omvandla både inputnamnet och namnet i databasen till lowercase för case-insensitive jämförelse
+  const formattedName = name.replace(/\s+/g, "").toLowerCase(); // Tar bort mellanslag och gör om till lowercase
+
   try {
-    const result = await client.query(
-      "SELECT * FROM countries WHERE country_name = $1",
-      [name]
+    // Hämtar landet med namnet omvandlat till lowercase och utan mellanslag
+    const { rows } = await client.query<Country>(
+      `SELECT * FROM countries WHERE LOWER(REPLACE(country_name, ' ', '')) = $1`,
+      [formattedName] // Använder den formaterade variabeln för sökningen
     );
-    if (result.rows.length === 0) {
-      res.status(404).json({ error: "Country not found" });
-    }
-    res.json(result.rows[0]);
+
+    // Om inget land hittas
+    // if (rows.length === 0) {
+    //    res.status(404).json({ error: "Country not found" });
+    // }
+
+    // Returnera det första landet i resultatet
+    res.status(200).json(rows[0]);
   } catch (error) {
-    res.status(500).json({ error: "Failed to fetch country details" });
+    // Hantera eventuella fel
+    res.status(500).json({ error: "Error fetching country details" });
   }
 });
 
