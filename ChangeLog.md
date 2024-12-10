@@ -52,3 +52,4 @@ Testade att fetcha länder från API till database tabellen. Det blev en hel del
 - Pages -Home & Login-Register
 - Components NavBar & Footer
 - Mapp structure med pages-components-styles
+- POST länder till database from API:s via en Hook ( det var inte lätt)

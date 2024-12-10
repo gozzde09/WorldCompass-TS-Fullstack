@@ -1,4 +1,4 @@
-import Countries from "../../components/Countries";
+import Countries from "../../src/components/Countries";
 
 describe("Countries", () => {
   it("should render the title and countries list", () => {
