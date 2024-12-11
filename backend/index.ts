@@ -18,7 +18,7 @@ const client = new Client({
   connectionString: process.env.PGURI,
 });
 client.connect();
-
+// ----- USERS -----
 // GET - users
 app.get("/api/users", async (_req: Request, res: Response) => {
   try {
@@ -28,6 +28,7 @@ app.get("/api/users", async (_req: Request, res: Response) => {
     res.status(500).json(error + "Error fetching users");
   }
 });
+
 // POST-REGISTER user
 app.post("/api/users", async (req: Request, res: Response) => {
   const { first_name, last_name, email, password }: User = req.body;
@@ -46,6 +47,8 @@ app.post("/api/users", async (req: Request, res: Response) => {
     res.status(500).json({ error: "Error adding user" });
   }
 });
+
+// ----- COUNTRIES -----
 // GET - länder
 app.get("/api/countries", async (_req: Request, res: Response) => {
   try {
@@ -59,11 +62,11 @@ app.get("/api/countries", async (_req: Request, res: Response) => {
 // GET - ett land
 app.get("/api/countries/:name", async (req: Request, res: Response) => {
   const { name } = req.params;
-  console.log(name);
-  const formattedName = name.replace(/\s+/g, "").toLowerCase(); // Tar bort mellanslag och gör om till lowercase
+  // console.log(name);
+  // Namnet omvandlat till lowercase och utan mellanslag
+  const formattedName = name.replace(/\s+/g, "").toLowerCase();
 
   try {
-    // Hämtar landet med namnet omvandlat till lowercase och utan mellanslag
     const { rows } = await client.query<Country>(
       `SELECT * FROM countries WHERE LOWER(REPLACE(country_name, ' ', '')) = $1`,
       [formattedName]
@@ -110,6 +113,7 @@ app.post("/api/countries", async (req: Request, res: Response) => {
   }
 });
 
+// ----- VISIT-STATUS -----
 // GET -visitstatus
 app.get("/api/visitstatus", async (_req: Request, res: Response) => {
   try {
@@ -120,6 +124,7 @@ app.get("/api/visitstatus", async (_req: Request, res: Response) => {
   }
 });
 
+// ----- TRAVEL-LIST -----
 // GET - travellist med alla tabeller
 app.get("/api/travellist", async (_req: Request, res: Response) => {
   try {
