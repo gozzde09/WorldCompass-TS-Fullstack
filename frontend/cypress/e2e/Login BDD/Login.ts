@@ -1,0 +1,37 @@
+import { Given, When, Then } from "@badeball/cypress-cucumber-preprocessor";
+
+const validCredentials = {
+  email: "test@example.com",
+  password: "correctpassword",
+};
+
+const invalidCredentials = {
+  email: "invalid@example.com",
+  password: "wrongpassword",
+};
+
+Given("I visit the login page", () => {
+  cy.visit("/");
+});
+
+When("I enter a valid email and password", () => {
+  cy.get("input[name='email']").type(validCredentials.email);
+  cy.get("input[name='password']").type(validCredentials.password);
+});
+
+When("I enter an invalid email and password", () => {
+  cy.get("input[name='email']").type(invalidCredentials.email);
+  cy.get("input[name='password']").type(invalidCredentials.password);
+});
+
+When("I click the login button", () => {
+  cy.get("#login").click();
+});
+
+Then("I should see the home page", () => {
+  cy.url().should("include", "http://localhost/home");
+});
+
+Then("I should see the error message", () => {
+  cy.contains("Invalid email or password.").should("be.visible");
+});
