@@ -40,12 +40,6 @@ CREATE TABLE travellist (
     UNIQUE (country_id, status_id, user_id)
 );
 
--- INSERT INTO countries (country_name, country_description, country_capital, country_population, country_continent, country_language, country_currency)
--- VALUES
--- ('Japan', 'A country known for its rich culture, technology, and cherry blossoms.', 'Tokyo', 125800000, 'Asia', 'Japanese', 'Yen'),
--- ('Sweden', 'A Scandinavian nation known for its forests and advanced social systems.', 'Stockholm', 10350000, 'Europe', 'Swedish', 'Krona'),
--- ('USA', 'A large and diverse country known for its influence on world culture and economy.', 'Washington D.C.', 331000000, 'North America', 'English', 'Dollar');
-
 INSERT INTO visitstatus (status_name)
 VALUES
 ('Want to visit'),
@@ -53,6 +47,7 @@ VALUES
 
 INSERT INTO users (first_name, last_name, email, password)
 VALUES
+('Test', 'Testson', 'test@example.com', 'test'),
 ('Alice', 'Johnson', 'alice@example.com', 'password1'),
 ('Bob', 'Smith', 'bob@example.com', 'password2'),
 ('Charlie', 'Brown', 'charlie@example.com', 'password3');

@@ -4,6 +4,9 @@ import * as dotenv from "dotenv";
 import express, { Request, Response } from "express";
 import path from "path";
 
+import bcrypt from "bcryptjs";
+import jwt from "jsonwebtoken";
+
 import { Country } from "./types/interfaces";
 import { User } from "./types/interfaces";
 import { Status } from "./types/interfaces";
@@ -18,6 +21,7 @@ const client = new Client({
   connectionString: process.env.PGURI,
 });
 client.connect();
+
 // ----- USERS -----
 // GET - users
 app.get("/api/users", async (_req: Request, res: Response) => {
@@ -26,6 +30,42 @@ app.get("/api/users", async (_req: Request, res: Response) => {
     res.status(200).json(rows);
   } catch (error) {
     res.status(500).json(error + "Error fetching users");
+  }
+});
+
+// POST - Login
+app.post("/api/login", async (req: Request, res: Response) => {
+  const { email, password } = req.body;
+
+  try {
+    // Check if the user exists
+    const query = "SELECT * FROM users WHERE email = $1";
+    const { rows } = await client.query(query, [email]);
+
+    const user = rows[0];
+
+    // Check password
+    await bcrypt.compare(password, user.password);
+
+    // Generate JWT token
+    const token = jwt.sign({ userId: user.id }, "my_jwt_secret", {
+      expiresIn: "1h", // Token expiration time
+    });
+
+    // Send the response
+    res.json({
+      message: "Login successful",
+      token,
+      user: {
+        id: user.id,
+        email: user.email,
+        first_name: user.first_name,
+        last_name: user.last_name,
+      },
+    });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: "Internal server error" });
   }
 });
 
@@ -89,27 +129,37 @@ app.post("/api/countries", async (req: Request, res: Response) => {
     country_currency,
     country_flag,
   }: Country = req.body;
+  const existingCountryQuery = `
+    SELECT * FROM countries
+    WHERE LOWER(REPLACE(country_name, ' ', '')) = LOWER(REPLACE($1, ' ', ''));
+    `;
+  const { rows: existingCountries } = await client.query(existingCountryQuery, [
+    country_name,
+  ]);
 
-  try {
-    const query = `
+  if (!existingCountries) {
+    //  res.status(409).json({ error: "Country with this name already exists" });
+    try {
+      const query = `
       INSERT INTO countries (country_name, country_description, country_capital, country_population, country_continent, country_language, country_currency, country_flag)
       VALUES ($1, $2, $3, $4, $5, $6, $7, $8)
       RETURNING *;
     `;
-    const values = [
-      country_name,
-      country_description,
-      country_capital,
-      country_population,
-      country_continent,
-      country_language,
-      country_currency,
-      country_flag,
-    ];
-    const { rows } = await client.query<Country>(query, values);
-    res.status(201).send(rows[0]);
-  } catch (error) {
-    res.status(500).json({ error: "Error adding countries" });
+      const values = [
+        country_name,
+        country_description,
+        country_capital,
+        country_population,
+        country_continent,
+        country_language,
+        country_currency,
+        country_flag,
+      ];
+      const { rows } = await client.query<Country>(query, values);
+      res.status(201).send(rows[0]);
+    } catch (error) {
+      res.status(500).json({ error: "Error adding countries" });
+    }
   }
 });
 

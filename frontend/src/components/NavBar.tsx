@@ -11,13 +11,13 @@ export default function Navbar() {
         <BootstrapNavbar.Toggle aria-controls='basic-navbar-nav' />
         <BootstrapNavbar.Collapse id='basic-navbar-nav'>
           <Nav className='ms-auto'>
-            <Nav.Link as={Link} to='/'>
+            <Nav.Link as={Link} to='/home'>
               Home
             </Nav.Link>
-            <Nav.Link as={Link} to='/loginreg'>
+            <Nav.Link as={Link} to='/'>
               Login/Register
             </Nav.Link>
-            <Nav.Link as={Link} to='/loginreg'>
+            <Nav.Link as={Link} to='/'>
               Log out
             </Nav.Link>
           </Nav>

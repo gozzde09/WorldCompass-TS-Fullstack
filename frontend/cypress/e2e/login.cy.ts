@@ -4,10 +4,10 @@ describe("Login Form E2E Tests", () => {
   });
 
   it("should display login form with email and password inputs", () => {
-    cy.get("form").within(() => {
+    cy.get("#loginForm").within(() => {
       cy.get("input[name='email']").should("be.visible");
       cy.get("input[name='password']").should("be.visible");
-      cy.get("button[type='submit']").contains("Login").should("be.visible");
+      cy.get("#login").contains("Login").should("be.visible");
     });
   });
 
@@ -17,18 +17,18 @@ describe("Login Form E2E Tests", () => {
       statusCode: 200,
       body: {
         user: {
-          email: "test@gcom",
+          email: "posttest@example.com",
           password: "test",
         },
       },
     }).as("loginRequest");
 
-    cy.get("input[name='email']").type("test@example.com");
+    cy.get("input[name='email']").type("posttest@example.com");
     cy.get("input[name='password']").type("password123");
-    cy.get("button[type='submit']").click();
+    cy.get("#login").click();
 
     // Verify redirection after successful login
-    cy.url().should("eq", `${Cypress.config().baseUrl}/`);
+    cy.url().should("eq", `${Cypress.config().baseUrl}/home`);
   });
 
   it("should display an error message for invalid credentials", () => {
@@ -41,7 +41,7 @@ describe("Login Form E2E Tests", () => {
 
     cy.get("input[name='email']").type("invalid@example.com");
     cy.get("input[name='password']").type("wrongpassword");
-    cy.get("button[type='submit']").click();
+    cy.get("#login").click();
 
     // Wait for the API call and check for error message
     cy.wait("@loginRequest");
@@ -49,7 +49,7 @@ describe("Login Form E2E Tests", () => {
   });
 
   it("should validate required fields", () => {
-    cy.get("button[type='submit']").click();
+    cy.get("#login").click();
 
     // Check for validation messages
     cy.get("input[name='email']:invalid").should("exist");

@@ -1,8 +1,8 @@
 import { Given, When, Then } from "@badeball/cypress-cucumber-preprocessor";
 
 const validCredentials = {
-  email: "test@example.com",
-  password: "correctpassword",
+  email: "test@g.com",
+  password: "test",
 };
 
 const invalidCredentials = {
@@ -28,8 +28,8 @@ When("I click the login button", () => {
   cy.get("#login").click();
 });
 
-Then("I should see the home page", () => {
-  cy.url().should("include", "http://localhost/home");
+Then("I should see home page", () => {
+  cy.url().should("eq", `${Cypress.config().baseUrl}/home`);
 });
 
 Then("I should see the error message", () => {

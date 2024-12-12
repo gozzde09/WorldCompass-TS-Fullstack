@@ -8,10 +8,10 @@ import Navbar from "./components/NavBar";
 import Footer from "./components/Footer";
 
 const HomePage = lazyWithPreload(() => import("./pages/HomePage"));
-const LoginRegPage = lazyWithPreload(() => import("./pages/LoginRegPage"));
+const LogRegPage = lazyWithPreload(() => import("./pages/LogRegPage"));
 
 HomePage.preload();
-LoginRegPage.preload();
+LogRegPage.preload();
 
 export default function App() {
   usePostCountries();
@@ -20,10 +20,8 @@ export default function App() {
       <Navbar />
       <Suspense fallback={<div>Loading...</div>}>
         <Routes>
-          <Route path='/' element={<HomePage />} />
-          <Route path='/loginreg' element={<LoginRegPage />} />
-          {/* Redirect unknown paths to HomePage */}
-          {/* <Route path='*' element={<Navigate to='/' />} /> */}
+          <Route path='/home' element={<HomePage />} />
+          <Route path='/' element={<LogRegPage />} />
         </Routes>
       </Suspense>
       <Footer />
