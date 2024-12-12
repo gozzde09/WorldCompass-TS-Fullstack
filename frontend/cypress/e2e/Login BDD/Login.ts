@@ -1,7 +1,7 @@
 import { Given, When, Then } from "@badeball/cypress-cucumber-preprocessor";
 
 const validCredentials = {
-  email: "test@g.com",
+  email: "test@example.com",
   password: "test",
 };
 
@@ -14,24 +14,40 @@ Given("I visit the login page", () => {
   cy.visit("/");
 });
 
-When("I enter a valid email and password", () => {
-  cy.get("input[name='email']").type(validCredentials.email);
-  cy.get("input[name='password']").type(validCredentials.password);
+When("I enter valid email and password", () => {
+  cy.get("#loginEmail").type(validCredentials.email);
+  cy.get("#loginPassword").type(validCredentials.password);
 });
 
 When("I enter an invalid email and password", () => {
-  cy.get("input[name='email']").type(invalidCredentials.email);
-  cy.get("input[name='password']").type(invalidCredentials.password);
+  cy.get("#loginEmail").type(invalidCredentials.email);
+  cy.get("#loginPassword").type(invalidCredentials.password);
+});
+
+When("I submit the form without entering any details", () => {
+  cy.get("#login").click();
 });
 
 When("I click the login button", () => {
   cy.get("#login").click();
 });
 
-Then("I should see home page", () => {
+Then("I should see a success message", () => {
+  cy.contains("Login successful! Redirecting to the homepage...").should(
+    "be.visible"
+  );
+});
+
+Then("I should be redirected to the home page", () => {
   cy.url().should("eq", `${Cypress.config().baseUrl}/home`);
 });
 
-Then("I should see the error message", () => {
-  cy.contains("Invalid email or password.").should("be.visible");
+Then("I should see an error message", () => {
+  cy.contains("Invalid email or password.Please try again!").should(
+    "be.visible"
+  );
+});
+
+Then("I should see validation error messages", () => {
+  cy.get(".invalid-feedback").should("be.visible");
 });
