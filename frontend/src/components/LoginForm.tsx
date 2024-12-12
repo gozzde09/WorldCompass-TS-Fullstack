@@ -33,8 +33,7 @@ export default function LoginForm() {
         setAlertMessage("Login successful! Redirecting to the homepage...");
         setAlertType("success");
 
-        localStorage.setItem("authToken", response.data.token);
-        localStorage.setItem("userId", response.data.userId);
+        localStorage.setItem("authToken", response.data.token); //TODO
 
         setTimeout(() => {
           navigate("/home");
