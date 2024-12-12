@@ -10,7 +10,7 @@ Feature: Login functionality
     Then I should see a success message
     And I should be redirected to the home page
 
-  Scenario: Login with invalid credentials
+  Scenario: Login error with invalid credentials
     Given I visit the login page
     When I enter an invalid email and password
     And I click the login button

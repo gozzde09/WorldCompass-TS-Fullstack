@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Container } from "react-bootstrap";
 
+import backgroundImage from "/bg.avif";
 import LoginForm from "../components/LoginForm";
 import RegisterForm from "../components/RegisterForm";
 import "../styles/FlipCard.css";
@@ -19,8 +20,12 @@ export default function FlipCard() {
   };
 
   return (
-    <main>
-      <Container className='d-flex justify-content-center my-4'>
+    <main
+      style={{
+        backgroundImage: `url(${backgroundImage})`,
+        backgroundSize: "cover",
+      }}>
+      <Container className='d-flex justify-content-center'>
         <div
           className={`flip-card ${isFlipped ? "flipped" : ""}`}
           onClick={toggleCard}>
@@ -39,7 +44,7 @@ export default function FlipCard() {
             <div className='flip-card-back'>
               <RegisterForm />
               <p
-                className='text-center text-warning d-block mt-3'
+                className='text-center text-warning d-block mt-3 flip-button'
                 onClick={() => setIsFlipped(false)}>
                 Have an account? Click to login
               </p>

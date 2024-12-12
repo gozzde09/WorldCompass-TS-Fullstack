@@ -53,3 +53,20 @@ Testade att fetcha länder från API till database tabellen. Det blev en hel del
 - Components NavBar & Footer
 - Mapp structure med pages-components-styles
 - POST länder till database from API:s via en Hook ( det var inte lätt)
+
+# 11/12
+
+- Update POST länder med en Hook
+- Get country by name -backend
+- Konfiguration BDD-Cucumber
+- TDD-BDD tests for LoginForm
+- Login endpoint with jsonwebtoken-bcryptjs
+
+# 12/12
+
+- Login / Regsiter sida med FlipCard
+- LoginForm with Formik och Yup validering
+- Updated BDD tests för LoginForm , id, alerts osv
+- TDD-BDD tests for RegisterForm
+- RegisterForm with Formik och Yup validering
+- Lite CSS

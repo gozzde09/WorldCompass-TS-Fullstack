@@ -46,7 +46,7 @@ export default function RegisterForm() {
 
   return (
     <div>
-      <h2>Register at World Compass</h2>
+      <h3 className='card-header'>Register at World Compass</h3>
       {/* Conditionally render alert */}
       {alertMessage && (
         <div className={`alert alert-${alertType}`} role='alert'>
@@ -120,7 +120,7 @@ export default function RegisterForm() {
                 className='invalid-feedback'
               />
             </Form.Group>
-            <Button variant='success' type='submit' id='register'>
+            <Button className='submit' type='submit' id='register'>
               Register
             </Button>
           </FormikForm>
