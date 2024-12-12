@@ -70,3 +70,4 @@ Testade att fetcha länder från API till database tabellen. Det blev en hel del
 - TDD-BDD tests for RegisterForm
 - RegisterForm with Formik och Yup validering
 - Lite CSS
+- Fick göra denna installning :https://docs.cypress.io/api/cypress-api/catalog-of-events#Uncaught-Exceptions
