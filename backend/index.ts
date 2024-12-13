@@ -92,7 +92,7 @@ app.post("/api/users", async (req: Request, res: Response) => {
 });
 
 // ----- COUNTRIES -----
-//Insert Into Countries från JSON file
+// Hämta länder fårn API och Hook
 app.post("/api/savecountries", async (req: Request, res: Response) => {
   const newCountries = req.body;
 
@@ -118,7 +118,6 @@ app.post("/api/savecountries", async (req: Request, res: Response) => {
     console.error("Error saving to file:", error);
     res.status(500).send("An error occurred while saving to file");
   }
-  insertDataFromFile();
 });
 
 // Read and insert data from countries.json into the database
@@ -160,7 +159,7 @@ const insertDataFromFile = () => {
 };
 
 // Insert data when server starts
-//insertDataFromFile();
+insertDataFromFile();
 
 console.log("Data successfully inserted into the database");
 

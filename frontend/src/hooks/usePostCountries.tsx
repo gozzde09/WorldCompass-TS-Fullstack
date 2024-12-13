@@ -38,6 +38,9 @@ export default function usePostCountries() {
             : "No currency data available",
         country_flag: currentCountryData.flags?.svg ?? "",
       }));
+      // const jsonCountries = JSON.stringify(countries, null, 2);
+      // console.log(countries.length);
+      // console.log(jsonCountries);
 
       // Konvertera till JSON och spara data i en fil
       // Lists of 99 //payload was too large

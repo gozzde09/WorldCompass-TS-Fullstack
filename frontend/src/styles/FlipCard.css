@@ -45,11 +45,11 @@
 .form-control {
   margin: 1rem 0;
 }
-.submit {
+.submitButton {
   background-color: #833a40c2;
   border: none;
 }
-.submit:hover {
+.submitButton:hover {
   background-color: #f7b0b6;
 }
 .flip-button {
