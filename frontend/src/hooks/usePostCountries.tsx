@@ -34,15 +34,10 @@ export default function usePostCountries() {
           Object.values(currentCountryData.currencies)[0]?.name,
         country_flag: currentCountryData.flags?.svg ?? "",
       }));
-
-      try {
-        for (const country of countries) {
-          await axios.post("/api/countries", country);
-          // console.log(`Posted country: ${country.country_name}`);
-        }
-      } catch (error) {
-        console.error("Error posting countries to the backend:", error);
-      }
+      //Convertera till JSON
+      const jsonCountries = JSON.stringify(countries, null, 2);
+      console.log(countries.length);
+      console.log(jsonCountries); //Kopierade json data i en fil i backend
     }
 
     async function getCountryDescriptions(countryData: RestCountry[]) {

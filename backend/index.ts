@@ -3,6 +3,7 @@ import { Client } from "pg";
 import * as dotenv from "dotenv";
 import express, { Request, Response } from "express";
 import path from "path";
+import fs from "fs";
 
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
@@ -38,21 +39,15 @@ app.post("/api/login", async (req: Request, res: Response) => {
   const { email, password } = req.body;
 
   try {
-    // Check if the user exists
     const query = "SELECT * FROM users WHERE email = $1";
     const { rows } = await client.query(query, [email]);
-
     const user = rows[0];
 
-    // Check password
     await bcrypt.compare(password, user.password);
-
-    // Generate JWT token
     const token = jwt.sign({ userId: user.id }, "my_jwt_secret", {
       expiresIn: "1h", // Token expiration time
     });
 
-    // Send the response
     res.json({
       message: "Login successful",
       token,
@@ -89,6 +84,47 @@ app.post("/api/users", async (req: Request, res: Response) => {
 });
 
 // ----- COUNTRIES -----
+//Insert Into Countries från JSON file
+fs.readFile("countries.json", "utf8", async (_err, data) => {
+  const countries = JSON.parse(data);
+
+  try {
+    for (const country of countries) {
+      const {
+        country_name,
+        country_description,
+        country_capital,
+        country_population,
+        country_continent,
+        country_language,
+        country_currency,
+        country_flag,
+      } = country;
+
+      const query = `
+          INSERT INTO countries (country_name, country_description, country_capital, country_population, country_continent, country_language, country_currency, country_flag)
+          VALUES ($1, $2, $3, $4, $5, $6, $7, $8)
+          RETURNING *;
+        `;
+      const values = [
+        country_name,
+        country_description,
+        country_capital,
+        country_population,
+        country_continent,
+        country_language,
+        country_currency,
+        country_flag,
+      ];
+      await client.query(query, values);
+    }
+
+    console.log("All countries have been processed.");
+  } catch (error) {
+    console.error("Error adding countries:", error);
+  }
+});
+
 // GET - länder
 app.get("/api/countries", async (_req: Request, res: Response) => {
   try {
@@ -114,52 +150,6 @@ app.get("/api/countries/:name", async (req: Request, res: Response) => {
     res.status(200).json(rows[0]);
   } catch (error) {
     res.status(500).json({ error: "Error fetching country details" });
-  }
-});
-
-// POST - Lägg till länder
-app.post("/api/countries", async (req: Request, res: Response) => {
-  const {
-    country_name,
-    country_description,
-    country_capital,
-    country_population,
-    country_continent,
-    country_language,
-    country_currency,
-    country_flag,
-  }: Country = req.body;
-  const existingCountryQuery = `
-    SELECT * FROM countries
-    WHERE LOWER(REPLACE(country_name, ' ', '')) = LOWER(REPLACE($1, ' ', ''));
-    `;
-  const { rows: existingCountries } = await client.query(existingCountryQuery, [
-    country_name,
-  ]);
-
-  if (!existingCountries) {
-    //  res.status(409).json({ error: "Country with this name already exists" });
-    try {
-      const query = `
-      INSERT INTO countries (country_name, country_description, country_capital, country_population, country_continent, country_language, country_currency, country_flag)
-      VALUES ($1, $2, $3, $4, $5, $6, $7, $8)
-      RETURNING *;
-    `;
-      const values = [
-        country_name,
-        country_description,
-        country_capital,
-        country_population,
-        country_continent,
-        country_language,
-        country_currency,
-        country_flag,
-      ];
-      const { rows } = await client.query<Country>(query, values);
-      res.status(201).send(rows[0]);
-    } catch (error) {
-      res.status(500).json({ error: "Error adding countries" });
-    }
   }
 });
 
