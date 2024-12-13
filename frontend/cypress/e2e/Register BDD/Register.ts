@@ -3,7 +3,7 @@ import { Given, When, Then } from "@badeball/cypress-cucumber-preprocessor";
 const validUser = {
   first_name: "John",
   last_name: "Doe",
-  email: "johndoe@example.com",
+  email: "jdoe@example.com",
   password: "secret",
 };
 

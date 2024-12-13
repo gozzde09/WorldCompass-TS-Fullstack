@@ -9,6 +9,6 @@
 5-Starta Cypress genom att köra `npx cypress open` i terminalen.
 6- Eller headless versioner från consolen från frontend mappen :
 `npm run test:component --headless`
-`npm run test:e2e `
+`npm run test:e2e`
 
 # Gözde Akgün JSU23
