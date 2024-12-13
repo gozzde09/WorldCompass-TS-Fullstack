@@ -34,10 +34,26 @@ export default function usePostCountries() {
           Object.values(currentCountryData.currencies)[0]?.name,
         country_flag: currentCountryData.flags?.svg ?? "",
       }));
-      //Convertera till JSON
-      const jsonCountries = JSON.stringify(countries, null, 2);
-      console.log(countries.length);
-      console.log(jsonCountries); //Kopierade json data i en fil i backend
+
+      // Konvertera till JSON och spara data i en fil
+      // Lists of 99 //payload is too large
+      const countryLists = [];
+      for (let i = 0; i < countries.length; i += 99) {
+        countryLists.push(countries.slice(i, i + 99));
+      }
+
+      for (const [index, list] of countryLists.entries()) {
+        try {
+          const response = await axios.post("/api/savecountries", list, {
+            headers: {
+              "Content-Type": "application/json",
+            },
+          });
+          console.log(`Group ${index + 1} successfully sent:`, response.data);
+        } catch (error) {
+          console.error(`Error sending Group ${index + 1}:`, error);
+        }
+      }
     }
 
     async function getCountryDescriptions(countryData: RestCountry[]) {

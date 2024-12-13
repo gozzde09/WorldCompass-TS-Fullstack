@@ -1,6 +1,7 @@
 import { Suspense } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { lazyWithPreload } from "react-lazy-with-preload";
+// import usePostCountries from "./hooks/usePostCountries";
 
 import "./styles/App.css";
 import Footer from "./components/Footer";
@@ -12,6 +13,7 @@ HomePage.preload();
 LogRegPage.preload();
 
 export default function App() {
+  // usePostCountries();
   return (
     <Router>
       <Suspense fallback={<div>Loading...</div>}>

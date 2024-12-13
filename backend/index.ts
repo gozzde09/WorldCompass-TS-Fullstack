@@ -85,11 +85,28 @@ app.post("/api/users", async (req: Request, res: Response) => {
 
 // ----- COUNTRIES -----
 //Insert Into Countries från JSON file
-fs.readFile("countries.json", "utf8", async (_err, data) => {
-  const countries = JSON.parse(data);
 
+app.post("/api/savecountries", async (req: Request, res: Response) => {
+  const newCountries = req.body;
   try {
-    for (const country of countries) {
+    // Read the file
+    const data = fs.existsSync("countries.json")
+      ? fs.readFileSync("countries.json", "utf8")
+      : "[]";
+    // If the file contains data, parse it; otherwise, create an empty array
+    const existingCountries = data ? JSON.parse(data) : [];
+    // Add new countries to the existing list
+    const updatedCountries = [...existingCountries, ...newCountries];
+
+    // Update the JSON file
+    fs.writeFileSync(
+      "countries.json",
+      JSON.stringify(updatedCountries, null, 2),
+      "utf8"
+    );
+
+    // Save to the database
+    for (const country of newCountries) {
       const {
         country_name,
         country_description,
@@ -102,10 +119,13 @@ fs.readFile("countries.json", "utf8", async (_err, data) => {
       } = country;
 
       const query = `
-          INSERT INTO countries (country_name, country_description, country_capital, country_population, country_continent, country_language, country_currency, country_flag)
-          VALUES ($1, $2, $3, $4, $5, $6, $7, $8)
-          RETURNING *;
-        `;
+        INSERT INTO countries
+        (country_name, country_description, country_capital, country_population,
+        country_continent, country_language, country_currency, country_flag)
+        VALUES ($1, $2, $3, $4, $5, $6, $7, $8)
+        RETURNING *;
+      `;
+
       const values = [
         country_name,
         country_description,
@@ -116,12 +136,14 @@ fs.readFile("countries.json", "utf8", async (_err, data) => {
         country_currency,
         country_flag,
       ];
+
       await client.query(query, values);
     }
 
-    console.log("All countries have been processed.");
+    res.status(200).send("Data successfully saved");
   } catch (error) {
-    console.error("Error adding countries:", error);
+    console.error("Error:", error);
+    res.status(500).send("An error occurred");
   }
 });
 
