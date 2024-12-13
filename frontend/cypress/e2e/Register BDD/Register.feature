@@ -10,12 +10,12 @@ Feature: Register functionality
     Then I should see a success message
     And I should be redirected to the home page
 
-  Scenario: Registration with missing details
+  Scenario: Registration gives error with missing details
     Given I visit the registration page
     When I submit the form with missing required fields
     Then I should see validation error messages
 
-  Scenario: Registration with invalid email
+  Scenario: Registration gives validation error with invalid email
     Given I visit the registration page
     When I submit the form with an invalid email
     Then I should see a validation error for the email field

@@ -44,19 +44,14 @@ app.post("/api/login", async (req: Request, res: Response) => {
     const user = rows[0];
 
     await bcrypt.compare(password, user.password);
-    const token = jwt.sign({ userId: user.id }, "my_jwt_secret", {
-      expiresIn: "1h", // Token expiration time
+    const token = jwt.sign({ userId: user.user_id }, "my_jwt_secret", {
+      expiresIn: "1h",
     });
 
     res.json({
       message: "Login successful",
       token,
-      user: {
-        id: user.id,
-        email: user.email,
-        first_name: user.first_name,
-        last_name: user.last_name,
-      },
+      user: user,
     });
   } catch (error) {
     console.error(error);
@@ -70,13 +65,26 @@ app.post("/api/users", async (req: Request, res: Response) => {
 
   try {
     const query = `
-      INSERT INTO users (first_name, last_name, email, password )
+      INSERT INTO users (first_name, last_name, email, password)
       VALUES ($1, $2, $3, $4)
+      ON CONFLICT (email) DO NOTHING
       RETURNING *;
     `;
     const values = [first_name, last_name, email, password];
     const { rows } = await client.query<User>(query, values);
-    res.status(201).send(rows[0]);
+    const user = rows[0];
+    const token = jwt.sign({ userId: user.user_id }, "my_jwt_secret", {
+      expiresIn: "1h",
+    });
+    if (rows.length === 0) {
+      res.status(409).json({ error: "Email already exists" });
+    }
+
+    res.status(201).send({
+      message: "Registering successfull",
+      user: user,
+      token: token,
+    });
   } catch (error) {
     console.error(error);
     res.status(500).json({ error: "Error adding user" });
@@ -85,67 +93,76 @@ app.post("/api/users", async (req: Request, res: Response) => {
 
 // ----- COUNTRIES -----
 //Insert Into Countries från JSON file
-
 app.post("/api/savecountries", async (req: Request, res: Response) => {
   const newCountries = req.body;
+
   try {
-    // Read the file
+    // Read the existing JSON file
     const data = fs.existsSync("countries.json")
       ? fs.readFileSync("countries.json", "utf8")
       : "[]";
-    // If the file contains data, parse it; otherwise, create an empty array
+
+    // Parse the existing data or initialize an empty array
     const existingCountries = data ? JSON.parse(data) : [];
-    // Add new countries to the existing list
     const updatedCountries = [...existingCountries, ...newCountries];
 
-    // Update the JSON file
+    // Write the updated countries to the JSON file
     fs.writeFileSync(
       "countries.json",
       JSON.stringify(updatedCountries, null, 2),
       "utf8"
     );
 
-    // Save to the database
-    for (const country of newCountries) {
-      const {
-        country_name,
-        country_description,
-        country_capital,
-        country_population,
-        country_continent,
-        country_language,
-        country_currency,
-        country_flag,
-      } = country;
+    res.status(200).send("Data successfully saved to file");
+  } catch (error) {
+    console.error("Error saving to file:", error);
+    res.status(500).send("An error occurred while saving to file");
+  }
+  insertDataFromFile();
+});
 
-      const query = `
-        INSERT INTO countries
-        (country_name, country_description, country_capital, country_population,
-        country_continent, country_language, country_currency, country_flag)
+// Read and insert data from countries.json into the database
+const insertDataFromFile = () => {
+  fs.readFile(path.join(__dirname, "countries.json"), "utf8", (err, data) => {
+    if (err) {
+      console.error("Error reading the JSON file:", err);
+      return;
+    }
+
+    const countries = JSON.parse(data);
+    countries.forEach((country: Country) => {
+      const insertQuery = `
+        INSERT INTO countries (country_name, country_description, country_capital, country_population, country_continent, country_language, country_currency, country_flag)
         VALUES ($1, $2, $3, $4, $5, $6, $7, $8)
-        RETURNING *;
+        ON CONFLICT (country_name) DO NOTHING;
       `;
 
       const values = [
-        country_name,
-        country_description,
-        country_capital,
-        country_population,
-        country_continent,
-        country_language,
-        country_currency,
-        country_flag,
+        country.country_name,
+        country.country_description,
+        country.country_capital,
+        country.country_population,
+        country.country_continent,
+        country.country_language,
+        country.country_currency,
+        country.country_flag,
       ];
 
-      await client.query(query, values);
-    }
+      client.query(insertQuery, values, (err) => {
+        if (err) {
+          console.error("Error inserting country:", err);
+        } else {
+          console.log(`Inserted: ${country.country_name}`);
+        }
+      });
+    });
+  });
+};
 
-    res.status(200).send("Data successfully saved");
-  } catch (error) {
-    console.error("Error:", error);
-    res.status(500).send("An error occurred");
-  }
-});
+// Insert data when server starts
+//insertDataFromFile();
+
+console.log("Data successfully inserted into the database");
 
 // GET - länder
 app.get("/api/countries", async (_req: Request, res: Response) => {

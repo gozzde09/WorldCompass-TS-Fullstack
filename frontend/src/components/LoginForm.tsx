@@ -28,17 +28,14 @@ export default function LoginForm() {
           "Content-Type": "application/json",
         },
       });
+      setAlertMessage("Login successful! Redirecting to the homepage...");
+      setAlertType("success");
 
-      if (response.data.token) {
-        setAlertMessage("Login successful! Redirecting to the homepage...");
-        setAlertType("success");
+      localStorage.setItem("userId", response.data.user.user_id);
 
-        localStorage.setItem("authToken", response.data.token); //TODO
-
-        setTimeout(() => {
-          navigate("/home");
-        }, 2000);
-      }
+      setTimeout(() => {
+        navigate("/home");
+      }, 2000);
     } catch (error) {
       console.error("Error with login:", error);
       setAlertMessage("Invalid email or password.Please try again!");
@@ -92,7 +89,7 @@ export default function LoginForm() {
                 className='invalid-feedback'
               />
             </Form.Group>
-            <Button className='submit' type='submit' id='login'>
+            <Button className='submitButton' type='submit' id='login'>
               Login
             </Button>
           </FormikForm>

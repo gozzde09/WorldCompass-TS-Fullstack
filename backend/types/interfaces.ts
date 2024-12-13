@@ -12,19 +12,19 @@ export interface Country {
 
 export interface User {
   user_id?: number;
-  first_name?: string;
-  last_name?: string;
+  first_name: string;
+  last_name: string;
   email: string;
   password: string;
 }
 
 export interface Status {
-  status_id?: number;
+  status_id: number;
   status_name: string;
 }
 
 export interface TravelList {
-  travel_list_id?: number;
+  travel_list_id: number;
   user_id: number;
   country_id: number;
   status_id: number;

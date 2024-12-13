@@ -3,7 +3,7 @@ import { Navbar as BootstrapNavbar, Nav, Container } from "react-bootstrap";
 
 export default function Navbar() {
   const handleLogout = () => {
-    localStorage.removeItem("authToken");
+    localStorage.removeItem("userId");
   };
   return (
     <BootstrapNavbar bg='dark' variant='dark' expand='lg'>

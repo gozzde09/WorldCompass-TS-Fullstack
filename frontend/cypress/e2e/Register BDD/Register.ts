@@ -1,9 +1,9 @@
 import { Given, When, Then } from "@badeball/cypress-cucumber-preprocessor";
-
+const generateUniqueEmail = () => `user${Date.now()}@example.com`;
 const validUser = {
   first_name: "John",
   last_name: "Doe",
-  email: "jdoe@example.com",
+  email: generateUniqueEmail(),
   password: "secret",
 };
 
@@ -14,12 +14,11 @@ const invalidUser = {
 Given("I visit the registration page", () => {
   cy.visit("/");
 
-  // Dönüşüm işlemini sıfırlayıp öğeyi görünür hale getirin
   cy.get(".flip-card-back")
-    .invoke("css", "transform", "rotateY(0deg)") // Arka tarafı ön tarafa çevirir
-    .should("be.visible"); // Öğenin görünür olduğundan emin olun
+    .invoke("css", "transform", "rotateY(0deg)")
+    .should("be.visible");
 
-  cy.get(".flip-card-back").should("be.visible"); // Flip-card arka tarafının görünür olduğunu doğrula
+  cy.get(".flip-card-back").should("be.visible");
 });
 
 When("I fill out the form with valid details", () => {
@@ -48,7 +47,6 @@ When("I click the register button", () => {
 });
 
 Then("I should see a success message", () => {
-  cy.wait(3000);
   cy.contains(
     "You successfully registered! Redirecting to the homepage..."
   ).should("be.visible");

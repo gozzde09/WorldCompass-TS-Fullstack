@@ -31,12 +31,16 @@ export default function usePostCountries() {
           Object.values(currentCountryData.languages)[0],
         country_currency:
           currentCountryData.currencies &&
-          Object.values(currentCountryData.currencies)[0]?.name,
+          Object.values(currentCountryData.currencies)[0]
+            ? `${Object.values(currentCountryData.currencies)[0].name} (${
+                Object.values(currentCountryData.currencies)[0].symbol
+              })`
+            : "No currency data available",
         country_flag: currentCountryData.flags?.svg ?? "",
       }));
 
       // Konvertera till JSON och spara data i en fil
-      // Lists of 99 //payload is too large
+      // Lists of 99 //payload was too large
       const countryLists = [];
       for (let i = 0; i < countries.length; i += 99) {
         countryLists.push(countries.slice(i, i + 99));

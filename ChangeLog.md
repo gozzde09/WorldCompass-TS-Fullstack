@@ -71,3 +71,10 @@ Testade att fetcha länder från API till database tabellen. Det blev en hel del
 - RegisterForm with Formik och Yup validering
 - Lite CSS
 - Fick göra denna installning :https://docs.cypress.io/api/cypress-api/catalog-of-events#Uncaught-Exceptions
+
+# 13/12
+
+- Automated sparade länder via hook-API och sparade satan i JSOn-file. Skickade JSON data till database.
+- Färdiga BDD tester för Login och Register
+- Sparade userId i local storage, fxade logga ut function
+- E2E komplett tester för Login och Register

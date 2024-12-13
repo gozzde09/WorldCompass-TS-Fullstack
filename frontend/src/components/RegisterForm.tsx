@@ -25,11 +25,20 @@ export default function RegisterForm() {
 
   const handleSubmit = async (values: User) => {
     try {
-      await axios.post<User>("/api/users", values, {
+      const response = await axios.post("/api/users", values, {
         headers: {
           "Content-Type": "application/json",
         },
       });
+      setAlertMessage("Login successful! Redirecting to the homepage...");
+      setAlertType("success");
+
+      localStorage.setItem("userId", response.data.user.user_id);
+
+      setTimeout(() => {
+        navigate("/home");
+      }, 2000);
+
       setAlertMessage(
         "You successfully registered! Redirecting to the homepage..."
       );
@@ -120,7 +129,7 @@ export default function RegisterForm() {
                 className='invalid-feedback'
               />
             </Form.Group>
-            <Button className='submit' type='submit' id='register'>
+            <Button className='submitButton' type='submit' id='register'>
               Register
             </Button>
           </FormikForm>

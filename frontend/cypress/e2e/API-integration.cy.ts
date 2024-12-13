@@ -1,5 +1,5 @@
 import { User } from "../../src/types/interfaces";
-
+const generateUniqueEmail = () => `user${Date.now()}@example.com`;
 describe("Users API Tests", () => {
   it("fetches all users from the database", () => {
     cy.request("GET", "/api/users").then((response) => {
@@ -11,12 +11,16 @@ describe("Users API Tests", () => {
     const newUser: User = {
       first_name: "Test",
       last_name: "User",
-      email: "newuser@example.com",
+      email: generateUniqueEmail(),
       password: "password123",
     };
     cy.request("POST", "/api/users", newUser).then((response) => {
+      console.log(response);
       expect(response.status).to.eq(201); // Created
-      expect(response.body).to.have.property("first_name", newUser.first_name);
+      expect(response.body.user).to.have.property(
+        "first_name",
+        newUser.first_name
+      );
     });
   });
 });
@@ -30,7 +34,7 @@ describe("Countries API Tests", () => {
   it("fetches details of a specific country", () => {
     cy.request("GET", "/api/countries/turkey").then((response) => {
       expect(response.status).to.eq(200);
-      expect(response.body).to.have.property("country_name", "Testland");
+      expect(response.body).to.have.property("country_name", "Turkey");
     });
   });
 });

@@ -52,11 +52,6 @@ VALUES
 ('Bob', 'Smith', 'bob@example.com', 'password2'),
 ('Charlie', 'Brown', 'charlie@example.com', 'password3');
 
--- INSERT INTO travellist (country_id, status_id, user_id)
--- VALUES
--- (1, 1, 1),   -- country_id = 1 (Japan), status_id = 1 (Want to visit), user_id = 1 (Alice)
--- (2, 2, 2),   -- country_id = 2 (Sweden), status_id = 2 (Visited), user_id = 2 (Bob)
--- (3, 1, 3);
 
 -- SELECT
 --     travellist.travellist_id,
