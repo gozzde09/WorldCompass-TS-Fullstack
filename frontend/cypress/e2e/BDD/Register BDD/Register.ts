@@ -1,5 +1,5 @@
 import { Given, When, Then } from "@badeball/cypress-cucumber-preprocessor";
-const generateUniqueEmail = () => `user${Date.now()}@example.com`;
+const generateUniqueEmail = () => `user2${Date.now()}@example.com`;
 const validUser = {
   first_name: "John",
   last_name: "Doe",

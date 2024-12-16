@@ -5,7 +5,6 @@ import express, { Request, Response } from "express";
 import path from "path";
 import fs from "fs";
 
-import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
 
 import { Country } from "./types/interfaces";
@@ -41,23 +40,30 @@ app.post("/api/login", async (req: Request, res: Response) => {
   try {
     const query = "SELECT * FROM users WHERE email = $1";
     const { rows } = await client.query(query, [email]);
+
+    // Check if the user exists
+    if (rows.length === 0) {
+      res.status(401).json({ error: "Email is not registrerad. " });
+    }
+
     const user = rows[0];
 
-    const isPasswordValid = await bcrypt.compare(password, user.password);
-    if (!isPasswordValid) {
-      res.status(401).json({ error: "Invalid email or password" });
+    // Compare the password
+    if (password !== user.password) {
+      res.status(401).json({ error: "Invalid password" });
     }
-    if (isPasswordValid) {
-      const token = jwt.sign({ userId: user.user_id }, "my_jwt_secret", {
-        expiresIn: "1h",
-      });
 
-      res.json({
-        message: "Login successful",
-        token,
-        user: user,
-      });
-    }
+    // If password is valid, generate the JWT token
+    const token = jwt.sign({ userId: user.user_id }, "my_jwt_secret", {
+      expiresIn: "1h",
+    });
+
+    // Send the successful login response
+    res.json({
+      message: "Login successful",
+      token,
+      user,
+    });
   } catch (error) {
     console.error(error);
     res.status(500).json({ error: "Internal server error" });
@@ -69,27 +75,32 @@ app.post("/api/users", async (req: Request, res: Response) => {
   const { first_name, last_name, email, password }: User = req.body;
 
   try {
-    const query = `
+    const query = "SELECT * FROM users WHERE email = $1";
+    const { rows } = await client.query<User>(query, [email]);
+
+    if (rows.length > 0) {
+      res.status(400).json({ error: "User already exists" });
+    }
+    if (rows.length === 0) {
+      const insertQuery = `
       INSERT INTO users (first_name, last_name, email, password)
       VALUES ($1, $2, $3, $4)
-      ON CONFLICT (email) DO NOTHING
       RETURNING *;
     `;
-    const values = [first_name, last_name, email, password];
-    const { rows } = await client.query<User>(query, values);
-    const user = rows[0];
-    const token = jwt.sign({ userId: user.user_id }, "my_jwt_secret", {
-      expiresIn: "1h",
-    });
-    if (rows.length === 0) {
-      res.status(409).json({ error: "Email already exists" });
-    }
+      const values = [first_name, last_name, email, password];
+      const insertResult = await client.query<User>(insertQuery, values);
+      const user = insertResult.rows[0];
 
-    res.status(201).send({
-      message: "Registering successfull",
-      user: user,
-      token: token,
-    });
+      const token = jwt.sign({ userId: user.user_id }, "my_jwt_secret", {
+        expiresIn: "1h",
+      });
+
+      res.status(201).send({
+        message: "Registering successfull",
+        user: user,
+        token: token,
+      });
+    }
   } catch (error) {
     console.error(error);
     res.status(500).json({ error: "Error adding user" });

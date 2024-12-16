@@ -77,5 +77,10 @@ Testade att fetcha länder från API till database tabellen. Det blev en hel del
 - Automated sparade länder via hook-API och sparade satan i JSOn-file. Skickade JSON data till database.
 - Fixade Login och Register nedpoinst på riktigt
 - Färdiga BDD tester för
-- Sparade userId i local storage, fxade logga ut function
+- Sparade userId i local storage, fixade logga ut function
 - E2E komplett tester för Login och Register
+
+# 16/12
+
+- Komponent tester och updated E2E komplett tester för Login och Register
+- Local Storage - sparar user object med namn

@@ -16,7 +16,7 @@ describe("CompleteE2E: Login form", () => {
   });
 
   //Backend
-  it("verifies login request on the BACKEND; logined user exists in the response", () => {
+  it("verifies login request works on the BACKEND", () => {
     cy.request("POST", "/api/login", validUser).then((response) => {
       expect(response.status).to.eq(200);
       expect(response.body).to.have.property("user");
@@ -24,8 +24,8 @@ describe("CompleteE2E: Login form", () => {
     });
   });
 
-  // Database
-  it("verifies the user exists in the DATABASE", () => {
+  //Database
+  it("verifies login is successfull and the user exists in the DATABASE", () => {
     cy.request("GET", "/api/users").then((response) => {
       expect(response.status).to.eq(200);
       const users = response.body;
@@ -41,18 +41,19 @@ describe("CompleteE2E: Login form", () => {
     cy.wait(2500);
     cy.url().should("include", "/home");
 
-    // Användare sparades i localStorage
-    cy.window().then(() => {
-      const storedUser = JSON.parse(localStorage.getItem("user"));
-      console.log(storedUser);
-      expect(localStorage.getItem(storedUser)).to.exist;
-      expect(localStorage.getItem(storedUser.userId)).equal("1");
-      expect(localStorage.getItem(storedUser.userName)).to.equal(
-        validUser.first_name
-      );
-    });
     //Välkommen meddelande
     const firstName = validUser.first_name;
     cy.get("#welcome").should("contain", `Welcome back,${firstName}!`);
+
+    // Användare sparades i localStorage
+    cy.window().then(() => {
+      const storedUserString = localStorage.getItem("user");
+
+      const storedUser = storedUserString ? JSON.parse(storedUserString) : null;
+      expect(storedUser).to.exist;
+
+      expect(storedUser.userId).to.equal(1);
+      expect(storedUser.userName).to.equal(validUser.first_name);
+    });
   });
 });

@@ -11,7 +11,7 @@ beforeEach(() => {
 
 describe("<RegisterForm />", () => {
   //FORM
-  it("renders the registration form", () => {
+  it("should render the registration form", () => {
     cy.get("#registerFirstName").should("exist");
     cy.get("#registerLastName").should("exist");
     cy.get("#registerEmail").should("exist");
@@ -54,31 +54,13 @@ describe("<RegisterForm />", () => {
       .should("contain", "Password must be at least 4 characters");
   });
 
-  // ERROR REGISTRATION -invalid
-  it("should display error for registration failure", () => {
-    // Mock failed registration response
-    cy.intercept("POST", "/api/users", {
-      statusCode: 400,
-      body: { message: "Error with registration. Please try again!" },
-    });
-
-    cy.get("#registerFirstName").type("John");
-    cy.get("#registerLastName").type("Doe");
-    cy.get("#registerEmail").type("john.doe@example.com");
-    cy.get("#registerPassword").type("password123");
-    cy.get("#register").click();
-
-    cy.get(".alert-danger").should(
-      "contain",
-      "Error with registration. Please try again!"
-    );
-  });
-
   // VALID
   it("should register successfully and redirect", () => {
+    const email = `newuser${Date.now()}@example.com`;
+
     cy.get("#registerFirstName").type("John");
     cy.get("#registerLastName").type("Doe");
-    cy.get("#registerEmail").type("john.doe@example.com");
+    cy.get("#registerEmail").type(email);
     cy.get("#registerPassword").type("password123");
     cy.get("#register").click();
 
@@ -87,5 +69,19 @@ describe("<RegisterForm />", () => {
       "You successfully registered! Redirecting to the homepage..."
     );
     cy.url().should("include", "/home");
+  });
+
+  // ERROR REGISTRATION - samma mail
+  it("should display error for registration failure", () => {
+    cy.get("#registerFirstName").type("John");
+    cy.get("#registerLastName").type("Doe");
+    cy.get("#registerEmail").type("test@example.com"); //finns i database
+    cy.get("#registerPassword").type("password123");
+    cy.get("#register").click();
+
+    cy.get(".alert-danger").should(
+      "contain",
+      "Error with registration. Please try again!"
+    );
   });
 });

@@ -9,7 +9,7 @@ beforeEach(() => {
 });
 describe("<LoginForm />", () => {
   //FORM
-  it("renders the login form", () => {
+  it("should render the login form", () => {
     cy.get("#loginForm").should("exist");
     cy.get("#loginEmail").should("exist");
     cy.get("#loginPassword").should("exist");
@@ -61,7 +61,7 @@ describe("<LoginForm />", () => {
   //VALID
   it("should login successfully, show success alert and redirect", () => {
     cy.get("#loginEmail").type("test@example.com");
-    cy.get("#loginPassword").type("password123");
+    cy.get("#loginPassword").type("test");
     cy.get("#login").click();
 
     cy.get(".alert-success").should(
