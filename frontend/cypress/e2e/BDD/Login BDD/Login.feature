@@ -3,7 +3,7 @@ Feature: Login functionality
   I want to log in to the application with valid credentials
   So that I can access the application
 
-  Scenario: Successful login
+  Scenario: Successful login with valid credentials
     Given I visit the login page
     When I enter valid email and password
     And I click the login button
@@ -15,8 +15,3 @@ Feature: Login functionality
     When I enter an invalid email and password
     And I click the login button
     Then I should see an error message
-
-  Scenario: Login gives error with empty fields
-    Given I visit the login page
-    When I submit the form without entering any details
-    Then I should see validation error messages

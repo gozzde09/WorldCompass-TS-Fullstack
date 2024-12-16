@@ -31,7 +31,12 @@ export default function LoginForm() {
       setAlertMessage("Login successful! Redirecting to the homepage...");
       setAlertType("success");
 
-      localStorage.setItem("userId", response.data.user.user_id);
+      //Local Storage
+      const user = {
+        userId: response.data.user.user_id,
+        userName: response.data.user.first_name,
+      };
+      localStorage.setItem("user", JSON.stringify(user));
 
       setTimeout(() => {
         navigate("/home");
@@ -63,30 +68,30 @@ export default function LoginForm() {
           <FormikForm id='loginForm'>
             <Form.Group controlId='loginEmail'>
               <Field
+                as={Form.Control}
+                isInvalid={touched.email && !!errors.email}
                 name='email'
                 placeholder='Email'
                 type='email'
-                as={Form.Control}
-                isInvalid={touched.email && !!errors.email}
               />
               <ErrorMessage
-                name='email'
-                component='div'
                 className='invalid-feedback'
+                component='div'
+                name='email'
               />
             </Form.Group>
             <Form.Group controlId='loginPassword'>
               <Field
+                as={Form.Control}
+                isInvalid={touched.password && !!errors.password}
                 name='password'
                 placeholder='Password'
                 type='password'
-                as={Form.Control}
-                isInvalid={touched.password && !!errors.password}
               />
               <ErrorMessage
-                name='password'
-                component='div'
                 className='invalid-feedback'
+                component='div'
+                name='password'
               />
             </Form.Group>
             <Button className='submitButton' type='submit' id='login'>

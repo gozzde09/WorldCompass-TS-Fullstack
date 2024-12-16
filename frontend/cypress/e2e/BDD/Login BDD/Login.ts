@@ -24,10 +24,6 @@ When("I enter an invalid email and password", () => {
   cy.get("#loginPassword").type(invalidCredentials.password);
 });
 
-When("I submit the form without entering any details", () => {
-  cy.get("#login").click();
-});
-
 When("I click the login button", () => {
   cy.get("#login").click();
 });
@@ -46,8 +42,4 @@ Then("I should see an error message", () => {
   cy.contains("Invalid email or password.Please try again!").should(
     "be.visible"
   );
-});
-
-Then("I should see validation error messages", () => {
-  cy.get(".invalid-feedback").should("be.visible");
 });

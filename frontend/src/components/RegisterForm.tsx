@@ -33,7 +33,12 @@ export default function RegisterForm() {
       setAlertMessage("Login successful! Redirecting to the homepage...");
       setAlertType("success");
 
-      localStorage.setItem("userId", response.data.user.user_id);
+      //Local Storage
+      const user = {
+        userId: response.data.user.user_id,
+        userName: response.data.user.first_name,
+      };
+      localStorage.setItem("user", JSON.stringify(user));
 
       setTimeout(() => {
         navigate("/home");
@@ -75,58 +80,58 @@ export default function RegisterForm() {
           <FormikForm id='registerForm'>
             <Form.Group controlId='registerFirstName'>
               <Field
+                as={Form.Control}
+                isInvalid={touched.first_name && !!errors.first_name}
                 name='first_name'
                 placeholder='First Name'
                 type='text'
-                as={Form.Control}
-                isInvalid={touched.first_name && !!errors.first_name}
               />
               <ErrorMessage
-                name='first_name'
-                component='div'
                 className='invalid-feedback'
+                component='div'
+                name='first_name'
               />
             </Form.Group>
             <Form.Group controlId='registerLastName'>
               <Field
+                as={Form.Control}
+                isInvalid={touched.last_name && !!errors.last_name}
                 name='last_name'
                 placeholder='Last Name'
                 type='text'
-                as={Form.Control}
-                isInvalid={touched.last_name && !!errors.last_name}
               />
               <ErrorMessage
-                name='last_name'
-                component='div'
                 className='invalid-feedback'
+                component='div'
+                name='last_name'
               />
             </Form.Group>
             <Form.Group controlId='registerEmail'>
               <Field
+                as={Form.Control}
+                isInvalid={touched.email && !!errors.email}
                 name='email'
                 placeholder='Email'
                 type='email'
-                as={Form.Control}
-                isInvalid={touched.email && !!errors.email}
               />
               <ErrorMessage
-                name='email'
-                component='div'
                 className='invalid-feedback'
+                component='div'
+                name='email'
               />
             </Form.Group>
             <Form.Group controlId='registerPassword'>
               <Field
+                as={Form.Control}
+                isInvalid={touched.password && !!errors.password}
                 name='password'
                 placeholder='Password'
                 type='password'
-                as={Form.Control}
-                isInvalid={touched.password && !!errors.password}
               />
               <ErrorMessage
-                name='password'
-                component='div'
                 className='invalid-feedback'
+                component='div'
+                name='password'
               />
             </Form.Group>
             <Button className='submitButton' type='submit' id='register'>

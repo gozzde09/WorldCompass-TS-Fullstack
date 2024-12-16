@@ -13,12 +13,9 @@ const invalidUser = {
 
 Given("I visit the registration page", () => {
   cy.visit("/");
-
   cy.get(".flip-card-back")
     .invoke("css", "transform", "rotateY(0deg)")
     .should("be.visible");
-
-  cy.get(".flip-card-back").should("be.visible");
 });
 
 When("I fill out the form with valid details", () => {

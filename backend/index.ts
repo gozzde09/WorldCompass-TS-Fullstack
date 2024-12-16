@@ -43,16 +43,21 @@ app.post("/api/login", async (req: Request, res: Response) => {
     const { rows } = await client.query(query, [email]);
     const user = rows[0];
 
-    await bcrypt.compare(password, user.password);
-    const token = jwt.sign({ userId: user.user_id }, "my_jwt_secret", {
-      expiresIn: "1h",
-    });
+    const isPasswordValid = await bcrypt.compare(password, user.password);
+    if (!isPasswordValid) {
+      res.status(401).json({ error: "Invalid email or password" });
+    }
+    if (isPasswordValid) {
+      const token = jwt.sign({ userId: user.user_id }, "my_jwt_secret", {
+        expiresIn: "1h",
+      });
 
-    res.json({
-      message: "Login successful",
-      token,
-      user: user,
-    });
+      res.json({
+        message: "Login successful",
+        token,
+        user: user,
+      });
+    }
   } catch (error) {
     console.error(error);
     res.status(500).json({ error: "Internal server error" });
@@ -151,7 +156,7 @@ const insertDataFromFile = () => {
         if (err) {
           console.error("Error inserting country:", err);
         } else {
-          console.log(`Inserted: ${country.country_name}`);
+          // console.log(`Inserted: ${country.country_name}`);
         }
       });
     });
