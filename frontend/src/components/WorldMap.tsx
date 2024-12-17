@@ -4,34 +4,20 @@ import L from "leaflet";
 
 import CountryDetailsModal from "./CountryDetailsModal";
 
-export default function WorldMap() {
+export default function WorldMap({
+  visitedCountries,
+  wantedCountries,
+  fetchVisitedAndWantedCountries,
+}: {
+  visitedCountries: string[];
+  wantedCountries: string[];
+  fetchVisitedAndWantedCountries: (userId: number) => void;
+}) {
   const [modalShow, setModalShow] = useState(false);
   const [selectedCountry, setSelectedCountry] = useState<string | null>(null);
-  const [visitedCountries, setVisitedCountries] = useState<string[]>([]);
-  const [wantedCountries, setWantedCountries] = useState<string[]>([]);
 
   const geoJsonLayerRef = useRef<L.GeoJSON | null>(null);
   const mapRef = useRef<L.Map | null>(null);
-
-  const fetchVisitedAndWantedCountries = async () => {
-    try {
-      const storedUserString = localStorage.getItem("user");
-      const storedUser = storedUserString ? JSON.parse(storedUserString) : null;
-      const userId = storedUser?.userId;
-
-      if (!userId) return;
-
-      const response = await axios.get(`/api/travellist/${userId}`);
-      setVisitedCountries(response.data.visited);
-      setWantedCountries(response.data.wanted);
-    } catch (error) {
-      console.error("Error fetching travel list:", error);
-    }
-  };
-
-  useEffect(() => {
-    fetchVisitedAndWantedCountries();
-  }, []);
 
   // Karta
   useEffect(() => {

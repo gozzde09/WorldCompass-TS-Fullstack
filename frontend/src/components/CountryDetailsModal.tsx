@@ -8,7 +8,7 @@ interface CountryModalProps {
   show: boolean;
   countryName: string | null;
   onCancel: () => void;
-  onUpdate: () => void;
+  onUpdate: (userId: number) => void;
 }
 export default function CountryDetailsModal(props: CountryModalProps) {
   const { show, countryName, onCancel, onUpdate } = props;
@@ -60,7 +60,7 @@ export default function CountryDetailsModal(props: CountryModalProps) {
           countryDetails.country_name,
         ]);
       }
-      onUpdate();
+      onUpdate(userId);
       onCancel();
     } catch (error) {
       console.error("Error updating visit status:", error);

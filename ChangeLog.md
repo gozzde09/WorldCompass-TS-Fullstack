@@ -84,3 +84,9 @@ Testade att fetcha länder från API till database tabellen. Det blev en hel del
 
 - Komponent tester och updated E2E komplett tester för Login och Register
 - Local Storage - sparar user object med namn
+- Skapade kartan som visar travel-list tabellen men pushade inte än
+
+# 17/12
+
+- Komponenter Karta, CountryModal, TravelList
+- Komponent test TravelList

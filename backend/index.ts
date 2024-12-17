@@ -20,7 +20,18 @@ const client = new Client({
   connectionString: process.env.PGURI,
 });
 client.connect();
-
+app.get("/api/countries", async (_req: Request, res: Response) => {
+  try {
+    const { rows } = await client.query<Country>(`SELECT * FROM countries`);
+    if (rows.length === 0) {
+      console.log("No countries found in the database");
+    }
+    res.status(200).json(rows);
+  } catch (error) {
+    console.error("Error fetching countries: ", error);
+    res.status(500).json({ error: "Error fetching countries" });
+  }
+});
 //                 ----- USERS -----
 // GET - users
 app.get("/api/users", async (_req: Request, res: Response) => {
