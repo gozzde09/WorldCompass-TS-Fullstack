@@ -43,7 +43,7 @@ describe("CompleteE2E: Login form", () => {
 
     //Välkommen meddelande
     const firstName = validUser.first_name;
-    cy.get("#welcome").should("contain", `Welcome back,${firstName}!`);
+    cy.get("#welcome").should("contain", `Welcome,${firstName}!`);
 
     // Användare sparades i localStorage
     cy.window().then(() => {

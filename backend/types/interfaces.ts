@@ -18,11 +18,6 @@ export interface User {
   password: string;
 }
 
-export interface Status {
-  status_id: number;
-  status_name: string;
-}
-
 export interface TravelList {
   travel_list_id: number;
   user_id: number;

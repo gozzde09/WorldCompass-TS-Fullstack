@@ -1,15 +1,14 @@
-import cors from "cors";
 import { Client } from "pg";
 import * as dotenv from "dotenv";
+import cors from "cors";
 import express, { Request, Response } from "express";
-import path from "path";
 import fs from "fs";
+import path from "path";
 
 import jwt from "jsonwebtoken";
 
 import { Country } from "./types/interfaces";
 import { User } from "./types/interfaces";
-import { Status } from "./types/interfaces";
 import { TravelList } from "./types/interfaces";
 
 const app = express();
@@ -22,7 +21,7 @@ const client = new Client({
 });
 client.connect();
 
-// ----- USERS -----
+//                 ----- USERS -----
 // GET - users
 app.get("/api/users", async (_req: Request, res: Response) => {
   try {
@@ -33,55 +32,19 @@ app.get("/api/users", async (_req: Request, res: Response) => {
   }
 });
 
-// POST - Login
-app.post("/api/login", async (req: Request, res: Response) => {
-  const { email, password } = req.body;
-
-  try {
-    const query = "SELECT * FROM users WHERE email = $1";
-    const { rows } = await client.query(query, [email]);
-
-    // Check if the user exists
-    if (rows.length === 0) {
-      res.status(401).json({ error: "Email is not registrerad. " });
-    }
-
-    const user = rows[0];
-
-    // Compare the password
-    if (password !== user.password) {
-      res.status(401).json({ error: "Invalid password" });
-    }
-
-    // If password is valid, generate the JWT token
-    const token = jwt.sign({ userId: user.user_id }, "my_jwt_secret", {
-      expiresIn: "1h",
-    });
-
-    // Send the successful login response
-    res.json({
-      message: "Login successful",
-      token,
-      user,
-    });
-  } catch (error) {
-    console.error(error);
-    res.status(500).json({ error: "Internal server error" });
-  }
-});
-
 // POST-REGISTER user
 app.post("/api/users", async (req: Request, res: Response) => {
   const { first_name, last_name, email, password }: User = req.body;
+  // Kontrollera om användare redan fanns
+  const query = "SELECT * FROM users WHERE email = $1";
+  const { rows } = await client.query<User>(query, [email]);
 
-  try {
-    const query = "SELECT * FROM users WHERE email = $1";
-    const { rows } = await client.query<User>(query, [email]);
+  if (rows.length > 0) {
+    res.status(400).json({ error: "User already exists" });
+  }
 
-    if (rows.length > 0) {
-      res.status(400).json({ error: "User already exists" });
-    }
-    if (rows.length === 0) {
+  if (rows.length === 0) {
+    try {
       const insertQuery = `
       INSERT INTO users (first_name, last_name, email, password)
       VALUES ($1, $2, $3, $4)
@@ -100,42 +63,47 @@ app.post("/api/users", async (req: Request, res: Response) => {
         user: user,
         token: token,
       });
+    } catch (error) {
+      res.status(500).json({ error: "Error adding user" });
     }
-  } catch (error) {
-    console.error(error);
-    res.status(500).json({ error: "Error adding user" });
   }
 });
 
-// ----- COUNTRIES -----
-// Hämta länder fårn API och Hook
-app.post("/api/savecountries", async (req: Request, res: Response) => {
-  const newCountries = req.body;
+// POST - Login
+app.post("/api/login", async (req: Request, res: Response) => {
+  const { email, password } = req.body;
 
   try {
-    // Read the existing JSON file
-    const data = fs.existsSync("countries.json")
-      ? fs.readFileSync("countries.json", "utf8")
-      : "[]";
+    const query = "SELECT * FROM users WHERE email = $1";
+    const { rows } = await client.query(query, [email]);
 
-    // Parse the existing data or initialize an empty array
-    const existingCountries = data ? JSON.parse(data) : [];
-    const updatedCountries = [...existingCountries, ...newCountries];
+    // Kontrollera om användare redan fanns
+    if (rows.length === 0) {
+      res.status(401).json({ error: "Email is not registrerad. " });
+    }
 
-    // Write the updated countries to the JSON file
-    fs.writeFileSync(
-      "countries.json",
-      JSON.stringify(updatedCountries, null, 2),
-      "utf8"
-    );
+    const user = rows[0];
+    // Compare the password
+    if (password !== user.password) {
+      res.status(401).json({ error: "Invalid password" });
+    }
 
-    res.status(200).send("Data successfully saved to file");
+    // If password is valid, generate the JWT token
+    const token = jwt.sign({ userId: user.user_id }, "my_jwt_secret", {
+      expiresIn: "1h",
+    });
+
+    res.json({
+      message: "Login successful",
+      token,
+      user,
+    });
   } catch (error) {
-    console.error("Error saving to file:", error);
-    res.status(500).send("An error occurred while saving to file");
+    res.status(500).json({ error: "Internal server error" });
   }
 });
 
+//                    ----- COUNTRIES -----
 // Read and insert data from countries.json into the database
 const insertDataFromFile = () => {
   fs.readFile(path.join(__dirname, "countries.json"), "utf8", (err, data) => {
@@ -143,7 +111,6 @@ const insertDataFromFile = () => {
       console.error("Error reading the JSON file:", err);
       return;
     }
-
     const countries = JSON.parse(data);
     countries.forEach((country: Country) => {
       const insertQuery = `
@@ -151,7 +118,6 @@ const insertDataFromFile = () => {
         VALUES ($1, $2, $3, $4, $5, $6, $7, $8)
         ON CONFLICT (country_name) DO NOTHING;
       `;
-
       const values = [
         country.country_name,
         country.country_description,
@@ -167,32 +133,18 @@ const insertDataFromFile = () => {
         if (err) {
           console.error("Error inserting country:", err);
         } else {
-          // console.log(`Inserted: ${country.country_name}`);
+          console.log("Data successfully inserted into the database");
         }
       });
     });
   });
 };
-
 // Insert data when server starts
 insertDataFromFile();
 
-console.log("Data successfully inserted into the database");
-
-// GET - länder
-app.get("/api/countries", async (_req: Request, res: Response) => {
-  try {
-    const { rows } = await client.query<Country>(`SELECT * FROM countries`);
-    res.status(200).json(rows);
-  } catch (error) {
-    res.status(500).json(error + "Error fetching countries");
-  }
-});
-
-// GET - ett land
+// GET - ett land med detaljer
 app.get("/api/countries/:name", async (req: Request, res: Response) => {
   const { name } = req.params;
-  // console.log(name);
   // Namnet omvandlat till lowercase och utan mellanslag
   const formattedName = name.replace(/\s+/g, "").toLowerCase();
 
@@ -207,95 +159,158 @@ app.get("/api/countries/:name", async (req: Request, res: Response) => {
   }
 });
 
-// ----- VISIT-STATUS -----
-// GET -visitstatus
-app.get("/api/visitstatus", async (_req: Request, res: Response) => {
-  try {
-    const { rows } = await client.query<Country>(`SELECT * FROM visitstatus`);
-    res.status(200).json(rows);
-  } catch (error) {
-    res.status(500).json(error + "Error fetching visitstatus");
-  }
-});
+//                        ----- TRAVEL-LIST -----
+// GET - Travellist baserad på userId
+app.get("/api/travellist/:userId", async (req: Request, res: Response) => {
+  const { userId } = req.params;
 
-// ----- TRAVEL-LIST -----
-// GET - travellist med alla tabeller
-app.get("/api/travellist", async (_req: Request, res: Response) => {
   try {
-    const { rows } = await client.query<TravelList>(
-      `SELECT
-          travellist.travellist_id,
-          users.first_name,
-          countries.country_name,
-          visitstatus.status_name
-      FROM travellist
-      JOIN users ON travellist.user_id = users.user_id
-      JOIN countries ON travellist.country_id = countries.country_id
-      JOIN visitstatus ON travellist.status_id = visitstatus.status_id;`
-    );
-    res.status(200).json(rows);
+    const query = `
+      SELECT
+        t.country_id,
+        t.status_id,
+        c.country_name
+      FROM travellist t
+      INNER JOIN countries c ON t.country_id = c.country_id
+      WHERE t.user_id = $1;
+    `;
+    const { rows } = await client.query(query, [userId]);
+
+    const visited = rows
+      .filter((row) => row.status_id === 2)
+      .map((row) => row.country_name);
+
+    const wanted = rows
+      .filter((row) => row.status_id === 1)
+      .map((row) => row.country_name);
+
+    res.status(200).json({ visited, wanted });
   } catch (error) {
-    res.status(500).json(error + "Error fetching travel list");
+    res.status(500).json({ error: "Error fetching travel list" });
   }
 });
 
 // POST - Lägg land till travellist
 app.post("/api/travellist", async (req: Request, res: Response) => {
   const { country_id, status_id, user_id }: TravelList = req.body;
+
   try {
-    const query = `
+    const existing = await client.query(
+      "SELECT * FROM travellist WHERE user_id = $1 AND country_id = $2",
+      [user_id, country_id]
+    );
+
+    //PUT-UPDATE Status
+    if (existing.rows.length > 0) {
+      const updateResult = await client.query(
+        "UPDATE travellist SET status_id = $1 WHERE user_id = $2 AND country_id = $3 RETURNING *;",
+        [status_id, user_id, country_id]
+      );
+
+      res.status(200).json({
+        message: "Country updated in travel list successfully",
+        updatedItem: updateResult.rows[0],
+      });
+    } else {
+      const query = `
       INSERT INTO travellist (country_id, status_id, user_id)
-      VALUES ($1, $2, $3, $4)
+      VALUES ($1, $2, $3)
       RETURNING *;
     `;
-    const values = [country_id, status_id, user_id];
-    const { rows } = await client.query<TravelList>(query, values);
-    res.status(201).send(rows[0]);
+      const values = [country_id, status_id, user_id];
+      const insertResult = await client.query<TravelList>(query, values);
+      res.status(201).json({
+        message: "Country added to travel list successfully",
+        newItem: insertResult.rows[0],
+      });
+    }
   } catch (error) {
     res.status(500).json({ error: "Error adding country to the travellist" });
   }
 });
 
-// PUT - Uppdatera status i travellist
-app.put(
-  "/api/travellist/:id",
-  async (req: Request<{ id: string }>, res: Response) => {
-    const { id } = req.params;
-    const { status_id }: Status = req.body;
-
-    try {
-      const { rows } = await client.query<TravelList>(
-        "UPDATE travellist SET status_id = $1 WHERE travellist_id  = $2 RETURNING *",
-        [status_id, id]
-      );
-      res.status(200).send(rows[0]);
-    } catch (error) {
-      res
-        .status(500)
-        .json(error + "Error updating the visitstatus in the travellist");
-    }
-  }
-);
-
 // DELETE - Ta bort ett land från travellist
-app.delete(
-  "/api/travellist/:id",
-  async (req: Request<{ id: string }>, res: Response) => {
-    const { id } = req.params;
+app.delete("/api/travellist", async (req: Request, res: Response) => {
+  const { country_name } = req.body;
+  try {
+    // Hitta country_id
+    const countryResult = await client.query(
+      `SELECT country_id FROM countries WHERE country_name = $1`,
+      [country_name]
+    );
 
-    try {
-      await client.query<TravelList>(
-        `DELETE FROM travellist WHERE travellist_id = $1 RETURNING *`,
-        [id]
-      );
-      res.status(204).send();
-    } catch (error) {
-      res
-        .status(500)
-        .json(error + "Error deleting the country from the travellist");
+    const countryId = countryResult.rows[0].country_id;
+    const deleteResult = await client.query(
+      `DELETE FROM travellist
+         WHERE country_id = $1
+         RETURNING *`,
+      [countryId]
+    );
+
+    if (deleteResult.rowCount === 0) {
+      res.status(404).json({ error: "No matching entry found in travellist" });
     }
+    res.status(204).send();
+  } catch (error) {
+    res.status(500).json({ error: "Internal Server Error" });
   }
-);
+});
+// EJ ANVÄNDS
+// Hämta länder från API och Hook. ANVÄNT FÖR ATT SKAPA COUNTRIES.JSON
+app.post("/api/savecountries", async (req: Request, res: Response) => {
+  const newCountries = req.body;
+  try {
+    // Read the file
+    const data = fs.existsSync("countries.json")
+      ? fs.readFileSync("countries.json", "utf8")
+      : "[]";
+    // If the file contains data, parse it; otherwise, create an empty array
+    const existingCountries = data ? JSON.parse(data) : [];
+    // Add new countries to the existing list
+    const updatedCountries = [...existingCountries, ...newCountries];
+    // Update the JSON file
+    fs.writeFileSync(
+      "countries.json",
+      JSON.stringify(updatedCountries, null, 2),
+      "utf8"
+    );
+
+    for (const country of newCountries) {
+      const {
+        country_name,
+        country_description,
+        country_capital,
+        country_population,
+        country_continent,
+        country_language,
+        country_currency,
+        country_flag,
+      } = country;
+
+      const query = `
+          INSERT INTO countries (country_name, country_description, country_capital, country_population, country_continent, country_language, country_currency, country_flag)
+          VALUES ($1, $2, $3, $4, $5, $6, $7, $8)
+          RETURNING *;
+        `;
+      const values = [
+        country_name,
+        country_description,
+        country_capital,
+        country_population,
+        country_continent,
+        country_language,
+        country_currency,
+        country_flag,
+      ];
+      await client.query(query, values);
+    }
+
+    console.log("All countries have been processed.");
+    res.status(200).send("Data successfully saved");
+  } catch (error) {
+    res.status(500).send({ error: "Error adding countries:" });
+  }
+});
 
 // Serve frontend files
 app.use(express.static(path.join(path.resolve(), "dist")));
