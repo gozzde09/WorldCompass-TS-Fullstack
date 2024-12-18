@@ -34,7 +34,7 @@ export default function TravelList({
     color: string;
     listType: "visited" | "wanted";
   }) => (
-    <div className='mx-4'>
+    <div className='mx-4 travel-list'>
       <h5 style={{ color }}>{title}</h5>
       {countries.length > 0 ? (
         <ListGroup>

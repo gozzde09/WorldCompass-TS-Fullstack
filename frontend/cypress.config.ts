@@ -1,5 +1,5 @@
 import { defineConfig } from "cypress";
-// import codeCoverage from "@cypress/code-coverage/task";
+import codeCoverage from "@cypress/code-coverage/task";
 
 import createBundler from "@bahmutov/cypress-esbuild-preprocessor";
 import { addCucumberPreprocessorPlugin } from "@badeball/cypress-cucumber-preprocessor";
@@ -10,7 +10,7 @@ export default defineConfig({
     baseUrl: "http://localhost",
     async setupNodeEvents(on, config) {
       // Set up the code coverage task
-      // codeCoverage(on, config);
+      codeCoverage(on, config);
 
       const bundler = createBundler({
         plugins: [createEsbuildPlugin(config)],
