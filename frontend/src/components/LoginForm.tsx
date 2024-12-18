@@ -50,7 +50,7 @@ export default function LoginForm() {
 
   return (
     <div>
-      <h3 className='card-header'>Login to World Compass</h3>
+      <h3 className='card-header mb-5'>Login to World Compass</h3>
       {/* Conditionally render alert */}
       {alertMessage && (
         <div className={`alert alert-${alertType}`} role='alert'>
@@ -94,7 +94,7 @@ export default function LoginForm() {
                 name='password'
               />
             </Form.Group>
-            <Button className='submitButton' type='submit' id='login'>
+            <Button className='submitButton mt-4' type='submit' id='login'>
               Login
             </Button>
           </FormikForm>

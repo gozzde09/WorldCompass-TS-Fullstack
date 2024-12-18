@@ -48,15 +48,20 @@ export default function WorldMap({
             fillColor: getColorForCountry(feature?.properties.name),
             weight: 1,
             opacity: 1,
-            color: "white",
+            color: "gray",
             dashArray: "3",
             fillOpacity: 0.7,
           }),
           onEachFeature: (feature, layer) => {
+            layer.bindPopup(feature.properties.name);
+
+            layer.on("mouseover", () => {
+              layer.openPopup();
+            });
+
             layer.on("click", () =>
               handleCountryClick(feature.properties.name)
             );
-            layer.bindPopup(feature.properties.name);
           },
         });
 
@@ -70,11 +75,11 @@ export default function WorldMap({
 
     const getColorForCountry = (countryName: string) => {
       if (visitedCountries.includes(countryName)) {
-        return "pink";
+        return "#3d3b8e";
       } else if (wantedCountries.includes(countryName)) {
-        return "purple";
+        return "#e072a4";
       }
-      return "lightgray";
+      return "#f9f9f9";
     };
 
     const handleCountryClick = (countryName: string) => {
@@ -95,8 +100,8 @@ export default function WorldMap({
     <div className='d-flex'>
       <div
         id='map'
-        style={{ height: "450px", width: "500px", margin: "0.5rem" }}
-        className='mx-auto my-2'></div>
+        style={{ height: "450px", width: "500px" }}
+        className='mx-auto my-4'></div>
       <CountryDetailsModal
         show={modalShow}
         countryName={selectedCountry}

@@ -114,14 +114,14 @@ export default function CountryDetailsModal(props: CountryModalProps) {
       </Modal.Body>
       <Modal.Footer>
         <Button
-          variant='primary'
+          style={{ backgroundColor: "#3d3b8e", border: "none" }}
           onClick={() => {
             updateVisitStatus(2);
           }}>
           Visited
         </Button>
         <Button
-          variant='primary'
+          style={{ backgroundColor: "#e072a4", border: "none" }}
           onClick={() => {
             updateVisitStatus(1);
           }}>

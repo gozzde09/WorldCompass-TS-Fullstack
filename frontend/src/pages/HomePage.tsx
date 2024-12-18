@@ -3,6 +3,7 @@ import Navbar from "../components/NavBar";
 import WorldMap from "../components/WorldMap";
 import axios from "axios";
 import TravelList from "../components/TravelList";
+import Footer from "../components/Footer";
 
 export default function HomePage() {
   const storedUserString = localStorage.getItem("user");
@@ -56,20 +57,25 @@ export default function HomePage() {
     <>
       <Navbar />
       <main>
-        <h1 id='welcome'>Welcome,{firstName}!</h1>
         <div className='d-flex justify-content-evenly'>
           <WorldMap
             visitedCountries={visitedCountries}
             wantedCountries={wantedCountries}
             fetchVisitedAndWantedCountries={fetchVisitedAndWantedCountries}
-          />
-          <TravelList
-            visitedCountries={visitedCountries}
-            wantedCountries={wantedCountries}
-            handleDeleteCountry={deleteCountry}
-          />
+          />{" "}
+          <div className='my-4'>
+            <h2 id='welcome' className='mt-2'>
+              Welcome,{firstName}!
+            </h2>
+            <TravelList
+              visitedCountries={visitedCountries}
+              wantedCountries={wantedCountries}
+              handleDeleteCountry={deleteCountry}
+            />
+          </div>
         </div>
       </main>
+      <Footer />
     </>
   );
 }

@@ -132,11 +132,11 @@ const insertDataFromFile = () => {
       client.query(insertQuery, values, (err) => {
         if (err) {
           console.error("Error inserting country:", err);
-        } else {
-          console.log("Data successfully inserted into the database");
         }
       });
-    }); // Initial data for travellist
+    });
+    console.log("Data successfully inserted into the database");
+    // Initial data for travellist
     const initialQuery = `
       INSERT INTO travellist (country_id, status_id, user_id)
       VALUES (1, 1, 1), (2, 1, 1), (3, 1, 1), (4, 2, 1), (5, 2, 1), (6, 2, 1)
