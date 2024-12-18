@@ -1,4 +1,4 @@
-describe("CompleteE2E: Travel List with Fixture Data", () => {
+describe("CompleteE2E: Travel List", () => {
   let visitedCountries = [];
   let wantedCountries = [];
 
@@ -11,7 +11,6 @@ describe("CompleteE2E: Travel List with Fixture Data", () => {
 
     cy.wait(2000);
 
-    // fixture data
     cy.request("GET", "/api/travellist/1").then((response) => {
       expect(response.status).to.eq(200);
       visitedCountries = response.body.visited;
@@ -19,37 +18,37 @@ describe("CompleteE2E: Travel List with Fixture Data", () => {
     });
   });
 
-  it("verifies that visited and wanted countries are fetched correctly from the backend", () => {
+  it("verifies that visited and wanted countries are fetched correctly from the BACKEND", () => {
     // Verify visited countries
     visitedCountries.forEach((country) => {
-      cy.contains(country).should("exist");
+      cy.contains(".list-group-item", country).should("exist");
     });
 
     // Verify wanted countries
     wantedCountries.forEach((country) => {
-      cy.contains(country).should("exist");
+      cy.contains(".list-group-item", country).should("exist");
     });
   });
 
-  it("verifies deleting a country updates the frontend", () => {
+  it("verifies deleting a country updates the FRONTEND", () => {
     // Deleting from visited list
     const countryToDeleteVisited = visitedCountries[0];
-    cy.contains("li", countryToDeleteVisited).within(() => {
-      cy.get("button").click();
+    cy.contains(".list-group-item", countryToDeleteVisited).within(() => {
+      cy.get("span").find("svg").click();
     });
 
-    cy.contains(countryToDeleteVisited).should("not.exist");
+    cy.contains(".list-group-item", countryToDeleteVisited).should("not.exist");
 
     // Deleting from wanted list
     const countryToDeleteWanted = wantedCountries[0];
-    cy.contains("li", countryToDeleteWanted).within(() => {
-      cy.get("button").click();
+    cy.contains(".list-group-item", countryToDeleteWanted).within(() => {
+      cy.get("span").find("svg").click();
     });
 
-    cy.contains(countryToDeleteWanted).should("not.exist");
+    cy.contains(".list-group-item", countryToDeleteWanted).should("not.exist");
   });
 
-  it("verifies the backend database updates correctly after deleting a country", () => {
+  it("verifies the backend DATABASE updates correctly after deleting a country", () => {
     // Deleting from visited list
     const countryToDeleteVisited = visitedCountries[0];
     cy.request("DELETE", "/api/travellist", {

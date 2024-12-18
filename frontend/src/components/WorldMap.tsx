@@ -23,7 +23,7 @@ export default function WorldMap({
   useEffect(() => {
     const mapInstance = L.map("map", {
       center: [0, 0],
-      zoom: 1,
+      zoom: 2,
     });
     mapRef.current = mapInstance;
 
@@ -75,7 +75,7 @@ export default function WorldMap({
 
     const getColorForCountry = (countryName: string) => {
       if (visitedCountries.includes(countryName)) {
-        return "#3d3b8e";
+        return "rgb(45, 42, 152)";
       } else if (wantedCountries.includes(countryName)) {
         return "#e072a4";
       }

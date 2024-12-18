@@ -95,3 +95,5 @@ Testade att fetcha länder från API till database tabellen. Det blev en hel del
 # 18/12
 
 - Komplett E2E test för TravelList-DELETE
+- CSS färger, margin osv
+- Uppdaterade ER-Diagram

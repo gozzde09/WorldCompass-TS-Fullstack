@@ -17,30 +17,35 @@ describe("Travel Lists", () => {
   });
 
   it("should display visited and wanted countries", () => {
+    //Visited
     cy.get("h5")
-      .contains("Visited Countries")
-      .next("ul")
+      .contains("You have visited:")
+      .next(".list-group")
       .within(() => {
         visitedCountries.forEach((country) => {
-          cy.contains("li", country).should("exist");
+          cy.contains(".list-group-item", country).should("exist");
         });
       });
 
+    //Want
     cy.get("h5")
-      .contains("Wanted Countries")
-      .next("ul")
+      .contains("You want visit:")
+      .next(".list-group")
       .within(() => {
         wantedCountries.forEach((country) => {
-          cy.contains("li", country).should("exist");
+          cy.contains(".list-group-item", country).should("exist");
         });
       });
   });
 
   it("should delete a visited country", () => {
-    cy.contains("Visited Countries")
+    cy.contains("You have visited:")
       .parent()
       .within(() => {
-        cy.contains("li", "Germany").find("button").click();
+        cy.contains(".list-group-item", "Germany")
+          .find("span")
+          .find("svg") // Adjusting to select the icon element directly
+          .click();
       });
 
     cy.get("@deleteCountryStub").should(
@@ -51,10 +56,13 @@ describe("Travel Lists", () => {
   });
 
   it("should delete a wanted country", () => {
-    cy.contains("Wanted Countries")
+    cy.contains("You want visit:")
       .parent()
       .within(() => {
-        cy.contains("li", "Canada").find("button").click();
+        cy.contains(".list-group-item", "Canada")
+          .find("span")
+          .find("svg") // Adjusting to select the icon element directly
+          .click();
       });
 
     cy.get("@deleteCountryStub").should(
