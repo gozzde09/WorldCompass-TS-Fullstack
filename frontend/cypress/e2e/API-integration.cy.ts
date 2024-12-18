@@ -40,7 +40,7 @@ describe("Countries API Tests", () => {
 describe("Travel List API Tests", () => {
   it("adds a country to the travel list", () => {
     const travelListItem: TravelList = {
-      country_id: 95,
+      country_id: 12, //Italy
       status_id: 1,
       user_id: 1,
     };
@@ -60,7 +60,7 @@ describe("Travel List API Tests", () => {
   });
   it("updates a country's status in the travel list", () => {
     const updatedTravelListItem: TravelList = {
-      country_id: 95,
+      country_id: 12,
       status_id: 2, // Update status to visited
       user_id: 1,
     };
@@ -73,12 +73,11 @@ describe("Travel List API Tests", () => {
       }
     );
   });
-  //TODO id
-  // it("removes a country from the travel list", () => {
-  //   cy.request("DELETE", "/api/travellist", {
-  //     country_name: "Germany", // Use an existing country name
-  //   }).then((response) => {
-  //     expect(response.status).to.eq(204);
-  //   });
-  // });
+  it("removes a country from the travel list", () => {
+    cy.request("DELETE", "/api/travellist", {
+      country_name: "Italy",
+    }).then((response) => {
+      expect(response.status).to.eq(204);
+    });
+  });
 });

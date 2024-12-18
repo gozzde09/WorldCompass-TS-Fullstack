@@ -20,18 +20,7 @@ const client = new Client({
   connectionString: process.env.PGURI,
 });
 client.connect();
-app.get("/api/countries", async (_req: Request, res: Response) => {
-  try {
-    const { rows } = await client.query<Country>(`SELECT * FROM countries`);
-    if (rows.length === 0) {
-      console.log("No countries found in the database");
-    }
-    res.status(200).json(rows);
-  } catch (error) {
-    console.error("Error fetching countries: ", error);
-    res.status(500).json({ error: "Error fetching countries" });
-  }
-});
+
 //                 ----- USERS -----
 // GET - users
 app.get("/api/users", async (_req: Request, res: Response) => {
@@ -115,7 +104,7 @@ app.post("/api/login", async (req: Request, res: Response) => {
 });
 
 //                    ----- COUNTRIES -----
-// Read and insert data from countries.json into the database
+// Read and insert data from countries.json into the database + initial data TravelList
 const insertDataFromFile = () => {
   fs.readFile(path.join(__dirname, "countries.json"), "utf8", (err, data) => {
     if (err) {
@@ -147,7 +136,18 @@ const insertDataFromFile = () => {
           console.log("Data successfully inserted into the database");
         }
       });
-    });
+    }); // Initial data for travellist
+    const initialQuery = `
+      INSERT INTO travellist (country_id, status_id, user_id)
+      VALUES (1, 1, 1), (2, 1, 1), (3, 1, 1), (4, 2, 1), (5, 2, 1), (6, 2, 1)
+      ON CONFLICT DO NOTHING;
+    `;
+    try {
+      client.query(initialQuery);
+      console.log("Initial data successfully inserted into travellist.");
+    } catch (err) {
+      console.error("Error inserting initial data into travellist:", err);
+    }
   });
 };
 // Insert data when server starts

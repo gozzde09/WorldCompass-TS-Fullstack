@@ -37,7 +37,7 @@ CREATE TABLE travellist (
     country_id INT REFERENCES countries(country_id),
     status_id INT REFERENCES visitstatus(status_id),
     user_id INT REFERENCES users(user_id),
-    UNIQUE (country_id, status_id, user_id)
+    UNIQUE (country_id)
 );
 
 INSERT INTO visitstatus (status_name)
@@ -49,9 +49,7 @@ INSERT INTO users (first_name, last_name, email, password)
 VALUES
 ('Test', 'Testson', 'test@example.com', 'test'),
 ('Alice', 'Johnson', 'alice@example.com', 'password1'),
-('Bob', 'Smith', 'bob@example.com', 'password2'),
-('Charlie', 'Brown', 'charlie@example.com', 'password3');
-
+('Bob', 'Smith', 'bob@example.com', 'password2');
 
 -- SELECT
 --     travellist.travellist_id,
