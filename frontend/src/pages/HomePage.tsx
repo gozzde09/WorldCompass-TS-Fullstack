@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import Navbar from "../components/NavBar";
 import WorldMap from "../components/WorldMap";
 import axios from "axios";
@@ -6,26 +6,27 @@ import TravelList from "../components/TravelList";
 import Footer from "../components/Footer";
 
 export default function HomePage() {
-  const storedUserString = localStorage.getItem("user");
-  const storedUser = storedUserString ? JSON.parse(storedUserString) : null;
+  const storedUser = JSON.parse(localStorage.getItem("user") || "{}");
   const firstName = storedUser.userName;
   const userId = storedUser.userId;
+
   const [visitedCountries, setVisitedCountries] = useState<string[]>([]);
   const [wantedCountries, setWantedCountries] = useState<string[]>([]);
 
   // Visited ve wanted countries
-  const fetchVisitedAndWantedCountries = async (userId: number) => {
+  const fetchVisitedAndWantedCountries = useCallback(async () => {
     try {
-      const response = await axios.get(`/api/travellist/${userId}`);
-      setVisitedCountries(response.data.visited || []);
-      setWantedCountries(response.data.wanted || []);
+      const { data } = await axios.get(`/api/travellist/${userId}`);
+      setVisitedCountries(data.visited || []);
+      setWantedCountries(data.wanted || []);
     } catch (error) {
       console.error("Error fetching travel list:", error);
     }
-  };
-  useEffect(() => {
-    fetchVisitedAndWantedCountries(userId);
   }, [userId]);
+
+  useEffect(() => {
+    fetchVisitedAndWantedCountries();
+  }, [fetchVisitedAndWantedCountries]);
 
   // Radera land från TravelList
   const deleteCountry = async (
@@ -62,9 +63,9 @@ export default function HomePage() {
             visitedCountries={visitedCountries}
             wantedCountries={wantedCountries}
             fetchVisitedAndWantedCountries={fetchVisitedAndWantedCountries}
-          />{" "}
+          />
           <div className='my-4'>
-            <h2 id='welcome' className='mt-2'>
+            <h2 id='welcome' className='my-4'>
               Welcome,{firstName}!
             </h2>
             <TravelList

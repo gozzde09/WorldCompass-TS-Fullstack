@@ -4,15 +4,17 @@ import L from "leaflet";
 
 import CountryDetailsModal from "./CountryDetailsModal";
 
+interface WorldMapProps {
+  visitedCountries: string[];
+  wantedCountries: string[];
+  fetchVisitedAndWantedCountries: (userId: number) => void;
+}
+
 export default function WorldMap({
   visitedCountries,
   wantedCountries,
   fetchVisitedAndWantedCountries,
-}: {
-  visitedCountries: string[];
-  wantedCountries: string[];
-  fetchVisitedAndWantedCountries: (userId: number) => void;
-}) {
+}: WorldMapProps) {
   const [modalShow, setModalShow] = useState(false);
   const [selectedCountry, setSelectedCountry] = useState<string | null>(null);
 
@@ -75,7 +77,7 @@ export default function WorldMap({
 
     const getColorForCountry = (countryName: string) => {
       if (visitedCountries.includes(countryName)) {
-        return "rgb(45, 42, 152)";
+        return "#2d2a98";
       } else if (wantedCountries.includes(countryName)) {
         return "#e072a4";
       }
@@ -100,7 +102,12 @@ export default function WorldMap({
     <div className='d-flex'>
       <div
         id='map'
-        style={{ height: "450px", width: "500px" }}
+        style={{
+          height: "450px",
+          width: "500px",
+          borderRadius: "10px",
+          border: "1px solid #2d2a98 ",
+        }}
         className='mx-auto my-4'></div>
       <CountryDetailsModal
         show={modalShow}

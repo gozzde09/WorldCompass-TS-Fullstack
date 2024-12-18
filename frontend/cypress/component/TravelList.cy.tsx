@@ -29,7 +29,7 @@ describe("Travel Lists", () => {
 
     //Want
     cy.get("h5")
-      .contains("You want visit:")
+      .contains("You want to visit:")
       .next(".list-group")
       .within(() => {
         wantedCountries.forEach((country) => {
@@ -56,7 +56,7 @@ describe("Travel Lists", () => {
   });
 
   it("should delete a wanted country", () => {
-    cy.contains("You want visit:")
+    cy.contains("You want to visit:")
       .parent()
       .within(() => {
         cy.contains(".list-group-item", "Canada")

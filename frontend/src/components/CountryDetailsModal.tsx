@@ -1,7 +1,6 @@
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import { Modal, Button } from "react-bootstrap";
-
 import { Country } from "../types/interfaces";
 
 interface CountryModalProps {
@@ -10,56 +9,44 @@ interface CountryModalProps {
   onCancel: () => void;
   onUpdate: (userId: number) => void;
 }
-export default function CountryDetailsModal(props: CountryModalProps) {
-  const { show, countryName, onCancel, onUpdate } = props;
 
+export default function CountryDetailsModal({
+  show,
+  countryName,
+  onCancel,
+  onUpdate,
+}: CountryModalProps) {
   const [countryDetails, setCountryDetails] = useState<Country | null>(null);
-  const [, setVisitedCountries] = useState<string[]>([]);
-  const [, setWantedCountries] = useState<string[]>([]);
 
-  useEffect(() => {
-    const fetchCountryDetails = async () => {
-      if (countryName) {
-        try {
-          const response = await axios.get<Country>(
-            `/api/countries/${countryName}`
-          );
-          setCountryDetails(response.data);
-        } catch (error) {
-          console.error("Error fetching country details:", error);
-        }
-      }
-    };
-
-    fetchCountryDetails();
+  const fetchCountryDetails = useCallback(async () => {
+    if (!countryName) return;
+    try {
+      const { data } = await axios.get<Country>(
+        `/api/countries/${countryName}`
+      );
+      setCountryDetails(data);
+    } catch (error) {
+      console.error("Error fetching country details:", error);
+    }
   }, [countryName]);
 
-  // Handle visited / want visit countries update
+  useEffect(() => {
+    fetchCountryDetails();
+  }, [fetchCountryDetails]);
+
   const updateVisitStatus = async (statusId: number) => {
+    const storedUser = JSON.parse(localStorage.getItem("user") || "{}");
+    const userId = storedUser?.userId;
+
+    if (!userId || !countryDetails) return;
+
     try {
-      const storedUserString = localStorage.getItem("user");
-      const storedUser = storedUserString ? JSON.parse(storedUserString) : null;
-      const userId = storedUser?.userId;
-
-      if (!userId || !countryDetails) return;
-
       await axios.post("/api/travellist", {
         user_id: userId,
         country_id: countryDetails.country_id,
         status_id: statusId,
       });
-      // Visited
-      if (statusId === 2) {
-        setVisitedCountries((prev) => [
-          ...(prev || []),
-          countryDetails.country_name,
-        ]);
-      } else if (statusId === 1) {
-        setWantedCountries((prev) => [
-          ...(prev || []),
-          countryDetails.country_name,
-        ]);
-      }
+
       onUpdate(userId);
       onCancel();
     } catch (error) {
@@ -71,42 +58,31 @@ export default function CountryDetailsModal(props: CountryModalProps) {
     <Modal show={show} onHide={onCancel}>
       <Modal.Header closeButton>
         <Modal.Title>{countryName}</Modal.Title>
-        <img
-          src={countryDetails?.country_flag}
-          alt='Flag '
-          width={30}
-          height={20}
-          className='mx-2'
-        />
+        {countryDetails?.country_flag && (
+          <img
+            src={countryDetails.country_flag}
+            alt='Flag'
+            width={30}
+            height={20}
+            className='mx-2'
+          />
+        )}
       </Modal.Header>
       <Modal.Body>
         {countryDetails ? (
           <div>
-            <p>
-              <strong>Country Description:</strong>{" "}
-              {countryDetails.country_description || "Not Found"}
-            </p>
-            <p>
-              <strong>Capital:</strong>{" "}
-              {countryDetails.country_capital || "Not Found"}
-            </p>
-            <p>
-              <strong>Population:</strong>{" "}
-              {countryDetails.country_population?.toLocaleString() ||
-                "Not Found"}
-            </p>
-            <p>
-              <strong>Continent:</strong>{" "}
-              {countryDetails.country_continent || "Not Found"}
-            </p>
-            <p>
-              <strong>Language:</strong>{" "}
-              {countryDetails.country_language || "Not Found"}
-            </p>
-            <p>
-              <strong>Currency:</strong>{" "}
-              {countryDetails.country_currency || "Not Found"}
-            </p>
+            {Object.entries({
+              Description: countryDetails.country_description,
+              Capital: countryDetails.country_capital,
+              Population: countryDetails.country_population?.toLocaleString(),
+              Continent: countryDetails.country_continent,
+              Language: countryDetails.country_language,
+              Currency: countryDetails.country_currency,
+            }).map(([key, value]) => (
+              <p key={key}>
+                <strong>{key}:</strong> {value || "Not Found"}
+              </p>
+            ))}
           </div>
         ) : (
           <p>No details available for this country.</p>
@@ -115,26 +91,18 @@ export default function CountryDetailsModal(props: CountryModalProps) {
       <Modal.Footer>
         <Button
           style={{ backgroundColor: "#3d3b8e", border: "none" }}
-          onClick={() => {
-            updateVisitStatus(2);
-          }}>
+          onClick={() => updateVisitStatus(2)}>
           Visited
         </Button>
         <Button
           style={{ backgroundColor: "#e072a4", border: "none" }}
-          onClick={() => {
-            updateVisitStatus(1);
-          }}>
+          onClick={() => updateVisitStatus(1)}>
           Want to Visit
         </Button>
-      </Modal.Footer>
-      <div
-        className='d-flex justify-content-end mx-3 my-2
-      '>
         <Button variant='secondary' onClick={onCancel}>
           Cancel
         </Button>
-      </div>
+      </Modal.Footer>
     </Modal>
   );
 }
