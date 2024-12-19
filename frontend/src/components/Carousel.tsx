@@ -47,7 +47,7 @@ const CountryCarousel: React.FC<CountryCarouselProps> = ({ countryName }) => {
   }, [countryName]);
 
   return (
-    <Carousel>
+    <Carousel className='mb-3'>
       {imageUrls.map((url, index) => (
         <Carousel.Item key={index} style={{ maxHeight: 300 }}>
           <img

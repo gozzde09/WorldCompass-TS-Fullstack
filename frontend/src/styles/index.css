@@ -5,6 +5,7 @@ body {
   min-width: 320px;
   min-height: 100vh;
   background-color: antiquewhite;
+  font-family: "Montserrat" !important;
 }
 #root {
   display: flex;

@@ -57,17 +57,17 @@ export default function CountryDetailsModal({
 
   return (
     <Modal show={show} onHide={onCancel}>
-      <Modal.Header closeButton>
-        <Modal.Title>{countryName}</Modal.Title>
+      <Modal.Header closeButton className='d-flex align-items-center'>
         {countryDetails?.country_flag && (
           <img
             src={countryDetails.country_flag}
             alt='Flag'
-            width={30}
-            height={20}
+            width={40}
+            height={30}
             className='mx-2'
           />
         )}
+        <Modal.Title>{countryName}</Modal.Title>
       </Modal.Header>
 
       <Modal.Body>
@@ -82,7 +82,7 @@ export default function CountryDetailsModal({
               Language: countryDetails.country_language,
               Currency: countryDetails.country_currency,
             }).map(([key, value]) => (
-              <p key={key}>
+              <p key={key} className='mb-0'>
                 <strong>{key}:</strong> {value || "Not Found"}
               </p>
             ))}

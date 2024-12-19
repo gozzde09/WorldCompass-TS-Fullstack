@@ -57,7 +57,7 @@ export default function TravelList({
       ) : (
         <p>
           No countries
-          {listType === "visited" ? "visited yet" : "added to wishlist yet"}.
+          {listType === "visited" ? " visited yet" : " added to wishlist yet"}.
         </p>
       )}
     </div>

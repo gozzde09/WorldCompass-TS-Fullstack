@@ -44,7 +44,7 @@ describe("Travel Lists", () => {
       .within(() => {
         cy.contains(".list-group-item", "Germany")
           .find("span")
-          .find("svg") // Adjusting to select the icon element directly
+          .find("svg")
           .click();
       });
 
@@ -61,7 +61,7 @@ describe("Travel Lists", () => {
       .within(() => {
         cy.contains(".list-group-item", "Canada")
           .find("span")
-          .find("svg") // Adjusting to select the icon element directly
+          .find("svg")
           .click();
       });
 

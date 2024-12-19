@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1734552833769" clover="3.2.0">
-  <project timestamp="1734552833769" name="All files">
-    <metrics statements="148" coveredstatements="139" conditionals="48" coveredconditionals="43" methods="49" coveredmethods="46" elements="245" coveredelements="228" complexity="0" loc="148" ncloc="148" packages="3" files="11" classes="11"/>
+<coverage generated="1734606019213" clover="3.2.0">
+  <project timestamp="1734606019213" name="All files">
+    <metrics statements="174" coveredstatements="165" conditionals="62" coveredconditionals="54" methods="61" coveredmethods="58" elements="297" coveredelements="277" complexity="0" loc="174" ncloc="174" packages="3" files="12" classes="12"/>
     <package name="src">
       <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
       <file name="App.tsx" path="/app/src/App.tsx">
         <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
-        <line num="8" count="76" type="stmt"/>
-        <line num="9" count="104" type="stmt"/>
-        <line num="11" count="60" type="stmt"/>
-        <line num="12" count="60" type="stmt"/>
-        <line num="16" count="60" type="stmt"/>
+        <line num="8" count="152" type="stmt"/>
+        <line num="9" count="208" type="stmt"/>
+        <line num="11" count="120" type="stmt"/>
+        <line num="12" count="120" type="stmt"/>
+        <line num="16" count="120" type="stmt"/>
       </file>
       <file name="main.tsx" path="/app/src/main.tsx">
         <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
@@ -18,177 +18,206 @@
       </file>
     </package>
     <package name="src.components">
-      <metrics statements="113" coveredstatements="106" conditionals="36" coveredconditionals="33" methods="35" coveredmethods="33"/>
-      <file name="CountryDetailsModal.tsx" path="/app/src/components/CountryDetailsModal.tsx">
-        <metrics statements="22" coveredstatements="20" conditionals="12" coveredconditionals="9" methods="7" coveredmethods="7"/>
-        <line num="19" count="119" type="stmt"/>
-        <line num="21" count="119" type="stmt"/>
-        <line num="22" count="52" type="cond" truecount="1" falsecount="0"/>
-        <line num="23" count="10" type="stmt"/>
-        <line num="24" count="10" type="stmt"/>
-        <line num="27" count="10" type="stmt"/>
+      <metrics statements="139" coveredstatements="132" conditionals="50" coveredconditionals="44" methods="47" coveredmethods="45"/>
+      <file name="Carousel.tsx" path="/app/src/components/Carousel.tsx">
+        <metrics statements="17" coveredstatements="15" conditionals="2" coveredconditionals="1" methods="6" coveredmethods="6"/>
+        <line num="12" count="60" type="stmt"/>
+        <line num="13" count="35" type="stmt"/>
+        <line num="15" count="35" type="stmt"/>
+        <line num="16" count="12" type="stmt"/>
+        <line num="17" count="12" type="stmt"/>
+        <line num="18" count="12" type="stmt"/>
+        <line num="28" count="8" type="cond" truecount="0" falsecount="1"/>
         <line num="29" count="0" type="stmt"/>
+        <line num="34" count="8" type="stmt"/>
+        <line num="35" count="8" type="stmt"/>
+        <line num="37" count="40" type="stmt"/>
+        <line num="38" count="8" type="stmt"/>
+        <line num="40" count="0" type="stmt"/>
+        <line num="44" count="12" type="cond" truecount="1" falsecount="0"/>
+        <line num="45" count="12" type="stmt"/>
+        <line num="49" count="35" type="stmt"/>
+        <line num="52" count="70" type="stmt"/>
+      </file>
+      <file name="CountryDetailsModal.tsx" path="/app/src/components/CountryDetailsModal.tsx">
+        <metrics statements="31" coveredstatements="31" conditionals="24" coveredconditionals="19" methods="13" coveredmethods="13"/>
+        <line num="19" count="119" type="stmt"/>
+        <line num="21" count="240" type="stmt"/>
+        <line num="22" count="171" type="cond" truecount="2" falsecount="0"/>
+        <line num="23" count="131" type="stmt"/>
+        <line num="24" count="129" type="stmt"/>
+        <line num="25" count="20" type="stmt"/>
+        <line num="27" count="20" type="stmt"/>
+        <line num="28" count="20" type="stmt"/>
+        <line num="29" count="10" type="stmt"/>
+        <line num="30" count="119" type="stmt"/>
         <line num="33" count="119" type="stmt"/>
-        <line num="34" count="52" type="stmt"/>
+        <line num="34" count="173" type="stmt"/>
+        <line num="35" count="171" type="stmt"/>
         <line num="37" count="119" type="stmt"/>
-        <line num="38" count="8" type="cond" truecount="1" falsecount="1"/>
-        <line num="39" count="8" type="stmt"/>
-        <line num="41" count="8" type="cond" truecount="2" falsecount="1"/>
-        <line num="43" count="8" type="stmt"/>
-        <line num="44" count="8" type="stmt"/>
-        <line num="50" count="8" type="stmt"/>
-        <line num="51" count="8" type="stmt"/>
-        <line num="53" count="0" type="stmt"/>
+        <line num="38" count="121" type="cond" truecount="1" falsecount="1"/>
+        <line num="39" count="256" type="cond" truecount="1" falsecount="1"/>
+        <line num="41" count="129" type="cond" truecount="4" falsecount="2"/>
+        <line num="43" count="129" type="stmt"/>
+        <line num="44" count="16" type="stmt"/>
+        <line num="50" count="16" type="stmt"/>
+        <line num="51" count="32" type="stmt"/>
+        <line num="52" count="16" type="stmt"/>
+        <line num="53" count="8" type="stmt"/>
+        <line num="54" count="119" type="stmt"/>
         <line num="57" count="119" type="stmt"/>
-        <line num="82" count="180" type="stmt"/>
-        <line num="94" count="4" type="stmt"/>
-        <line num="99" count="4" type="stmt"/>
+        <line num="82" count="301" type="stmt"/>
+        <line num="83" count="299" type="cond" truecount="2" falsecount="0"/>
+        <line num="94" count="125" type="stmt"/>
+        <line num="97" count="123" type="stmt"/>
+        <line num="99" count="125" type="stmt"/>
+        <line num="102" count="123" type="stmt"/>
       </file>
       <file name="Footer.tsx" path="/app/src/components/Footer.tsx">
         <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-        <line num="2" count="87" type="stmt"/>
+        <line num="2" count="176" type="stmt"/>
       </file>
       <file name="LoginForm.tsx" path="/app/src/components/LoginForm.tsx">
         <metrics statements="18" coveredstatements="18" conditionals="6" coveredconditionals="6" methods="4" coveredmethods="4"/>
-        <line num="10" count="60" type="stmt"/>
-        <line num="20" count="75" type="stmt"/>
-        <line num="21" count="75" type="stmt"/>
-        <line num="22" count="75" type="stmt"/>
-        <line num="24" count="75" type="stmt"/>
-        <line num="25" count="32" type="stmt"/>
-        <line num="26" count="32" type="stmt"/>
-        <line num="31" count="28" type="stmt"/>
-        <line num="32" count="28" type="stmt"/>
-        <line num="35" count="28" type="stmt"/>
-        <line num="39" count="28" type="stmt"/>
-        <line num="41" count="28" type="stmt"/>
-        <line num="42" count="24" type="stmt"/>
-        <line num="45" count="2" type="stmt"/>
-        <line num="46" count="2" type="stmt"/>
-        <line num="47" count="2" type="stmt"/>
-        <line num="51" count="75" type="stmt"/>
-        <line num="68" count="1555" type="stmt"/>
+        <line num="10" count="120" type="stmt"/>
+        <line num="20" count="151" type="stmt"/>
+        <line num="21" count="151" type="stmt"/>
+        <line num="22" count="151" type="stmt"/>
+        <line num="24" count="151" type="stmt"/>
+        <line num="25" count="62" type="stmt"/>
+        <line num="26" count="62" type="stmt"/>
+        <line num="31" count="56" type="stmt"/>
+        <line num="32" count="56" type="stmt"/>
+        <line num="35" count="56" type="stmt"/>
+        <line num="39" count="56" type="stmt"/>
+        <line num="41" count="56" type="stmt"/>
+        <line num="42" count="48" type="stmt"/>
+        <line num="45" count="4" type="stmt"/>
+        <line num="46" count="4" type="stmt"/>
+        <line num="47" count="4" type="stmt"/>
+        <line num="51" count="151" type="stmt"/>
+        <line num="68" count="2999" type="stmt"/>
       </file>
       <file name="NavBar.tsx" path="/app/src/components/NavBar.tsx">
         <metrics statements="3" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="1"/>
-        <line num="5" count="87" type="stmt"/>
+        <line num="5" count="176" type="stmt"/>
         <line num="6" count="0" type="stmt"/>
-        <line num="8" count="87" type="stmt"/>
+        <line num="8" count="176" type="stmt"/>
       </file>
       <file name="RegisterForm.tsx" path="/app/src/components/RegisterForm.tsx">
         <metrics statements="22" coveredstatements="18" conditionals="10" coveredconditionals="10" methods="5" coveredmethods="4"/>
-        <line num="10" count="60" type="stmt"/>
-        <line num="22" count="49" type="stmt"/>
-        <line num="23" count="49" type="stmt"/>
-        <line num="24" count="49" type="stmt"/>
-        <line num="26" count="49" type="stmt"/>
-        <line num="27" count="4" type="stmt"/>
-        <line num="28" count="4" type="stmt"/>
-        <line num="33" count="4" type="stmt"/>
-        <line num="34" count="4" type="stmt"/>
-        <line num="37" count="4" type="stmt"/>
-        <line num="41" count="4" type="stmt"/>
-        <line num="43" count="4" type="stmt"/>
-        <line num="44" count="4" type="stmt"/>
-        <line num="47" count="4" type="stmt"/>
-        <line num="50" count="4" type="stmt"/>
-        <line num="51" count="4" type="stmt"/>
+        <line num="10" count="120" type="stmt"/>
+        <line num="22" count="99" type="stmt"/>
+        <line num="23" count="99" type="stmt"/>
+        <line num="24" count="99" type="stmt"/>
+        <line num="26" count="99" type="stmt"/>
+        <line num="27" count="8" type="stmt"/>
+        <line num="28" count="8" type="stmt"/>
+        <line num="33" count="8" type="stmt"/>
+        <line num="34" count="8" type="stmt"/>
+        <line num="37" count="8" type="stmt"/>
+        <line num="41" count="8" type="stmt"/>
+        <line num="43" count="8" type="stmt"/>
+        <line num="44" count="8" type="stmt"/>
+        <line num="47" count="8" type="stmt"/>
+        <line num="50" count="8" type="stmt"/>
+        <line num="51" count="8" type="stmt"/>
         <line num="52" count="0" type="stmt"/>
         <line num="55" count="0" type="stmt"/>
         <line num="56" count="0" type="stmt"/>
         <line num="57" count="0" type="stmt"/>
-        <line num="61" count="49" type="stmt"/>
-        <line num="80" count="717" type="stmt"/>
+        <line num="61" count="99" type="stmt"/>
+        <line num="80" count="1435" type="stmt"/>
       </file>
       <file name="TravelList.tsx" path="/app/src/components/TravelList.tsx">
         <metrics statements="8" coveredstatements="8" conditionals="4" coveredconditionals="4" methods="5" coveredmethods="5"/>
-        <line num="18" count="87" type="stmt"/>
-        <line num="19" count="4" type="stmt"/>
-        <line num="23" count="87" type="stmt"/>
-        <line num="26" count="87" type="stmt"/>
-        <line num="37" count="174" type="stmt"/>
-        <line num="42" count="254" type="stmt"/>
-        <line num="49" count="4" type="stmt"/>
-        <line num="66" count="87" type="stmt"/>
+        <line num="18" count="176" type="stmt"/>
+        <line num="19" count="8" type="stmt"/>
+        <line num="23" count="176" type="stmt"/>
+        <line num="26" count="176" type="stmt"/>
+        <line num="37" count="352" type="stmt"/>
+        <line num="42" count="665" type="stmt"/>
+        <line num="49" count="8" type="stmt"/>
+        <line num="66" count="176" type="stmt"/>
       </file>
       <file name="WorldMap.tsx" path="/app/src/components/WorldMap.tsx">
         <metrics statements="39" coveredstatements="39" conditionals="4" coveredconditionals="4" methods="11" coveredmethods="11"/>
-        <line num="18" count="109" type="stmt"/>
-        <line num="19" count="109" type="stmt"/>
-        <line num="21" count="109" type="stmt"/>
-        <line num="22" count="109" type="stmt"/>
-        <line num="25" count="109" type="stmt"/>
-        <line num="26" count="85" type="stmt"/>
-        <line num="30" count="85" type="stmt"/>
-        <line num="32" count="85" type="stmt"/>
-        <line num="37" count="85" type="stmt"/>
-        <line num="39" count="85" type="stmt"/>
-        <line num="40" count="85" type="stmt"/>
-        <line num="41" count="85" type="stmt"/>
-        <line num="42" count="53" type="stmt"/>
-        <line num="44" count="53" type="cond" truecount="1" falsecount="0"/>
-        <line num="45" count="27" type="stmt"/>
-        <line num="48" count="53" type="stmt"/>
-        <line num="49" count="9540" type="stmt"/>
-        <line num="58" count="9540" type="stmt"/>
-        <line num="60" count="9540" type="stmt"/>
-        <line num="61" count="12" type="stmt"/>
-        <line num="64" count="9540" type="stmt"/>
-        <line num="65" count="12" type="stmt"/>
-        <line num="70" count="53" type="stmt"/>
-        <line num="72" count="18" type="stmt"/>
-        <line num="76" count="85" type="stmt"/>
-        <line num="78" count="85" type="stmt"/>
-        <line num="79" count="9540" type="cond" truecount="2" falsecount="0"/>
-        <line num="80" count="71" type="stmt"/>
-        <line num="81" count="9469" type="cond" truecount="1" falsecount="0"/>
-        <line num="82" count="64" type="stmt"/>
-        <line num="84" count="9405" type="stmt"/>
-        <line num="87" count="85" type="stmt"/>
-        <line num="88" count="12" type="stmt"/>
-        <line num="89" count="12" type="stmt"/>
-        <line num="92" count="85" type="stmt"/>
-        <line num="93" count="43" type="stmt"/>
-        <line num="97" count="109" type="stmt"/>
-        <line num="98" count="10" type="stmt"/>
-        <line num="101" count="109" type="stmt"/>
+        <line num="18" count="220" type="stmt"/>
+        <line num="19" count="220" type="stmt"/>
+        <line num="21" count="220" type="stmt"/>
+        <line num="22" count="220" type="stmt"/>
+        <line num="25" count="220" type="stmt"/>
+        <line num="26" count="172" type="stmt"/>
+        <line num="30" count="172" type="stmt"/>
+        <line num="32" count="172" type="stmt"/>
+        <line num="37" count="172" type="stmt"/>
+        <line num="39" count="172" type="stmt"/>
+        <line num="40" count="172" type="stmt"/>
+        <line num="41" count="172" type="stmt"/>
+        <line num="42" count="112" type="stmt"/>
+        <line num="44" count="112" type="cond" truecount="1" falsecount="0"/>
+        <line num="45" count="57" type="stmt"/>
+        <line num="48" count="112" type="stmt"/>
+        <line num="49" count="20160" type="stmt"/>
+        <line num="58" count="20160" type="stmt"/>
+        <line num="60" count="20160" type="stmt"/>
+        <line num="61" count="24" type="stmt"/>
+        <line num="64" count="20160" type="stmt"/>
+        <line num="65" count="24" type="stmt"/>
+        <line num="70" count="112" type="stmt"/>
+        <line num="72" count="38" type="stmt"/>
+        <line num="76" count="172" type="stmt"/>
+        <line num="78" count="172" type="stmt"/>
+        <line num="79" count="20160" type="cond" truecount="2" falsecount="0"/>
+        <line num="80" count="207" type="stmt"/>
+        <line num="81" count="19953" type="cond" truecount="1" falsecount="0"/>
+        <line num="82" count="143" type="stmt"/>
+        <line num="84" count="19810" type="stmt"/>
+        <line num="87" count="172" type="stmt"/>
+        <line num="88" count="24" type="stmt"/>
+        <line num="89" count="24" type="stmt"/>
+        <line num="92" count="172" type="stmt"/>
+        <line num="93" count="88" type="stmt"/>
+        <line num="97" count="220" type="stmt"/>
+        <line num="98" count="20" type="stmt"/>
+        <line num="101" count="220" type="stmt"/>
       </file>
     </package>
     <package name="src.pages">
       <metrics statements="29" coveredstatements="27" conditionals="12" coveredconditionals="10" methods="11" coveredmethods="10"/>
       <file name="HomePage.tsx" path="/app/src/pages/HomePage.tsx">
         <metrics statements="25" coveredstatements="24" conditionals="10" coveredconditionals="8" methods="8" coveredmethods="8"/>
-        <line num="9" count="87" type="cond" truecount="2" falsecount="0"/>
-        <line num="10" count="87" type="stmt"/>
-        <line num="11" count="87" type="stmt"/>
-        <line num="13" count="87" type="stmt"/>
-        <line num="14" count="87" type="stmt"/>
-        <line num="17" count="87" type="stmt"/>
-        <line num="18" count="50" type="stmt"/>
-        <line num="19" count="50" type="stmt"/>
-        <line num="20" count="43" type="cond" truecount="1" falsecount="1"/>
-        <line num="21" count="43" type="cond" truecount="1" falsecount="1"/>
-        <line num="23" count="2" type="stmt"/>
-        <line num="27" count="87" type="stmt"/>
-        <line num="28" count="42" type="stmt"/>
-        <line num="32" count="87" type="stmt"/>
-        <line num="36" count="4" type="stmt"/>
-        <line num="37" count="4" type="stmt"/>
-        <line num="41" count="4" type="cond" truecount="1" falsecount="0"/>
-        <line num="42" count="4" type="cond" truecount="2" falsecount="0"/>
-        <line num="43" count="2" type="stmt"/>
-        <line num="44" count="6" type="stmt"/>
-        <line num="46" count="2" type="cond" truecount="1" falsecount="0"/>
-        <line num="47" count="2" type="stmt"/>
-        <line num="48" count="8" type="stmt"/>
+        <line num="9" count="176" type="cond" truecount="2" falsecount="0"/>
+        <line num="10" count="176" type="stmt"/>
+        <line num="11" count="176" type="stmt"/>
+        <line num="13" count="176" type="stmt"/>
+        <line num="14" count="176" type="stmt"/>
+        <line num="17" count="176" type="stmt"/>
+        <line num="18" count="100" type="stmt"/>
+        <line num="19" count="100" type="stmt"/>
+        <line num="20" count="87" type="cond" truecount="1" falsecount="1"/>
+        <line num="21" count="87" type="cond" truecount="1" falsecount="1"/>
+        <line num="23" count="4" type="stmt"/>
+        <line num="27" count="176" type="stmt"/>
+        <line num="28" count="84" type="stmt"/>
+        <line num="32" count="176" type="stmt"/>
+        <line num="36" count="8" type="stmt"/>
+        <line num="37" count="8" type="stmt"/>
+        <line num="41" count="8" type="cond" truecount="1" falsecount="0"/>
+        <line num="42" count="8" type="cond" truecount="2" falsecount="0"/>
+        <line num="43" count="4" type="stmt"/>
+        <line num="44" count="16" type="stmt"/>
+        <line num="46" count="4" type="cond" truecount="1" falsecount="0"/>
+        <line num="47" count="4" type="stmt"/>
+        <line num="48" count="18" type="stmt"/>
         <line num="53" count="0" type="stmt"/>
-        <line num="57" count="87" type="stmt"/>
+        <line num="57" count="176" type="stmt"/>
       </file>
       <file name="LogRegPage.tsx" path="/app/src/pages/LogRegPage.tsx">
         <metrics statements="4" coveredstatements="3" conditionals="2" coveredconditionals="2" methods="3" coveredmethods="2"/>
-        <line num="10" count="45" type="stmt"/>
-        <line num="12" count="45" type="stmt"/>
-        <line num="26" count="1" type="stmt"/>
+        <line num="10" count="91" type="stmt"/>
+        <line num="12" count="91" type="stmt"/>
+        <line num="26" count="3" type="stmt"/>
         <line num="36" count="0" type="stmt"/>
       </file>
     </package>

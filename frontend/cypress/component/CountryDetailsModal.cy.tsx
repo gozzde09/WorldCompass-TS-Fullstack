@@ -26,29 +26,26 @@ describe("CountryDetailsModal", () => {
   });
 
   it("should display the country details in the modal", () => {
-    // header
+    // Header
     cy.get(".modal-title").should("contain.text", "Sweden");
     cy.get(".modal-header")
       .find("img")
       .should("have.attr", "src", countryDetailsMock.country_flag);
-
+    //Karusel
+    cy.get(".carousel").should("be.visible");
     // Country details
     cy.get(".modal-body").within(() => {
       cy.get("p").should(
         "contain.text",
         countryDetailsMock.country_description
       );
-
       cy.get("p").should("contain.text", countryDetailsMock.country_capital);
-
       cy.get("p").should(
         "contain.text",
         countryDetailsMock.country_population.toLocaleString()
       );
       cy.get("p").should("contain.text", countryDetailsMock.country_continent);
-
       cy.get("p").should("contain.text", countryDetailsMock.country_language);
-
       cy.get("p").should("contain.text", countryDetailsMock.country_currency);
     });
   });
