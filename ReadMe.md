@@ -1,10 +1,12 @@
 # TravelList World Compass
 
+Användare kan registrera sig och logga in appen.
 En app som låter användare välja sina besökta eller vill besöka länder på kartan.
 
 ## Använda verktyg
 
 Docker Compose
+
 `BACKEND`
 PostgreSQL -dotenv - pg
 Node.js- Nodemon
@@ -44,7 +46,7 @@ lösenord:`test`
 `npm run test:component --headless`
 `npm run test:e2e`
 3- Ni kan kolla GitHub actions också.
-4- Code Coverage rapport syns i html version, terminal visar inte pga Docker , antar jag.
+4- Code Coverage rapport syns i html version, terminal visar inte pga Docker, antar jag. För att utan Docker funakde den när jag testar.
 `http://localhost/frontend/coverage/lcov-report/index.html`
 
 # Gözde Akgün JSU23

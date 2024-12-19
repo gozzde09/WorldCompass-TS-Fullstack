@@ -2,100 +2,107 @@
 
 # 03/12
 
-Skapade GitHub repo med en enkel layout, installerade nödvändiga paketer.Började med VG kräven.
-
-- Fixade Code Coverage men jag ska pusha den sist, för att det blir för mycket push.
-- Jobbar med GitHub actions. Det blev för mycket misslyckades commits. Ska ha en TEST repo för detta.
+- Skapade GitHub-repo med en enkel layout, installerade nödvändiga paket. Började med VG-kraven.
+- Fixade Code Coverage men jag ska pusha den sist för att undvika för många push.
+- Jobbar med GitHub Actions. Det blev för många misslyckade commits. Ska skapa ett TEST-repo för detta.
 
 # 04/12
 
 - Skapade tabeller.
-- Skrev alla endpoints med nödvändiga CRUD operations i Backend.
-- Hämtade static Countries data och gjorde POST alla länder i Frontend.
-- Skapade en riktigt repo från igårs commitar.
+- Skrev alla endpoints med nödvändiga CRUD operationer i Backend.
+- Hämtade statik data för Countries-tabell och gjorde POST av alla länder i Frontend.
+- Skapade en riktigt repo från gårdagens commits.
 
 # 05/12
 
-Jobbade literally hela dagen för att fixa GitHub actions med `Docker compose + database`.
-Det känns som jag gör framsteg men också lite tidslöseri. Inget commit blir idag heller om test file.
-Men mina misslysckades tester ligger här, i en annan repo- hundratals...: https://github.com/gozzde09/BookList-Cypress/actions
+- Jobbade hela dagen för att fixa GitHub Actions med Docker Compose + database.
+  Det känns som jag gör framsteg, men också lite tidsförlust. Ingen commit idag om testfilen.
+  Mina misslyckade tester ligger här, i ett annat repo - hundratals... https://github.com/gozzde09/BookList-Cypress/actions
+  Känner mig helt trött, inga fler commits idag.
 
-Känner helt trött, inga mera CODE commit idag. kl.22.30
-
-- Docker configurations
-- Skapade UML diagram by Mermaid.
+- Docker-konfigurationer
+- Skapade UML-diagram med Mermaid.
 
 # 06/12
 
-Efter fyra dagar, 10-12 timmar i dagen-- löste jag GitHub actions. Datorn crashar längre.
-Det tog mycket tid som ni kan se i mina test repo:t https://github.com/gozzde09/BookList-Cypress/actions
+Efter fyra dagar, 10-12 timmar per dag – löste jag GitHub Actions. Datorn crashar ofta.
+Det tog mycket tid, som ni kan se i mina test-repo: https://github.com/gozzde09/BookList-Cypress/actions
 :)
 
-- Bytte repo:t till privat
-- Updated Docker conf
+- Bytte repo till privat
+- Uppdaterade Docker-konfigurationer
 - Skapade test.yml + skapade SECRETS i GitHub
-- Script justeringar
-- Rätta database och koppla den till frontend -- enkla fake tests
+- Justerade scripts
+- Rättade databasen och kopplade den till frontend – skrev enkla fake tests.
 
 # 09/12
 
-Jag planerade att använda en karta för att visa besökt / ska besöka länder. Studerade och testade `leaflet`.
-Testade att fetcha länder från API till database tabellen. Det blev en hel del rättning kring POST funktioner. Jag hade problem med att values hade långa text. Det tog tid med mig idag.
+Jag planerade att använda en karta för att visa besökta/vill besöka länder. Studerade och testade `leaflet`.
+Testade att fetcha länder från API till databastabellen. Det blev en hel del rättning av POST-funktionerna.
+Jag hade problem med att värdena hade för långa texter. Det tog tid idag.
 
-- Commitar database förbättringar idag.
-- TDD test en del med database
-  Tester som failed i Cypress app, passed i GitHub actions. Galen!
+- Commitade förbättringar för databasen
+- TDD-testade en del med databasen
+  Tester som misslyckades i Cypress-appen, passade i GitHub Actions. Galet!
 
 # 10/12
 
 - Router med `react-lazy-with-preload`
-- Pages -Home & Login-Register
-- Components NavBar & Footer
-- Mapp structure med pages-components-styles
-- POST länder till database from API:s via en Hook ( det var inte lätt)
+- Pages: Home & Login-Register
+- Komponents NavBar & Footer
+- Mappstruktur: pages-components-styles
+- POST länder till database från API:s via en Hook ( det var inte lätt)
 
 # 11/12
 
 - Update POST länder med en Hook
-- Get country by name -backend
-- Konfiguration BDD-Cucumber
+- Get country by name --backend
+- Konfiguration av BDD-Cucumber
 - TDD-BDD tests for LoginForm
-- Login endpoint with jsonwebtoken-bcryptjs
+- Login endpoint with jsonwebtoken
 
 # 12/12
 
-- Login / Regsiter sida med FlipCard
-- LoginForm with Formik och Yup validering
-- Updated BDD tests för LoginForm , id, alerts osv
+- Login / Register sida med FlipCard
+
+- LoginForm med Formik och Yup validering
+- Updaterade BDD tester för LoginForm, id, alerts osv
+
 - TDD-BDD tests for RegisterForm
-- RegisterForm with Formik och Yup validering
+- RegisterForm med Formik och Yup validering
 - Lite CSS
 - Fick göra denna installning :https://docs.cypress.io/api/cypress-api/catalog-of-events#Uncaught-Exceptions
 
 # 13/12
 
-- Automated sparade länder via hook-API och sparade satan i JSOn-file. Skickade JSON data till database.
-- Fixade Login och Register nedpoinst på riktigt
-- Färdiga BDD tester för
+- Automatiserade sparade länder via hook-API och sparade JSON-fil. Skickade JSON-data till databasen.
+- Fixade Login och Register endpoints på riktigt
+- Färdiga BDD tester för Login & Register
 - Sparade userId i local storage, fixade logga ut function
-- E2E komplett tester för Login och Register
+- E2E kompletta tester för Login och Register
 
 # 16/12
 
-- Komponent tester och updated E2E komplett tester för Login och Register
-- Local Storage - sparar user object med namn
-- Skapade kartan som visar travel-list tabellen men pushade inte än
+- Komponenttester och updaterade E2E komplett tester för Login och Register
+- Local Storage - sparar ett user object med namn + id
+- Skapade kartan som visar travel-list tabellen men pushade inte det än
 
 # 17/12
 
-- GET-POST-DELETE TravelList
+- GET-POST-DELETE för TravelList
 - Komponenter Karta, CountryModal, TravelList
-- Komponent test TravelList
+- Komponenttest för TravelList
 
 # 18/12
 
 - Komplett E2E test för TravelList - DELETE
 - CSS färger, margin osv
 - Uppdaterade ER-Diagram
-- Komponent and Komplete E2E tests for CountryDetailsModal -TravellList GET-POST-PUT
+- Komponent and kompletta E2E tester för CountryDetailsModal -TravellList GET-POST-PUT
 - Code Coverage
+
+# 19/12
+
+- Karusell för länder
+- Typsnitt
+- NavBar komponenttest
