@@ -5,6 +5,7 @@
   margin: 0;
   text-align: center;
   min-height: 100vh;
+  font-family: "Montserrat";
 }
 main {
   display: flex;

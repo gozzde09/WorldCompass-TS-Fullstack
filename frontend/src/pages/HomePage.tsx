@@ -65,9 +65,12 @@ export default function HomePage() {
             fetchVisitedAndWantedCountries={fetchVisitedAndWantedCountries}
           />
           <div className='my-4'>
-            <h2 id='welcome' className='my-4'>
+            <h2 id='welcome' className='mt-4'>
               Welcome,{firstName}!
             </h2>
+            <h5 className='mb-4'>
+              You can click on a country on the map and add it to your lists.
+            </h5>
             <TravelList
               visitedCountries={visitedCountries}
               wantedCountries={wantedCountries}

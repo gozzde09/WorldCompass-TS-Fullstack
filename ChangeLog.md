@@ -98,3 +98,4 @@ Testade att fetcha länder från API till database tabellen. Det blev en hel del
 - CSS färger, margin osv
 - Uppdaterade ER-Diagram
 - Komponent and Komplete E2E tests for CountryDetailsModal -TravellList GET-POST-PUT
+- Code Coverage

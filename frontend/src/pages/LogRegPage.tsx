@@ -22,7 +22,7 @@ export default function FlipCard() {
             <div className='flip-card-front'>
               <LoginForm />
               <p
-                className='h5 text-center  d-block mt-4 text-decoration-underline flip-button'
+                className='h5 text-center d-block mt-4 text-decoration-underline flip-button'
                 onClick={() => setIsFlipped(true)}>
                 No account? Click to register
               </p>
