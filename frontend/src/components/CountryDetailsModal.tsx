@@ -2,6 +2,7 @@ import axios from "axios";
 import { useEffect, useState, useCallback } from "react";
 import { Modal, Button } from "react-bootstrap";
 import { Country } from "../types/interfaces";
+import Carousel from "./Carousel";
 
 interface CountryModalProps {
   show: boolean;
@@ -68,9 +69,11 @@ export default function CountryDetailsModal({
           />
         )}
       </Modal.Header>
+
       <Modal.Body>
         {countryDetails ? (
           <div>
+            <Carousel countryName={countryDetails.country_name} />
             {Object.entries({
               Description: countryDetails.country_description,
               Capital: countryDetails.country_capital,

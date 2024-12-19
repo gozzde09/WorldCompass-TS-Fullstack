@@ -15,7 +15,10 @@ main {
   text-align: center;
   background-color: #f9f9f9;
 }
-modal-content {
+.modal-content {
   overflow: auto;
   max-height: 90vh;
+}
+.modal-dialog {
+  min-width: 60%;
 }
