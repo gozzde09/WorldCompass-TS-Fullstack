@@ -20,7 +20,7 @@ export default function TravelList({
   };
 
   const tooltipDelete = (
-    <Tooltip id='tooltip'>Delete the country from the list.</Tooltip>
+    <Tooltip id='tooltip'>Remove this country from the list.</Tooltip>
   );
 
   const CountryList = ({
@@ -64,7 +64,7 @@ export default function TravelList({
   );
 
   return (
-    <Container className='d-flex justify-content-evenly'>
+    <Container className='d-flex justify-content-evenly flex-wrap'>
       <CountryList
         title='You have visited:'
         countries={visitedCountries}

@@ -58,13 +58,8 @@ export default function HomePage() {
     <>
       <Navbar />
       <main>
-        <div className='d-flex justify-content-evenly'>
-          <WorldMap
-            visitedCountries={visitedCountries}
-            wantedCountries={wantedCountries}
-            fetchVisitedAndWantedCountries={fetchVisitedAndWantedCountries}
-          />
-          <div className='my-4'>
+        <div className='d-flex justify-content-evenly flex-wrap'>
+          <div className='my-4 d-flex justify-content-evenly flex-wrap'>
             <h2 id='welcome' className='mt-4'>
               Welcome,{firstName}!
             </h2>
@@ -77,6 +72,11 @@ export default function HomePage() {
               handleDeleteCountry={deleteCountry}
             />
           </div>
+          <WorldMap
+            visitedCountries={visitedCountries}
+            wantedCountries={wantedCountries}
+            fetchVisitedAndWantedCountries={fetchVisitedAndWantedCountries}
+          />
         </div>
       </main>
       <Footer />
