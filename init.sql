@@ -37,6 +37,7 @@ CREATE TABLE travellist (
     country_id INT REFERENCES countries(country_id),
     status_id INT REFERENCES visitstatus(status_id),
     user_id INT REFERENCES users(user_id),
+    UNIQUE (user_id, country_id)
 );
 
 INSERT INTO visitstatus (status_name)

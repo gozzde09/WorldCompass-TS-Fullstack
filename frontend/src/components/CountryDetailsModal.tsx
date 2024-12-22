@@ -70,7 +70,7 @@ export default function CountryDetailsModal({
         <Modal.Title>{countryName}</Modal.Title>
       </Modal.Header>
 
-      <Modal.Body>
+      <Modal.Body className='px-4'>
         {countryDetails ? (
           <div>
             <Carousel countryName={countryDetails.country_name} />

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Carousel } from "react-bootstrap";
+import { Carousel, Spinner } from "react-bootstrap";
 
 interface CountryCarouselProps {
   countryName: string;
@@ -9,11 +9,14 @@ interface UnsplashImage {
     regular: string;
   };
 }
+
 const CountryCarousel: React.FC<CountryCarouselProps> = ({ countryName }) => {
   const [imageUrls, setImageUrls] = useState<string[]>([]);
+  const [loading, setLoading] = useState<boolean>(true);
 
   useEffect(() => {
     const fetchImages = async () => {
+      setLoading(true);
       try {
         const response = await fetch(
           `https://api.unsplash.com/search/photos?query=${countryName}`,
@@ -38,6 +41,8 @@ const CountryCarousel: React.FC<CountryCarouselProps> = ({ countryName }) => {
         setImageUrls(imageUrls);
       } catch (error) {
         console.error("Error fetching images:", error);
+      } finally {
+        setLoading(false);
       }
     };
 
@@ -47,20 +52,31 @@ const CountryCarousel: React.FC<CountryCarouselProps> = ({ countryName }) => {
   }, [countryName]);
 
   return (
-    <Carousel className='mb-3'>
-      {imageUrls.map((url, index) => (
-        <Carousel.Item key={index} style={{ maxHeight: 300 }}>
-          <img
-            src={url}
-            alt={`Image of ${countryName} ${index + 1}`}
-            style={{ width: "100%", height: "auto", maxHeight: 300 }}
-          />
-          <Carousel.Caption>
-            <h3>{`${index + 1}`}</h3>
-          </Carousel.Caption>
-        </Carousel.Item>
-      ))}
-    </Carousel>
+    <>
+      {loading ? (
+        <div className='text-center my-3'>
+          <Spinner animation='border' role='status'>
+            <span className='visually-hidden'>Loading...</span>
+          </Spinner>
+          <p>Loading images...</p>
+        </div>
+      ) : (
+        <Carousel className='mb-3'>
+          {imageUrls.map((url, index) => (
+            <Carousel.Item key={index} style={{ maxHeight: 300 }}>
+              <img
+                src={url}
+                alt={`Image of ${countryName} ${index + 1}`}
+                style={{ width: "100%", height: "auto", maxHeight: 300 }}
+              />
+              <Carousel.Caption>
+                <h3>{`${index + 1}`}</h3>
+              </Carousel.Caption>
+            </Carousel.Item>
+          ))}
+        </Carousel>
+      )}
+    </>
   );
 };
 
