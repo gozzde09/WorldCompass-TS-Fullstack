@@ -14,14 +14,11 @@ export default function Navbar() {
         <BootstrapNavbar.Brand as={Link} to='/'>
           World Compass
         </BootstrapNavbar.Brand>
-        <BootstrapNavbar.Toggle aria-controls='basic-navbar-nav' />
-        <BootstrapNavbar.Collapse id='basic-navbar-nav'>
-          <Nav className='ms-auto'>
-            <Nav.Link as={Link} to='/' onClick={handleLogout}>
-              Log out
-            </Nav.Link>
-          </Nav>
-        </BootstrapNavbar.Collapse>
+        <Nav className='ms-auto'>
+          <Nav.Link as={Link} to='/' onClick={handleLogout}>
+            Log out
+          </Nav.Link>
+        </Nav>
       </Container>
     </BootstrapNavbar>
   );
