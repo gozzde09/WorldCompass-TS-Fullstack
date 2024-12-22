@@ -34,14 +34,14 @@ export default function TravelList({
     color: string;
     listType: "visited" | "wanted";
   }) => (
-    <div className='mx-4 travel-list'>
+    <div className='mx-4 travel-list d-flex flex-column flex-wrap'>
       <h5 style={{ color }}>{title}</h5>
       {countries.length > 0 ? (
         <ListGroup>
           {countries.map((country, index) => (
             <ListGroup.Item
               key={index}
-              className='d-flex justify-content-between align-items-center'>
+              className='d-flex justify-content-between align-items-center flex-wrap'>
               {country}
               <OverlayTrigger placement='top' overlay={tooltipDelete}>
                 <span className='mx-2'>
