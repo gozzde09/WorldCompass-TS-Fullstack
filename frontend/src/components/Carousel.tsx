@@ -69,9 +69,6 @@ const CountryCarousel: React.FC<CountryCarouselProps> = ({ countryName }) => {
                 alt={`Image of ${countryName} ${index + 1}`}
                 style={{ width: "100%", height: "auto", maxHeight: 300 }}
               />
-              <Carousel.Caption>
-                <h3>{`${index + 1}`}</h3>
-              </Carousel.Caption>
             </Carousel.Item>
           ))}
         </Carousel>

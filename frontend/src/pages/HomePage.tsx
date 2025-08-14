@@ -61,11 +61,11 @@ export default function HomePage() {
         <div className='d-flex justify-content-evenly flex-wrap'>
           <div className='my-4 d-flex flex-column justify-content-evenly flex-wrap'>
             <h2 id='welcome' className='mt-4'>
-              Welcome,{firstName}!
+              Welcome, {firstName}!
             </h2>
             <h5 className='mb-4'>
-              You can click on a country on the map, learn and add it to your
-              lists.
+              You can click on a country on the map, learn about it, and add it
+              to your lists.
             </h5>
             <TravelList
               visitedCountries={visitedCountries}

@@ -106,3 +106,8 @@ Jag hade problem med att värdena hade för långa texter. Det tog tid idag.
 - Karusell för länder
 - Typsnitt
 - NavBar komponenttest
+
+# 20/12 -21/12
+
+- Margin, responsive design
+- Släppte projektet på Azure

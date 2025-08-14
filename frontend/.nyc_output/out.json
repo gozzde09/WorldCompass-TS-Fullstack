@@ -149,18 +149,18 @@
     },
     "branchMap": {},
     "s": {
-      "0": 120,
-      "1": 152,
-      "2": 120,
-      "3": 208,
-      "4": 120,
-      "5": 120,
-      "6": 120
+      "0": 2,
+      "1": 2,
+      "2": 2,
+      "3": 4,
+      "4": 2,
+      "5": 2,
+      "6": 2
     },
     "f": {
-      "0": 152,
-      "1": 208,
-      "2": 120
+      "0": 2,
+      "1": 4,
+      "2": 2
     },
     "b": {},
     "inputSourceMap": {
@@ -180,16 +180,6 @@
     "statementMap": {
       "0": {
         "start": {
-          "line": 8,
-          "column": 0
-        },
-        "end": {
-          "line": 8,
-          "column": 90
-        }
-      },
-      "1": {
-        "start": {
           "line": 11,
           "column": 0
         },
@@ -202,8 +192,7 @@
     "fnMap": {},
     "branchMap": {},
     "s": {
-      "0": 60,
-      "1": 60
+      "0": 2
     },
     "f": {},
     "b": {},
@@ -214,10 +203,10 @@
         "/app/src/main.tsx"
       ],
       "names": [],
-      "mappings": "AAQ6D;AAR7D,OAAO,cAAc;AACrB,OAAO,SAAS;AAChB,OAAO;AAEP,OAAO;AACP,OAAO;AACP,OAAO;AAEP,SAAS,WAAW,SAAS,eAAe,MAAM,CAAE,EAAE,OAAO,oBAAC,OAAI,CAAE;"
+      "mappings": "AAY6D;AAZ7D,OAAO,cAAc;AACrB,OAAO,SAAS;AAChB,OAAO;AAEP,OAAO;AACP,OAAO;AACP,OAAO;AAEP,OAAO;AACP,OAAO;AACP,OAAO;AAEP,SAAS,WAAW,SAAS,eAAe,MAAM,CAAE,EAAE,OAAO,oBAAC,OAAI,CAAE;"
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "bc92a4ad20eba00f1a6f49206545a8cd430374da"
+    "hash": "0e213c998dd7a25f9e6122c77cab48850e7433f7"
   },
   "/app/src/components/NavBar.tsx": {
     "path": "C:\\Users\\gozde\\Desktop\\JSU\\Testning_Typescript\\TravelList\\frontend\\src\\components\\NavBar.tsx",
@@ -239,7 +228,7 @@
         },
         "end": {
           "line": 6,
-          "column": 38
+          "column": 36
         }
       },
       "2": {
@@ -248,7 +237,7 @@
           "column": 2
         },
         "end": {
-          "line": 20,
+          "line": 19,
           "column": 4
         }
       }
@@ -272,7 +261,7 @@
             "column": 33
           },
           "end": {
-            "line": 21,
+            "line": 20,
             "column": 1
           }
         },
@@ -305,12 +294,12 @@
     },
     "branchMap": {},
     "s": {
-      "0": 176,
+      "0": 2,
       "1": 0,
-      "2": 176
+      "2": 2
     },
     "f": {
-      "0": 176,
+      "0": 2,
       "1": 0
     },
     "b": {},
@@ -321,295 +310,536 @@
         "/app/src/components/NavBar.tsx"
       ],
       "names": [],
-      "mappings": "AAYM,SACE,KADF;AAZN,SAAS,YAAY;AACrB,SAAS,UAAU,iBAAiB,KAAK,iBAAiB;AAE1D,wBAAwB,SAAS;AAC/B,QAAM,eAAe,MAAM;AACzB,iBAAa,WAAW,QAAQ;AAAA,EAClC;AACA,SACE;AAAA,IAAC;AAAA;AAAA,MACC,OAAO,EAAE,iBAAiB,UAAU;AAAA,MACpC,QAAO;AAAA,MACP,SAAQ;AAAA,MACR,+BAAC,aACC;AAAA,4BAAC,gBAAgB,OAAhB,EAAsB,IAAI,MAAM,IAAG,KAAI,2BAExC;AAAA,QACA,oBAAC,gBAAgB,QAAhB,EAAuB,iBAAc,oBAAmB;AAAA,QACzD,oBAAC,gBAAgB,UAAhB,EAAyB,IAAG,oBAC3B,8BAAC,OAAI,WAAU,WACb,8BAAC,IAAI,MAAJ,EAAS,IAAI,MAAM,IAAG,KAAI,SAAS,cAAc,qBAElD,GACF,GACF;AAAA,SACF;AAAA;AAAA,EACF;AAEJ;"
+      "mappings": "AAYM,SACE,KADF;AAZN,SAAS,YAAY;AACrB,SAAS,UAAU,iBAAiB,KAAK,iBAAiB;AAE1D,wBAAwB,SAAS;AAC/B,QAAM,eAAe,MAAM;AACzB,iBAAa,WAAW,MAAM;AAAA,EAChC;AACA,SACE;AAAA,IAAC;AAAA;AAAA,MACC,OAAO,EAAE,iBAAiB,UAAU;AAAA,MACpC,QAAO;AAAA,MACP,SAAQ;AAAA,MACR,+BAAC,aACC;AAAA,4BAAC,gBAAgB,OAAhB,EAAsB,IAAI,MAAM,IAAG,KAAI,2BAExC;AAAA,QACA,oBAAC,OAAI,WAAU,WACb,8BAAC,IAAI,MAAJ,EAAS,IAAI,MAAM,IAAG,KAAI,SAAS,cAAc,qBAElD,GACF;AAAA,SACF;AAAA;AAAA,EACF;AAEJ;"
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "2a9046955767c8e661dd325705a693d469039d62"
+    "hash": "a9695ef3a720a9260b2cb24af688d4aaba7bf02d"
+  },
+  "/app/src/components/Carousel.tsx": {
+    "path": "C:\\Users\\gozde\\Desktop\\JSU\\Testning_Typescript\\TravelList\\frontend\\src\\components\\Carousel.tsx",
+    "statementMap": {
+      "0": {
+        "start": {
+          "line": 4,
+          "column": 24
+        },
+        "end": {
+          "line": 51,
+          "column": 1
+        }
+      },
+      "1": {
+        "start": {
+          "line": 5,
+          "column": 36
+        },
+        "end": {
+          "line": 5,
+          "column": 48
+        }
+      },
+      "2": {
+        "start": {
+          "line": 6,
+          "column": 32
+        },
+        "end": {
+          "line": 6,
+          "column": 46
+        }
+      },
+      "3": {
+        "start": {
+          "line": 7,
+          "column": 2
+        },
+        "end": {
+          "line": 36,
+          "column": 20
+        }
+      },
+      "4": {
+        "start": {
+          "line": 8,
+          "column": 24
+        },
+        "end": {
+          "line": 32,
+          "column": 5
+        }
+      },
+      "5": {
+        "start": {
+          "line": 9,
+          "column": 6
+        },
+        "end": {
+          "line": 9,
+          "column": 23
+        }
+      },
+      "6": {
+        "start": {
+          "line": 10,
+          "column": 6
+        },
+        "end": {
+          "line": 31,
+          "column": 7
+        }
+      },
+      "7": {
+        "start": {
+          "line": 11,
+          "column": 25
+        },
+        "end": {
+          "line": 18,
+          "column": 9
+        }
+      },
+      "8": {
+        "start": {
+          "line": 19,
+          "column": 8
+        },
+        "end": {
+          "line": 23,
+          "column": 9
+        }
+      },
+      "9": {
+        "start": {
+          "line": 20,
+          "column": 10
+        },
+        "end": {
+          "line": 22,
+          "column": 12
+        }
+      },
+      "10": {
+        "start": {
+          "line": 24,
+          "column": 21
+        },
+        "end": {
+          "line": 24,
+          "column": 42
+        }
+      },
+      "11": {
+        "start": {
+          "line": 25,
+          "column": 27
+        },
+        "end": {
+          "line": 25,
+          "column": 88
+        }
+      },
+      "12": {
+        "start": {
+          "line": 25,
+          "column": 68
+        },
+        "end": {
+          "line": 25,
+          "column": 87
+        }
+      },
+      "13": {
+        "start": {
+          "line": 26,
+          "column": 8
+        },
+        "end": {
+          "line": 26,
+          "column": 33
+        }
+      },
+      "14": {
+        "start": {
+          "line": 28,
+          "column": 8
+        },
+        "end": {
+          "line": 28,
+          "column": 55
+        }
+      },
+      "15": {
+        "start": {
+          "line": 30,
+          "column": 8
+        },
+        "end": {
+          "line": 30,
+          "column": 26
+        }
+      },
+      "16": {
+        "start": {
+          "line": 33,
+          "column": 4
+        },
+        "end": {
+          "line": 35,
+          "column": 5
+        }
+      },
+      "17": {
+        "start": {
+          "line": 34,
+          "column": 6
+        },
+        "end": {
+          "line": 34,
+          "column": 20
+        }
+      },
+      "18": {
+        "start": {
+          "line": 37,
+          "column": 2
+        },
+        "end": {
+          "line": 50,
+          "column": 21
+        }
+      },
+      "19": {
+        "start": {
+          "line": 40,
+          "column": 116
+        },
+        "end": {
+          "line": 50,
+          "column": 13
+        }
+      }
+    },
+    "fnMap": {
+      "0": {
+        "name": "(anonymous_0)",
+        "decl": {
+          "start": {
+            "line": 4,
+            "column": 24
+          },
+          "end": {
+            "line": 4,
+            "column": 25
+          }
+        },
+        "loc": {
+          "start": {
+            "line": 4,
+            "column": 45
+          },
+          "end": {
+            "line": 51,
+            "column": 1
+          }
+        },
+        "line": 4
+      },
+      "1": {
+        "name": "(anonymous_1)",
+        "decl": {
+          "start": {
+            "line": 7,
+            "column": 12
+          },
+          "end": {
+            "line": 7,
+            "column": 13
+          }
+        },
+        "loc": {
+          "start": {
+            "line": 7,
+            "column": 18
+          },
+          "end": {
+            "line": 36,
+            "column": 3
+          }
+        },
+        "line": 7
+      },
+      "2": {
+        "name": "(anonymous_2)",
+        "decl": {
+          "start": {
+            "line": 8,
+            "column": 24
+          },
+          "end": {
+            "line": 8,
+            "column": 25
+          }
+        },
+        "loc": {
+          "start": {
+            "line": 8,
+            "column": 36
+          },
+          "end": {
+            "line": 32,
+            "column": 5
+          }
+        },
+        "line": 8
+      },
+      "3": {
+        "name": "(anonymous_3)",
+        "decl": {
+          "start": {
+            "line": 25,
+            "column": 56
+          },
+          "end": {
+            "line": 25,
+            "column": 57
+          }
+        },
+        "loc": {
+          "start": {
+            "line": 25,
+            "column": 68
+          },
+          "end": {
+            "line": 25,
+            "column": 87
+          }
+        },
+        "line": 25
+      },
+      "4": {
+        "name": "(anonymous_4)",
+        "decl": {
+          "start": {
+            "line": 40,
+            "column": 84
+          },
+          "end": {
+            "line": 40,
+            "column": 85
+          }
+        },
+        "loc": {
+          "start": {
+            "line": 40,
+            "column": 116
+          },
+          "end": {
+            "line": 50,
+            "column": 13
+          }
+        },
+        "line": 40
+      }
+    },
+    "branchMap": {
+      "0": {
+        "loc": {
+          "start": {
+            "line": 19,
+            "column": 8
+          },
+          "end": {
+            "line": 23,
+            "column": 9
+          }
+        },
+        "type": "if",
+        "locations": [
+          {
+            "start": {
+              "line": 19,
+              "column": 8
+            },
+            "end": {
+              "line": 23,
+              "column": 9
+            }
+          },
+          {
+            "start": {},
+            "end": {}
+          }
+        ],
+        "line": 19
+      },
+      "1": {
+        "loc": {
+          "start": {
+            "line": 33,
+            "column": 4
+          },
+          "end": {
+            "line": 35,
+            "column": 5
+          }
+        },
+        "type": "if",
+        "locations": [
+          {
+            "start": {
+              "line": 33,
+              "column": 4
+            },
+            "end": {
+              "line": 35,
+              "column": 5
+            }
+          },
+          {
+            "start": {},
+            "end": {}
+          }
+        ],
+        "line": 33
+      },
+      "2": {
+        "loc": {
+          "start": {
+            "line": 37,
+            "column": 51
+          },
+          "end": {
+            "line": 50,
+            "column": 17
+          }
+        },
+        "type": "cond-expr",
+        "locations": [
+          {
+            "start": {
+              "line": 37,
+              "column": 77
+            },
+            "end": {
+              "line": 40,
+              "column": 6
+            }
+          },
+          {
+            "start": {
+              "line": 40,
+              "column": 25
+            },
+            "end": {
+              "line": 50,
+              "column": 17
+            }
+          }
+        ],
+        "line": 37
+      }
+    },
+    "s": {
+      "0": 2,
+      "1": 0,
+      "2": 0,
+      "3": 0,
+      "4": 0,
+      "5": 0,
+      "6": 0,
+      "7": 0,
+      "8": 0,
+      "9": 0,
+      "10": 0,
+      "11": 0,
+      "12": 0,
+      "13": 0,
+      "14": 0,
+      "15": 0,
+      "16": 0,
+      "17": 0,
+      "18": 0,
+      "19": 0
+    },
+    "f": {
+      "0": 0,
+      "1": 0,
+      "2": 0,
+      "3": 0,
+      "4": 0
+    },
+    "b": {
+      "0": [
+        0,
+        0
+      ],
+      "1": [
+        0,
+        0
+      ],
+      "2": [
+        0,
+        0
+      ]
+    },
+    "inputSourceMap": {
+      "version": 3,
+      "file": null,
+      "sources": [
+        "/app/src/components/Carousel.tsx"
+      ],
+      "names": [
+        "imageUrls"
+      ],
+      "mappings": "AAsDI,mBAIQ,KAFJ,YAFJ;AAtDJ,SAAgB,WAAW,gBAAgB;AAC3C,SAAS,UAAU,eAAe;AAWlC,MAAM,kBAAkD,CAAC,EAAE,YAAY,MAAM;AAC3E,QAAM,CAAC,WAAW,YAAY,IAAI,SAAmB,CAAC,CAAC;AACvD,QAAM,CAAC,SAAS,UAAU,IAAI,SAAkB,IAAI;AAEpD,YAAU,MAAM;AACd,UAAM,cAAc,YAAY;AAC9B,iBAAW,IAAI;AACf,UAAI;AACF,cAAM,WAAW,MAAM;AAAA,UACrB,gDAAgD,WAAW;AAAA,UAC3D;AAAA,YACE,SAAS;AAAA,cACP,eACE;AAAA,YACJ;AAAA,UACF;AAAA,QACF;AAEA,YAAI,CAAC,SAAS,IAAI;AAChB,gBAAM,IAAI;AAAA,YACR,gCAAgC,SAAS,UAAU;AAAA,UACrD;AAAA,QACF;AAEA,cAAM,OAAO,MAAM,SAAS,KAAK;AACjC,cAAMA,aAAY,KAAK,QACpB,MAAM,GAAG,CAAC,EACV,IAAI,CAAC,WAA0B,OAAO,KAAK,OAAO;AACrD,qBAAaA,UAAS;AAAA,MACxB,SAAS,OAAO;AACd,gBAAQ,MAAM,0BAA0B,KAAK;AAAA,MAC/C,UAAE;AACA,mBAAW,KAAK;AAAA,MAClB;AAAA,IACF;AAEA,QAAI,aAAa;AACf,kBAAY;AAAA,IACd;AAAA,EACF,GAAG,CAAC,WAAW,CAAC;AAEhB,SACE,gCACG,oBACC,qBAAC,SAAI,WAAU,oBACb;AAAA,wBAAC,WAAQ,WAAU,UAAS,MAAK,UAC/B,8BAAC,UAAK,WAAU,mBAAkB,wBAAU,GAC9C;AAAA,IACA,oBAAC,OAAE,+BAAiB;AAAA,KACtB,IAEA,oBAAC,YAAS,WAAU,QACjB,oBAAU,IAAI,CAAC,KAAK,UACnB,qBAAC,SAAS,MAAT,EAA0B,OAAO,EAAE,WAAW,IAAI,GACjD;AAAA;AAAA,MAAC;AAAA;AAAA,QACC,KAAK;AAAA,QACL,KAAK,YAAY,WAAW,IAAI,QAAQ,CAAC;AAAA,QACzC,OAAO,EAAE,OAAO,QAAQ,QAAQ,QAAQ,WAAW,IAAI;AAAA;AAAA,IACzD;AAAA,IACA,oBAAC,SAAS,SAAT,EACC,8BAAC,QAAI,aAAG,QAAQ,CAAC,IAAG,GACtB;AAAA,OARkB,KASpB,CACD,GACH,GAEJ;AAEJ;AAEA,eAAe;"
+    },
+    "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
+    "hash": "61c333dc42a21a6abc8c331ee71f81cff3b91d06"
   },
   "/app/src/components/CountryDetailsModal.tsx": {
     "path": "C:\\Users\\gozde\\Desktop\\JSU\\Testning_Typescript\\TravelList\\frontend\\src\\components\\CountryDetailsModal.tsx",
     "statementMap": {
       "0": {
         "start": {
-          "line": 11,
+          "line": 12,
           "column": 46
         },
         "end": {
-          "line": 11,
+          "line": 12,
           "column": 60
         }
       },
       "1": {
         "start": {
-          "line": 12,
+          "line": 13,
           "column": 30
         },
         "end": {
-          "line": 23,
+          "line": 24,
           "column": 19
         }
       },
       "2": {
         "start": {
-          "line": 13,
+          "line": 14,
           "column": 4
         },
         "end": {
-          "line": 14,
+          "line": 15,
           "column": 13
         }
       },
       "3": {
         "start": {
-          "line": 14,
+          "line": 15,
           "column": 6
         },
         "end": {
-          "line": 14,
+          "line": 15,
           "column": 13
         }
       },
       "4": {
-        "start": {
-          "line": 15,
-          "column": 4
-        },
-        "end": {
-          "line": 22,
-          "column": 5
-        }
-      },
-      "5": {
-        "start": {
-          "line": 16,
-          "column": 23
-        },
-        "end": {
-          "line": 18,
-          "column": 7
-        }
-      },
-      "6": {
-        "start": {
-          "line": 19,
-          "column": 6
-        },
-        "end": {
-          "line": 19,
-          "column": 30
-        }
-      },
-      "7": {
-        "start": {
-          "line": 21,
-          "column": 6
-        },
-        "end": {
-          "line": 21,
-          "column": 62
-        }
-      },
-      "8": {
-        "start": {
-          "line": 24,
-          "column": 2
-        },
-        "end": {
-          "line": 26,
-          "column": 28
-        }
-      },
-      "9": {
-        "start": {
-          "line": 25,
-          "column": 4
-        },
-        "end": {
-          "line": 25,
-          "column": 26
-        }
-      },
-      "10": {
-        "start": {
-          "line": 27,
-          "column": 28
-        },
-        "end": {
-          "line": 43,
-          "column": 3
-        }
-      },
-      "11": {
-        "start": {
-          "line": 28,
-          "column": 23
-        },
-        "end": {
-          "line": 28,
-          "column": 71
-        }
-      },
-      "12": {
-        "start": {
-          "line": 29,
-          "column": 19
-        },
-        "end": {
-          "line": 29,
-          "column": 37
-        }
-      },
-      "13": {
-        "start": {
-          "line": 30,
-          "column": 4
-        },
-        "end": {
-          "line": 31,
-          "column": 13
-        }
-      },
-      "14": {
-        "start": {
-          "line": 31,
-          "column": 6
-        },
-        "end": {
-          "line": 31,
-          "column": 13
-        }
-      },
-      "15": {
-        "start": {
-          "line": 32,
-          "column": 4
-        },
-        "end": {
-          "line": 42,
-          "column": 5
-        }
-      },
-      "16": {
-        "start": {
-          "line": 33,
-          "column": 6
-        },
-        "end": {
-          "line": 37,
-          "column": 9
-        }
-      },
-      "17": {
-        "start": {
-          "line": 38,
-          "column": 6
-        },
-        "end": {
-          "line": 38,
-          "column": 23
-        }
-      },
-      "18": {
-        "start": {
-          "line": 39,
-          "column": 6
-        },
-        "end": {
-          "line": 39,
-          "column": 17
-        }
-      },
-      "19": {
-        "start": {
-          "line": 41,
-          "column": 6
-        },
-        "end": {
-          "line": 41,
-          "column": 59
-        }
-      },
-      "20": {
-        "start": {
-          "line": 44,
-          "column": 2
-        },
-        "end": {
-          "line": 92,
-          "column": 7
-        }
-      },
-      "21": {
-        "start": {
-          "line": 65,
-          "column": 45
-        },
-        "end": {
-          "line": 72,
-          "column": 13
-        }
-      },
-      "22": {
-        "start": {
-          "line": 78,
-          "column": 25
-        },
-        "end": {
-          "line": 78,
-          "column": 45
-        }
-      },
-      "23": {
-        "start": {
-          "line": 86,
-          "column": 25
-        },
-        "end": {
-          "line": 86,
-          "column": 45
-        }
-      },
-      "24": {
-        "start": {
-          "line": 12,
-          "column": 46
-        },
-        "end": {
-          "line": 12,
-          "column": 60
-        }
-      },
-      "25": {
-        "start": {
-          "line": 13,
-          "column": 30
-        },
-        "end": {
-          "line": 24,
-          "column": 19
-        }
-      },
-      "26": {
-        "start": {
-          "line": 14,
-          "column": 4
-        },
-        "end": {
-          "line": 15,
-          "column": 13
-        }
-      },
-      "27": {
-        "start": {
-          "line": 15,
-          "column": 6
-        },
-        "end": {
-          "line": 15,
-          "column": 13
-        }
-      },
-      "28": {
         "start": {
           "line": 16,
           "column": 4
@@ -619,7 +849,7 @@
           "column": 5
         }
       },
-      "29": {
+      "5": {
         "start": {
           "line": 17,
           "column": 23
@@ -629,7 +859,7 @@
           "column": 7
         }
       },
-      "30": {
+      "6": {
         "start": {
           "line": 20,
           "column": 6
@@ -639,7 +869,7 @@
           "column": 30
         }
       },
-      "31": {
+      "7": {
         "start": {
           "line": 22,
           "column": 6
@@ -649,7 +879,7 @@
           "column": 62
         }
       },
-      "32": {
+      "8": {
         "start": {
           "line": 25,
           "column": 2
@@ -659,7 +889,7 @@
           "column": 28
         }
       },
-      "33": {
+      "9": {
         "start": {
           "line": 26,
           "column": 4
@@ -669,7 +899,7 @@
           "column": 26
         }
       },
-      "34": {
+      "10": {
         "start": {
           "line": 28,
           "column": 28
@@ -679,7 +909,7 @@
           "column": 3
         }
       },
-      "35": {
+      "11": {
         "start": {
           "line": 29,
           "column": 23
@@ -689,7 +919,7 @@
           "column": 71
         }
       },
-      "36": {
+      "12": {
         "start": {
           "line": 30,
           "column": 19
@@ -699,7 +929,7 @@
           "column": 37
         }
       },
-      "37": {
+      "13": {
         "start": {
           "line": 31,
           "column": 4
@@ -709,7 +939,7 @@
           "column": 13
         }
       },
-      "38": {
+      "14": {
         "start": {
           "line": 32,
           "column": 6
@@ -719,7 +949,7 @@
           "column": 13
         }
       },
-      "39": {
+      "15": {
         "start": {
           "line": 33,
           "column": 4
@@ -729,7 +959,7 @@
           "column": 5
         }
       },
-      "40": {
+      "16": {
         "start": {
           "line": 34,
           "column": 6
@@ -739,7 +969,7 @@
           "column": 9
         }
       },
-      "41": {
+      "17": {
         "start": {
           "line": 39,
           "column": 6
@@ -749,7 +979,7 @@
           "column": 23
         }
       },
-      "42": {
+      "18": {
         "start": {
           "line": 40,
           "column": 6
@@ -759,7 +989,7 @@
           "column": 17
         }
       },
-      "43": {
+      "19": {
         "start": {
           "line": 42,
           "column": 6
@@ -769,7 +999,7 @@
           "column": 59
         }
       },
-      "44": {
+      "20": {
         "start": {
           "line": 45,
           "column": 2
@@ -779,7 +1009,7 @@
           "column": 7
         }
       },
-      "45": {
+      "21": {
         "start": {
           "line": 68,
           "column": 47
@@ -789,7 +1019,7 @@
           "column": 15
         }
       },
-      "46": {
+      "22": {
         "start": {
           "line": 82,
           "column": 25
@@ -799,7 +1029,7 @@
           "column": 45
         }
       },
-      "47": {
+      "23": {
         "start": {
           "line": 90,
           "column": 25
@@ -812,174 +1042,6 @@
     },
     "fnMap": {
       "0": {
-        "name": "CountryDetailsModal",
-        "decl": {
-          "start": {
-            "line": 5,
-            "column": 24
-          },
-          "end": {
-            "line": 5,
-            "column": 43
-          }
-        },
-        "loc": {
-          "start": {
-            "line": 10,
-            "column": 3
-          },
-          "end": {
-            "line": 93,
-            "column": 1
-          }
-        },
-        "line": 10
-      },
-      "1": {
-        "name": "(anonymous_1)",
-        "decl": {
-          "start": {
-            "line": 12,
-            "column": 42
-          },
-          "end": {
-            "line": 12,
-            "column": 43
-          }
-        },
-        "loc": {
-          "start": {
-            "line": 12,
-            "column": 54
-          },
-          "end": {
-            "line": 23,
-            "column": 3
-          }
-        },
-        "line": 12
-      },
-      "2": {
-        "name": "(anonymous_2)",
-        "decl": {
-          "start": {
-            "line": 24,
-            "column": 12
-          },
-          "end": {
-            "line": 24,
-            "column": 13
-          }
-        },
-        "loc": {
-          "start": {
-            "line": 24,
-            "column": 18
-          },
-          "end": {
-            "line": 26,
-            "column": 3
-          }
-        },
-        "line": 24
-      },
-      "3": {
-        "name": "(anonymous_3)",
-        "decl": {
-          "start": {
-            "line": 27,
-            "column": 28
-          },
-          "end": {
-            "line": 27,
-            "column": 29
-          }
-        },
-        "loc": {
-          "start": {
-            "line": 27,
-            "column": 48
-          },
-          "end": {
-            "line": 43,
-            "column": 3
-          }
-        },
-        "line": 27
-      },
-      "4": {
-        "name": "(anonymous_4)",
-        "decl": {
-          "start": {
-            "line": 65,
-            "column": 11
-          },
-          "end": {
-            "line": 65,
-            "column": 12
-          }
-        },
-        "loc": {
-          "start": {
-            "line": 65,
-            "column": 45
-          },
-          "end": {
-            "line": 72,
-            "column": 13
-          }
-        },
-        "line": 65
-      },
-      "5": {
-        "name": "(anonymous_5)",
-        "decl": {
-          "start": {
-            "line": 78,
-            "column": 19
-          },
-          "end": {
-            "line": 78,
-            "column": 20
-          }
-        },
-        "loc": {
-          "start": {
-            "line": 78,
-            "column": 25
-          },
-          "end": {
-            "line": 78,
-            "column": 45
-          }
-        },
-        "line": 78
-      },
-      "6": {
-        "name": "(anonymous_6)",
-        "decl": {
-          "start": {
-            "line": 86,
-            "column": 19
-          },
-          "end": {
-            "line": 86,
-            "column": 20
-          }
-        },
-        "loc": {
-          "start": {
-            "line": 86,
-            "column": 25
-          },
-          "end": {
-            "line": 86,
-            "column": 45
-          }
-        },
-        "line": 86
-      },
-      "7": {
         "name": "CountryDetailsModal",
         "decl": {
           "start": {
@@ -1003,7 +1065,7 @@
         },
         "line": 11
       },
-      "8": {
+      "1": {
         "name": "(anonymous_1)",
         "decl": {
           "start": {
@@ -1027,7 +1089,7 @@
         },
         "line": 13
       },
-      "9": {
+      "2": {
         "name": "(anonymous_2)",
         "decl": {
           "start": {
@@ -1051,7 +1113,7 @@
         },
         "line": 25
       },
-      "10": {
+      "3": {
         "name": "(anonymous_3)",
         "decl": {
           "start": {
@@ -1075,7 +1137,7 @@
         },
         "line": 28
       },
-      "11": {
+      "4": {
         "name": "(anonymous_4)",
         "decl": {
           "start": {
@@ -1099,7 +1161,7 @@
         },
         "line": 68
       },
-      "12": {
+      "5": {
         "name": "(anonymous_5)",
         "decl": {
           "start": {
@@ -1123,7 +1185,7 @@
         },
         "line": 82
       },
-      "13": {
+      "6": {
         "name": "(anonymous_6)",
         "decl": {
           "start": {
@@ -1152,11 +1214,11 @@
       "0": {
         "loc": {
           "start": {
-            "line": 13,
+            "line": 14,
             "column": 4
           },
           "end": {
-            "line": 14,
+            "line": 15,
             "column": 13
           }
         },
@@ -1164,11 +1226,11 @@
         "locations": [
           {
             "start": {
-              "line": 13,
+              "line": 14,
               "column": 4
             },
             "end": {
-              "line": 14,
+              "line": 15,
               "column": 13
             }
           },
@@ -1177,16 +1239,16 @@
             "end": {}
           }
         ],
-        "line": 13
+        "line": 14
       },
       "1": {
         "loc": {
           "start": {
-            "line": 28,
+            "line": 29,
             "column": 34
           },
           "end": {
-            "line": 28,
+            "line": 29,
             "column": 70
           }
         },
@@ -1194,35 +1256,35 @@
         "locations": [
           {
             "start": {
-              "line": 28,
+              "line": 29,
               "column": 34
             },
             "end": {
-              "line": 28,
+              "line": 29,
               "column": 62
             }
           },
           {
             "start": {
-              "line": 28,
+              "line": 29,
               "column": 66
             },
             "end": {
-              "line": 28,
+              "line": 29,
               "column": 70
             }
           }
         ],
-        "line": 28
+        "line": 29
       },
       "2": {
         "loc": {
           "start": {
-            "line": 30,
+            "line": 31,
             "column": 4
           },
           "end": {
-            "line": 31,
+            "line": 32,
             "column": 13
           }
         },
@@ -1230,11 +1292,11 @@
         "locations": [
           {
             "start": {
-              "line": 30,
+              "line": 31,
               "column": 4
             },
             "end": {
-              "line": 31,
+              "line": 32,
               "column": 13
             }
           },
@@ -1243,16 +1305,16 @@
             "end": {}
           }
         ],
-        "line": 30
+        "line": 31
       },
       "3": {
         "loc": {
           "start": {
-            "line": 30,
+            "line": 31,
             "column": 8
           },
           "end": {
-            "line": 30,
+            "line": 31,
             "column": 34
           }
         },
@@ -1260,26 +1322,26 @@
         "locations": [
           {
             "start": {
-              "line": 30,
+              "line": 31,
               "column": 8
             },
             "end": {
-              "line": 30,
+              "line": 31,
               "column": 15
             }
           },
           {
             "start": {
-              "line": 30,
+              "line": 31,
               "column": 19
             },
             "end": {
-              "line": 30,
+              "line": 31,
               "column": 34
             }
           }
         ],
-        "line": 30
+        "line": 31
       },
       "4": {
         "loc": {
@@ -1320,248 +1382,8 @@
       "5": {
         "loc": {
           "start": {
-            "line": 58,
-            "column": 48
-          },
-          "end": {
-            "line": 72,
-            "column": 100
-          }
-        },
-        "type": "cond-expr",
-        "locations": [
-          {
-            "start": {
-              "line": 58,
-              "column": 81
-            },
-            "end": {
-              "line": 72,
-              "column": 17
-            }
-          },
-          {
-            "start": {
-              "line": 72,
-              "column": 36
-            },
-            "end": {
-              "line": 72,
-              "column": 100
-            }
-          }
-        ],
-        "line": 58
-      },
-      "6": {
-        "loc": {
-          "start": {
-            "line": 71,
-            "column": 6
-          },
-          "end": {
-            "line": 71,
-            "column": 26
-          }
-        },
-        "type": "binary-expr",
-        "locations": [
-          {
-            "start": {
-              "line": 71,
-              "column": 6
-            },
-            "end": {
-              "line": 71,
-              "column": 11
-            }
-          },
-          {
-            "start": {
-              "line": 71,
-              "column": 15
-            },
-            "end": {
-              "line": 71,
-              "column": 26
-            }
-          }
-        ],
-        "line": 71
-      },
-      "7": {
-        "loc": {
-          "start": {
-            "line": 14,
-            "column": 4
-          },
-          "end": {
-            "line": 15,
-            "column": 13
-          }
-        },
-        "type": "if",
-        "locations": [
-          {
-            "start": {
-              "line": 14,
-              "column": 4
-            },
-            "end": {
-              "line": 15,
-              "column": 13
-            }
-          },
-          {
-            "start": {},
-            "end": {}
-          }
-        ],
-        "line": 14
-      },
-      "8": {
-        "loc": {
-          "start": {
-            "line": 29,
-            "column": 34
-          },
-          "end": {
-            "line": 29,
-            "column": 70
-          }
-        },
-        "type": "binary-expr",
-        "locations": [
-          {
-            "start": {
-              "line": 29,
-              "column": 34
-            },
-            "end": {
-              "line": 29,
-              "column": 62
-            }
-          },
-          {
-            "start": {
-              "line": 29,
-              "column": 66
-            },
-            "end": {
-              "line": 29,
-              "column": 70
-            }
-          }
-        ],
-        "line": 29
-      },
-      "9": {
-        "loc": {
-          "start": {
-            "line": 31,
-            "column": 4
-          },
-          "end": {
-            "line": 32,
-            "column": 13
-          }
-        },
-        "type": "if",
-        "locations": [
-          {
-            "start": {
-              "line": 31,
-              "column": 4
-            },
-            "end": {
-              "line": 32,
-              "column": 13
-            }
-          },
-          {
-            "start": {},
-            "end": {}
-          }
-        ],
-        "line": 31
-      },
-      "10": {
-        "loc": {
-          "start": {
-            "line": 31,
-            "column": 8
-          },
-          "end": {
-            "line": 31,
-            "column": 34
-          }
-        },
-        "type": "binary-expr",
-        "locations": [
-          {
-            "start": {
-              "line": 31,
-              "column": 8
-            },
-            "end": {
-              "line": 31,
-              "column": 15
-            }
-          },
-          {
-            "start": {
-              "line": 31,
-              "column": 19
-            },
-            "end": {
-              "line": 31,
-              "column": 34
-            }
-          }
-        ],
-        "line": 31
-      },
-      "11": {
-        "loc": {
-          "start": {
-            "line": 48,
-            "column": 6
-          },
-          "end": {
-            "line": 57,
-            "column": 7
-          }
-        },
-        "type": "binary-expr",
-        "locations": [
-          {
-            "start": {
-              "line": 48,
-              "column": 6
-            },
-            "end": {
-              "line": 48,
-              "column": 34
-            }
-          },
-          {
-            "start": {
-              "line": 48,
-              "column": 54
-            },
-            "end": {
-              "line": 57,
-              "column": 7
-            }
-          }
-        ],
-        "line": 48
-      },
-      "12": {
-        "loc": {
-          "start": {
             "line": 59,
-            "column": 48
+            "column": 67
           },
           "end": {
             "line": 76,
@@ -1573,7 +1395,7 @@
           {
             "start": {
               "line": 59,
-              "column": 81
+              "column": 100
             },
             "end": {
               "line": 76,
@@ -1593,7 +1415,7 @@
         ],
         "line": 59
       },
-      "13": {
+      "6": {
         "loc": {
           "start": {
             "line": 74,
@@ -1631,126 +1453,67 @@
       }
     },
     "s": {
-      "0": 119,
-      "1": 119,
-      "2": 52,
-      "3": 94,
-      "4": 131,
-      "5": 20,
-      "6": 20,
-      "7": 10,
-      "8": 119,
-      "9": 173,
-      "10": 119,
-      "11": 8,
-      "12": 129,
-      "13": 129,
-      "14": 8,
-      "15": 129,
-      "16": 16,
-      "17": 16,
-      "18": 16,
-      "19": 8,
-      "20": 119,
-      "21": 301,
-      "22": 125,
-      "23": 125,
-      "24": 240,
-      "25": 121,
-      "26": 171,
-      "27": 52,
-      "28": 129,
-      "29": 20,
-      "30": 20,
-      "31": 119,
-      "32": 121,
-      "33": 171,
-      "34": 121,
-      "35": 127,
-      "36": 16,
-      "37": 127,
-      "38": 8,
-      "39": 8,
-      "40": 16,
-      "41": 16,
-      "42": 16,
-      "43": 119,
-      "44": 121,
-      "45": 299,
-      "46": 123,
-      "47": 123
+      "0": 2,
+      "1": 2,
+      "2": 1,
+      "3": 1,
+      "4": 0,
+      "5": 0,
+      "6": 0,
+      "7": 0,
+      "8": 2,
+      "9": 1,
+      "10": 2,
+      "11": 0,
+      "12": 0,
+      "13": 0,
+      "14": 0,
+      "15": 0,
+      "16": 0,
+      "17": 0,
+      "18": 0,
+      "19": 0,
+      "20": 2,
+      "21": 0,
+      "22": 0,
+      "23": 0
     },
     "f": {
-      "0": 119,
-      "1": 173,
-      "2": 173,
-      "3": 129,
-      "4": 301,
-      "5": 125,
-      "6": 125,
-      "7": 121,
-      "8": 171,
-      "9": 171,
-      "10": 127,
-      "11": 299,
-      "12": 123,
-      "13": 123
+      "0": 2,
+      "1": 1,
+      "2": 1,
+      "3": 0,
+      "4": 0,
+      "5": 0,
+      "6": 0
     },
     "b": {
       "0": [
-        42,
-        10
+        1,
+        0
       ],
       "1": [
-        8,
+        0,
         0
       ],
       "2": [
         0,
-        8
-      ],
-      "3": [
-        8,
-        8
-      ],
-      "4": [
-        180,
-        45
-      ],
-      "5": [
-        30,
-        89
-      ],
-      "6": [
-        210,
-        91
-      ],
-      "7": [
-        42,
-        10
-      ],
-      "8": [
-        8,
         0
       ],
-      "9": [
+      "3": [
         0,
-        8
+        0
       ],
-      "10": [
-        8,
-        8
+      "4": [
+        2,
+        0
       ],
-      "11": [
-        60,
-        15
+      "5": [
+        0,
+        2
       ],
-      "12": [
-        30,
-        91
-      ],
-      "13": [
-        180,
+      "6": [
+        0,
         0
       ]
     },
@@ -1761,10 +1524,10 @@
         "/app/src/components/CountryDetailsModal.tsx"
       ],
       "names": [],
-      "mappings": "AA0DM,SACE,KADF;AA1DN,OAAO,WAAW;AAClB,SAAS,WAAW,UAAU,mBAAmB;AACjD,SAAS,OAAO,cAAc;AAU9B,wBAAwB,oBAAoB;AAAA,EAC1C;AAAA,EACA;AAAA,EACA;AAAA,EACA;AACF,GAAsB;AACpB,QAAM,CAAC,gBAAgB,iBAAiB,IAAI,SAAyB,IAAI;AAEzE,QAAM,sBAAsB,YAAY,YAAY;AAClD,QAAI,CAAC;AAAa;AAClB,QAAI;AACF,YAAM,EAAE,KAAK,IAAI,MAAM,MAAM;AAAA,QAC3B,kBAAkB,WAAW;AAAA,MAC/B;AACA,wBAAkB,IAAI;AAAA,IACxB,SAAS,OAAO;AACd,cAAQ,MAAM,mCAAmC,KAAK;AAAA,IACxD;AAAA,EACF,GAAG,CAAC,WAAW,CAAC;AAEhB,YAAU,MAAM;AACd,wBAAoB;AAAA,EACtB,GAAG,CAAC,mBAAmB,CAAC;AAExB,QAAM,oBAAoB,OAAO,aAAqB;AACpD,UAAM,aAAa,KAAK,MAAM,aAAa,QAAQ,MAAM,KAAK,IAAI;AAClE,UAAM,SAAS,YAAY;AAE3B,QAAI,CAAC,UAAU,CAAC;AAAgB;AAEhC,QAAI;AACF,YAAM,MAAM,KAAK,mBAAmB;AAAA,QAClC,SAAS;AAAA,QACT,YAAY,eAAe;AAAA,QAC3B,WAAW;AAAA,MACb,CAAC;AAED,eAAS,MAAM;AACf,eAAS;AAAA,IACX,SAAS,OAAO;AACd,cAAQ,MAAM,gCAAgC,KAAK;AAAA,IACrD;AAAA,EACF;AAEA,SACE,qBAAC,SAAM,MAAY,QAAQ,UACzB;AAAA,yBAAC,MAAM,QAAN,EAAa,aAAW,MACvB;AAAA,0BAAC,MAAM,OAAN,EAAa,uBAAY;AAAA,MACzB,gBAAgB,gBACf;AAAA,QAAC;AAAA;AAAA,UACC,KAAK,eAAe;AAAA,UACpB,KAAI;AAAA,UACJ,OAAO;AAAA,UACP,QAAQ;AAAA,UACR,WAAU;AAAA;AAAA,MACZ;AAAA,OAEJ;AAAA,IACA,oBAAC,MAAM,MAAN,EACE,2BACC,oBAAC,SACE,iBAAO,QAAQ;AAAA,MACd,aAAa,eAAe;AAAA,MAC5B,SAAS,eAAe;AAAA,MACxB,YAAY,eAAe,oBAAoB,eAAe;AAAA,MAC9D,WAAW,eAAe;AAAA,MAC1B,UAAU,eAAe;AAAA,MACzB,UAAU,eAAe;AAAA,IAC3B,CAAC,EAAE,IAAI,CAAC,CAAC,KAAK,KAAK,MACjB,qBAAC,OACC;AAAA,2BAAC,YAAQ;AAAA;AAAA,QAAI;AAAA,SAAC;AAAA,MAAS;AAAA,MAAE,SAAS;AAAA,SAD5B,GAER,CACD,GACH,IAEA,oBAAC,OAAE,oDAAsC,GAE7C;AAAA,IACA,qBAAC,MAAM,QAAN,EACC;AAAA;AAAA,QAAC;AAAA;AAAA,UACC,OAAO,EAAE,iBAAiB,WAAW,QAAQ,OAAO;AAAA,UACpD,SAAS,MAAM,kBAAkB,CAAC;AAAA,UAAG;AAAA;AAAA,MAEvC;AAAA,MACA;AAAA,QAAC;AAAA;AAAA,UACC,OAAO,EAAE,iBAAiB,WAAW,QAAQ,OAAO;AAAA,UACpD,SAAS,MAAM,kBAAkB,CAAC;AAAA,UAAG;AAAA;AAAA,MAEvC;AAAA,MACA,oBAAC,UAAO,SAAQ,aAAY,SAAS,UAAU,oBAE/C;AAAA,OACF;AAAA,KACF;AAEJ;"
+      "mappings": "AA2DM,SAEI,KAFJ;AA3DN,OAAO,WAAW;AAClB,SAAS,WAAW,UAAU,mBAAmB;AACjD,SAAS,OAAO,cAAc;AAE9B,OAAO,cAAc;AASrB,wBAAwB,oBAAoB;AAAA,EAC1C;AAAA,EACA;AAAA,EACA;AAAA,EACA;AACF,GAAsB;AACpB,QAAM,CAAC,gBAAgB,iBAAiB,IAAI,SAAyB,IAAI;AAEzE,QAAM,sBAAsB,YAAY,YAAY;AAClD,QAAI,CAAC;AAAa;AAClB,QAAI;AACF,YAAM,EAAE,KAAK,IAAI,MAAM,MAAM;AAAA,QAC3B,kBAAkB,WAAW;AAAA,MAC/B;AACA,wBAAkB,IAAI;AAAA,IACxB,SAAS,OAAO;AACd,cAAQ,MAAM,mCAAmC,KAAK;AAAA,IACxD;AAAA,EACF,GAAG,CAAC,WAAW,CAAC;AAEhB,YAAU,MAAM;AACd,wBAAoB;AAAA,EACtB,GAAG,CAAC,mBAAmB,CAAC;AAExB,QAAM,oBAAoB,OAAO,aAAqB;AACpD,UAAM,aAAa,KAAK,MAAM,aAAa,QAAQ,MAAM,KAAK,IAAI;AAClE,UAAM,SAAS,YAAY;AAE3B,QAAI,CAAC,UAAU,CAAC;AAAgB;AAEhC,QAAI;AACF,YAAM,MAAM,KAAK,mBAAmB;AAAA,QAClC,SAAS;AAAA,QACT,YAAY,eAAe;AAAA,QAC3B,WAAW;AAAA,MACb,CAAC;AAED,eAAS,MAAM;AACf,eAAS;AAAA,IACX,SAAS,OAAO;AACd,cAAQ,MAAM,gCAAgC,KAAK;AAAA,IACrD;AAAA,EACF;AAEA,SACE,qBAAC,SAAM,MAAY,QAAQ,UACzB;AAAA,yBAAC,MAAM,QAAN,EAAa,aAAW,MAAC,WAAU,6BACjC;AAAA,sBAAgB,gBACf;AAAA,QAAC;AAAA;AAAA,UACC,KAAK,eAAe;AAAA,UACpB,KAAI;AAAA,UACJ,OAAO;AAAA,UACP,QAAQ;AAAA,UACR,WAAU;AAAA;AAAA,MACZ;AAAA,MAEF,oBAAC,MAAM,OAAN,EAAa,uBAAY;AAAA,OAC5B;AAAA,IAEA,oBAAC,MAAM,MAAN,EAAW,WAAU,QACnB,2BACC,qBAAC,SACC;AAAA,0BAAC,YAAS,aAAa,eAAe,cAAc;AAAA,MACnD,OAAO,QAAQ;AAAA,QACd,aAAa,eAAe;AAAA,QAC5B,SAAS,eAAe;AAAA,QACxB,YAAY,eAAe,oBAAoB,eAAe;AAAA,QAC9D,WAAW,eAAe;AAAA,QAC1B,UAAU,eAAe;AAAA,QACzB,UAAU,eAAe;AAAA,MAC3B,CAAC,EAAE,IAAI,CAAC,CAAC,KAAK,KAAK,MACjB,qBAAC,OAAY,WAAU,QACrB;AAAA,6BAAC,YAAQ;AAAA;AAAA,UAAI;AAAA,WAAC;AAAA,QAAS;AAAA,QAAE,SAAS;AAAA,WAD5B,GAER,CACD;AAAA,OACH,IAEA,oBAAC,OAAE,oDAAsC,GAE7C;AAAA,IACA,qBAAC,MAAM,QAAN,EACC;AAAA;AAAA,QAAC;AAAA;AAAA,UACC,OAAO,EAAE,iBAAiB,WAAW,QAAQ,OAAO;AAAA,UACpD,SAAS,MAAM,kBAAkB,CAAC;AAAA,UAAG;AAAA;AAAA,MAEvC;AAAA,MACA;AAAA,QAAC;AAAA;AAAA,UACC,OAAO,EAAE,iBAAiB,WAAW,QAAQ,OAAO;AAAA,UACpD,SAAS,MAAM,kBAAkB,CAAC;AAAA,UAAG;AAAA;AAAA,MAEvC;AAAA,MACA,oBAAC,UAAO,SAAQ,aAAY,SAAS,UAAU,oBAE/C;AAAA,OACF;AAAA,KACF;AAEJ;"
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "7694e235bdb8115d09fa5d5d87ec55515b554043"
+    "hash": "38e139186c251507b813270f5228d871d828fda6"
   },
   "/app/src/components/WorldMap.tsx": {
     "path": "C:\\Users\\gozde\\Desktop\\JSU\\Testning_Typescript\\TravelList\\frontend\\src\\components\\WorldMap.tsx",
@@ -2525,71 +2288,71 @@
       }
     },
     "s": {
-      "0": 220,
-      "1": 220,
-      "2": 220,
-      "3": 220,
-      "4": 220,
-      "5": 172,
-      "6": 172,
-      "7": 172,
-      "8": 172,
-      "9": 172,
-      "10": 172,
-      "11": 172,
-      "12": 112,
-      "13": 112,
-      "14": 57,
-      "15": 112,
-      "16": 20160,
-      "17": 20160,
-      "18": 20160,
-      "19": 24,
-      "20": 20160,
-      "21": 24,
-      "22": 112,
-      "23": 38,
-      "24": 172,
-      "25": 172,
-      "26": 20160,
-      "27": 207,
-      "28": 19953,
-      "29": 143,
-      "30": 19810,
-      "31": 172,
-      "32": 24,
-      "33": 24,
-      "34": 172,
-      "35": 88,
-      "36": 220,
-      "37": 20,
-      "38": 220
+      "0": 2,
+      "1": 2,
+      "2": 2,
+      "3": 2,
+      "4": 2,
+      "5": 1,
+      "6": 1,
+      "7": 1,
+      "8": 1,
+      "9": 1,
+      "10": 1,
+      "11": 1,
+      "12": 0,
+      "13": 0,
+      "14": 0,
+      "15": 0,
+      "16": 0,
+      "17": 0,
+      "18": 0,
+      "19": 0,
+      "20": 0,
+      "21": 0,
+      "22": 0,
+      "23": 0,
+      "24": 1,
+      "25": 1,
+      "26": 0,
+      "27": 0,
+      "28": 0,
+      "29": 0,
+      "30": 0,
+      "31": 1,
+      "32": 0,
+      "33": 0,
+      "34": 1,
+      "35": 0,
+      "36": 2,
+      "37": 0,
+      "38": 2
     },
     "f": {
-      "0": 220,
-      "1": 172,
-      "2": 172,
-      "3": 20160,
-      "4": 20160,
-      "5": 24,
-      "6": 24,
-      "7": 20160,
-      "8": 24,
-      "9": 88,
-      "10": 20
+      "0": 2,
+      "1": 1,
+      "2": 1,
+      "3": 0,
+      "4": 0,
+      "5": 0,
+      "6": 0,
+      "7": 0,
+      "8": 0,
+      "9": 0,
+      "10": 0
     },
     "b": {
       "0": [
-        57,
-        55
+        0,
+        0
       ],
       "1": [
-        207,
-        19953
+        0,
+        0
       ],
       "2": [
-        143,
-        19810
+        0,
+        0
       ]
     },
     "inputSourceMap": {
@@ -2634,7 +2397,7 @@
         },
         "end": {
           "line": 12,
-          "column": 118
+          "column": 119
         }
       },
       "3": {
@@ -2855,42 +2618,6 @@
           },
           "end": {
             "line": 38,
-            "column": 70
-          }
-        },
-        "type": "cond-expr",
-        "locations": [
-          {
-            "start": {
-              "line": 38,
-              "column": 31
-            },
-            "end": {
-              "line": 38,
-              "column": 44
-            }
-          },
-          {
-            "start": {
-              "line": 38,
-              "column": 47
-            },
-            "end": {
-              "line": 38,
-              "column": 70
-            }
-          }
-        ],
-        "line": 38
-      },
-      "2": {
-        "loc": {
-          "start": {
-            "line": 38,
-            "column": 6
-          },
-          "end": {
-            "line": 38,
             "column": 72
           }
         },
@@ -2921,34 +2648,30 @@
       }
     },
     "s": {
-      "0": 176,
-      "1": 8,
-      "2": 176,
-      "3": 176,
-      "4": 352,
-      "5": 665,
-      "6": 8,
-      "7": 176
+      "0": 2,
+      "1": 0,
+      "2": 2,
+      "3": 2,
+      "4": 4,
+      "5": 6,
+      "6": 0,
+      "7": 2
     },
     "f": {
-      "0": 176,
-      "1": 8,
-      "2": 352,
-      "3": 665,
-      "4": 8
+      "0": 2,
+      "1": 0,
+      "2": 4,
+      "3": 6,
+      "4": 0
     },
     "b": {
       "0": [
-        174,
-        178
+        2,
+        2
       ],
       "1": [
-        90,
-        88
-      ],
-      "2": [
-        153,
-        155
+        1,
+        1
       ]
     },
     "inputSourceMap": {
@@ -2958,10 +2681,10 @@
         "/app/src/components/TravelList.tsx"
       ],
       "names": [],
-      "mappings": "AAsBI,cAmBQ,YAnBR;AAtBJ,SAAS,WAAW,WAAW,gBAAgB,eAAe;AAC9D,SAAS,qBAAqB;AAW9B,wBAAwB,WAAW;AAAA,EACjC;AAAA,EACA;AAAA,EACA;AACF,GAAoB;AAClB,QAAM,eAAe,CAAC,SAAiB,aAAmC;AACxE,wBAAoB,SAAS,QAAQ;AAAA,EACvC;AAEA,QAAM,gBACJ,oBAAC,WAAQ,IAAG,WAAU,+CAAiC;AAGzD,QAAM,cAAc,CAAC;AAAA,IACnB;AAAA,IACA;AAAA,IACA;AAAA,IACA;AAAA,EACF,MAME,qBAAC,SAAI,WAAU,QACb;AAAA,wBAAC,QAAG,OAAO,EAAE,MAAM,GAAI,iBAAM;AAAA,IAC5B,UAAU,SAAS,IAClB,oBAAC,aACE,oBAAU,IAAI,CAAC,SAAS,UACvB;AAAA,MAAC,UAAU;AAAA,MAAV;AAAA,QAEC,WAAU;AAAA,QACT;AAAA;AAAA,UACD,oBAAC,kBAAe,WAAU,OAAM,SAAS,eACvC,8BAAC,UAAK,WAAU,QACd;AAAA,YAAC;AAAA;AAAA,cACC,SAAS,MAAM,aAAa,SAAS,QAAQ;AAAA,cAC7C,OAAO,EAAE,QAAQ,WAAW,OAAO,UAAU;AAAA;AAAA,UAC/C,GACF,GACF;AAAA;AAAA;AAAA,MAVK;AAAA,IAWP,CACD,GACH,IAEA,qBAAC,OAAE;AAAA;AAAA,MAEA,aAAa,YAAY,gBAAgB;AAAA,MAAwB;AAAA,OACpE;AAAA,KAEJ;AAGF,SACE,qBAAC,aAAU,WAAU,iCACnB;AAAA;AAAA,MAAC;AAAA;AAAA,QACC,OAAM;AAAA,QACN,WAAW;AAAA,QACX,OAAM;AAAA,QACN,UAAS;AAAA;AAAA,IACX;AAAA,IACA;AAAA,MAAC;AAAA;AAAA,QACC,OAAM;AAAA,QACN,WAAW;AAAA,QACX,OAAM;AAAA,QACN,UAAS;AAAA;AAAA,IACX;AAAA,KACF;AAEJ;"
+      "mappings": "AAsBI,cAmBQ,YAnBR;AAtBJ,SAAS,WAAW,WAAW,gBAAgB,eAAe;AAC9D,SAAS,qBAAqB;AAW9B,wBAAwB,WAAW;AAAA,EACjC;AAAA,EACA;AAAA,EACA;AACF,GAAoB;AAClB,QAAM,eAAe,CAAC,SAAiB,aAAmC;AACxE,wBAAoB,SAAS,QAAQ;AAAA,EACvC;AAEA,QAAM,gBACJ,oBAAC,WAAQ,IAAG,WAAU,gDAAkC;AAG1D,QAAM,cAAc,CAAC;AAAA,IACnB;AAAA,IACA;AAAA,IACA;AAAA,IACA;AAAA,EACF,MAME,qBAAC,SAAI,WAAU,iDACb;AAAA,wBAAC,QAAG,OAAO,EAAE,MAAM,GAAI,iBAAM;AAAA,IAC5B,UAAU,SAAS,IAClB,oBAAC,aACE,oBAAU,IAAI,CAAC,SAAS,UACvB;AAAA,MAAC,UAAU;AAAA,MAAV;AAAA,QAEC,WAAU;AAAA,QACT;AAAA;AAAA,UACD,oBAAC,kBAAe,WAAU,OAAM,SAAS,eACvC,8BAAC,UAAK,WAAU,QACd;AAAA,YAAC;AAAA;AAAA,cACC,SAAS,MAAM,aAAa,SAAS,QAAQ;AAAA,cAC7C,OAAO,EAAE,QAAQ,WAAW,OAAO,UAAU;AAAA;AAAA,UAC/C,GACF,GACF;AAAA;AAAA;AAAA,MAVK;AAAA,IAWP,CACD,GACH,IAEA,qBAAC,OAAE;AAAA;AAAA,MAEA,aAAa,YAAY,iBAAiB;AAAA,MAAyB;AAAA,OACtE;AAAA,KAEJ;AAGF,SACE,qBAAC,aAAU,WAAU,2CACnB;AAAA;AAAA,MAAC;AAAA;AAAA,QACC,OAAM;AAAA,QACN,WAAW;AAAA,QACX,OAAM;AAAA,QACN,UAAS;AAAA;AAAA,IACX;AAAA,IACA;AAAA,MAAC;AAAA;AAAA,QACC,OAAM;AAAA,QACN,WAAW;AAAA,QACX,OAAM;AAAA,QACN,UAAS;AAAA;AAAA,IACX;AAAA,KACF;AAEJ;"
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "9411e75e1b67f990692a4661a1ce43e20a5fe469"
+    "hash": "51efeca8ec18feae8df4380f4ee86b48b99cd934"
   },
   "/app/src/components/Footer.tsx": {
     "path": "C:\\Users\\gozde\\Desktop\\JSU\\Testning_Typescript\\TravelList\\frontend\\src\\components\\Footer.tsx",
@@ -3005,10 +2728,10 @@
     },
     "branchMap": {},
     "s": {
-      "0": 176
+      "0": 2
     },
     "f": {
-      "0": 176
+      "0": 2
     },
     "b": {},
     "inputSourceMap": {
@@ -3292,16 +3015,6 @@
           "column": 2
         },
         "end": {
-          "line": 74,
-          "column": 7
-        }
-      },
-      "27": {
-        "start": {
-          "line": 46,
-          "column": 2
-        },
-        "end": {
           "line": 75,
           "column": 7
         }
@@ -3326,7 +3039,7 @@
             "column": 35
           },
           "end": {
-            "line": 75,
+            "line": 76,
             "column": 1
           }
         },
@@ -3499,30 +3212,6 @@
           }
         },
         "line": 38
-      },
-      "8": {
-        "name": "HomePage",
-        "decl": {
-          "start": {
-            "line": 8,
-            "column": 24
-          },
-          "end": {
-            "line": 8,
-            "column": 32
-          }
-        },
-        "loc": {
-          "start": {
-            "line": 8,
-            "column": 35
-          },
-          "end": {
-            "line": 76,
-            "column": 1
-          }
-        },
-        "line": 8
       }
     },
     "branchMap": {
@@ -3732,69 +3421,67 @@
       }
     },
     "s": {
-      "0": 176,
-      "1": 176,
-      "2": 176,
-      "3": 176,
-      "4": 176,
-      "5": 176,
-      "6": 100,
-      "7": 100,
-      "8": 87,
-      "9": 87,
-      "10": 4,
-      "11": 176,
-      "12": 84,
-      "13": 176,
-      "14": 8,
-      "15": 8,
-      "16": 8,
-      "17": 8,
-      "18": 4,
-      "19": 4,
-      "20": 16,
-      "21": 4,
-      "22": 4,
-      "23": 4,
-      "24": 18,
+      "0": 2,
+      "1": 2,
+      "2": 2,
+      "3": 2,
+      "4": 2,
+      "5": 2,
+      "6": 1,
+      "7": 1,
+      "8": 1,
+      "9": 1,
+      "10": 0,
+      "11": 2,
+      "12": 1,
+      "13": 2,
+      "14": 0,
+      "15": 0,
+      "16": 0,
+      "17": 0,
+      "18": 0,
+      "19": 0,
+      "20": 0,
+      "21": 0,
+      "22": 0,
+      "23": 0,
+      "24": 0,
       "25": 0,
-      "26": 176,
-      "27": 89
+      "26": 2
     },
     "f": {
-      "0": 176,
-      "1": 100,
-      "2": 84,
-      "3": 8,
-      "4": 4,
-      "5": 16,
-      "6": 4,
-      "7": 18,
-      "8": 89
+      "0": 2,
+      "1": 1,
+      "2": 1,
+      "3": 0,
+      "4": 0,
+      "5": 0,
+      "6": 0,
+      "7": 0
     },
     "b": {
       "0": [
-        176,
-        4
+        2,
+        0
       ],
       "1": [
-        87,
+        1,
         0
       ],
       "2": [
-        87,
+        1,
         0
       ],
       "3": [
-        8,
+        0,
         0
       ],
       "4": [
-        4,
-        4
+        0,
+        0
       ],
       "5": [
-        4,
+        0,
         0
       ]
     },
@@ -3805,10 +3492,10 @@
         "/app/src/pages/HomePage.tsx"
       ],
       "names": [],
-      "mappings": "AAyDI,mBACE,KASM,YAVR;AAzDJ,SAAS,aAAa,WAAW,gBAAgB;AACjD,OAAO,YAAY;AACnB,OAAO,cAAc;AACrB,OAAO,WAAW;AAClB,OAAO,gBAAgB;AACvB,OAAO,YAAY;AAEnB,wBAAwB,WAAW;AACjC,QAAM,aAAa,KAAK,MAAM,aAAa,QAAQ,MAAM,KAAK,IAAI;AAClE,QAAM,YAAY,WAAW;AAC7B,QAAM,SAAS,WAAW;AAE1B,QAAM,CAAC,kBAAkB,mBAAmB,IAAI,SAAmB,CAAC,CAAC;AACrE,QAAM,CAAC,iBAAiB,kBAAkB,IAAI,SAAmB,CAAC,CAAC;AAGnE,QAAM,iCAAiC,YAAY,YAAY;AAC7D,QAAI;AACF,YAAM,EAAE,KAAK,IAAI,MAAM,MAAM,IAAI,mBAAmB,MAAM,EAAE;AAC5D,0BAAoB,KAAK,WAAW,CAAC,CAAC;AACtC,yBAAmB,KAAK,UAAU,CAAC,CAAC;AAAA,IACtC,SAAS,OAAO;AACd,cAAQ,MAAM,+BAA+B,KAAK;AAAA,IACpD;AAAA,EACF,GAAG,CAAC,MAAM,CAAC;AAEX,YAAU,MAAM;AACd,mCAA+B;AAAA,EACjC,GAAG,CAAC,8BAA8B,CAAC;AAGnC,QAAM,gBAAgB,OACpB,aACA,aACG;AACH,QAAI;AACF,YAAM,WAAW,MAAM,MAAM,OAAO,mBAAmB;AAAA,QACrD,MAAM,EAAE,cAAc,YAAY;AAAA,MACpC,CAAC;AAED,UAAI,SAAS,WAAW,KAAK;AAC3B,YAAI,aAAa,WAAW;AAC1B;AAAA,YAAoB,CAAC,SACnB,KAAK,OAAO,CAAC,YAAY,YAAY,WAAW;AAAA,UAClD;AAAA,QACF,WAAW,aAAa,UAAU;AAChC;AAAA,YAAmB,CAAC,SAClB,KAAK,OAAO,CAAC,YAAY,YAAY,WAAW;AAAA,UAClD;AAAA,QACF;AAAA,MACF;AAAA,IACF,SAAS,OAAO;AACd,cAAQ,MAAM,2BAA2B,KAAK;AAAA,IAChD;AAAA,EACF;AAEA,SACE,iCACE;AAAA,wBAAC,UAAO;AAAA,IACR,oBAAC,UACC,+BAAC,SAAI,WAAU,iCACb;AAAA;AAAA,QAAC;AAAA;AAAA,UACC;AAAA,UACA;AAAA,UACA;AAAA;AAAA,MACF;AAAA,MACA,qBAAC,SAAI,WAAU,QACb;AAAA,6BAAC,QAAG,IAAG,WAAU,WAAU,QAAO;AAAA;AAAA,UACvB;AAAA,UAAU;AAAA,WACrB;AAAA,QACA;AAAA,UAAC;AAAA;AAAA,YACC;AAAA,YACA;AAAA,YACA,qBAAqB;AAAA;AAAA,QACvB;AAAA,SACF;AAAA,OACF,GACF;AAAA,IACA,oBAAC,UAAO;AAAA,KACV;AAEJ;"
+      "mappings": "AAyDI,mBACE,KAIM,YALR;AAzDJ,SAAS,aAAa,WAAW,gBAAgB;AACjD,OAAO,YAAY;AACnB,OAAO,cAAc;AACrB,OAAO,WAAW;AAClB,OAAO,gBAAgB;AACvB,OAAO,YAAY;AAEnB,wBAAwB,WAAW;AACjC,QAAM,aAAa,KAAK,MAAM,aAAa,QAAQ,MAAM,KAAK,IAAI;AAClE,QAAM,YAAY,WAAW;AAC7B,QAAM,SAAS,WAAW;AAE1B,QAAM,CAAC,kBAAkB,mBAAmB,IAAI,SAAmB,CAAC,CAAC;AACrE,QAAM,CAAC,iBAAiB,kBAAkB,IAAI,SAAmB,CAAC,CAAC;AAGnE,QAAM,iCAAiC,YAAY,YAAY;AAC7D,QAAI;AACF,YAAM,EAAE,KAAK,IAAI,MAAM,MAAM,IAAI,mBAAmB,MAAM,EAAE;AAC5D,0BAAoB,KAAK,WAAW,CAAC,CAAC;AACtC,yBAAmB,KAAK,UAAU,CAAC,CAAC;AAAA,IACtC,SAAS,OAAO;AACd,cAAQ,MAAM,+BAA+B,KAAK;AAAA,IACpD;AAAA,EACF,GAAG,CAAC,MAAM,CAAC;AAEX,YAAU,MAAM;AACd,mCAA+B;AAAA,EACjC,GAAG,CAAC,8BAA8B,CAAC;AAGnC,QAAM,gBAAgB,OACpB,aACA,aACG;AACH,QAAI;AACF,YAAM,WAAW,MAAM,MAAM,OAAO,mBAAmB;AAAA,QACrD,MAAM,EAAE,cAAc,YAAY;AAAA,MACpC,CAAC;AAED,UAAI,SAAS,WAAW,KAAK;AAC3B,YAAI,aAAa,WAAW;AAC1B;AAAA,YAAoB,CAAC,SACnB,KAAK,OAAO,CAAC,YAAY,YAAY,WAAW;AAAA,UAClD;AAAA,QACF,WAAW,aAAa,UAAU;AAChC;AAAA,YAAmB,CAAC,SAClB,KAAK,OAAO,CAAC,YAAY,YAAY,WAAW;AAAA,UAClD;AAAA,QACF;AAAA,MACF;AAAA,IACF,SAAS,OAAO;AACd,cAAQ,MAAM,2BAA2B,KAAK;AAAA,IAChD;AAAA,EACF;AAEA,SACE,iCACE;AAAA,wBAAC,UAAO;AAAA,IACR,oBAAC,UACC,+BAAC,SAAI,WAAU,2CACb;AAAA,2BAAC,SAAI,WAAU,4DACb;AAAA,6BAAC,QAAG,IAAG,WAAU,WAAU,QAAO;AAAA;AAAA,UACvB;AAAA,UAAU;AAAA,WACrB;AAAA,QACA,oBAAC,QAAG,WAAU,QAAO,8FAGrB;AAAA,QACA;AAAA,UAAC;AAAA;AAAA,YACC;AAAA,YACA;AAAA,YACA,qBAAqB;AAAA;AAAA,QACvB;AAAA,SACF;AAAA,MACA;AAAA,QAAC;AAAA;AAAA,UACC;AAAA,UACA;AAAA,UACA;AAAA;AAAA,MACF;AAAA,OACF,GACF;AAAA,IACA,oBAAC,UAAO;AAAA,KACV;AAEJ;"
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "41c0e0fe9665a863c9a3d4b216265ecf04547c67"
+    "hash": "8d0ea508e88b3a58aadddb642ff392384964f0a4"
   },
   "/app/src/components/RegisterForm.tsx": {
     "path": "C:\\Users\\gozde\\Desktop\\JSU\\Testning_Typescript\\TravelList\\frontend\\src\\components\\RegisterForm.tsx",
@@ -4339,56 +4026,56 @@
       }
     },
     "s": {
-      "0": 120,
-      "1": 99,
-      "2": 99,
-      "3": 99,
-      "4": 99,
-      "5": 8,
-      "6": 8,
-      "7": 8,
-      "8": 8,
-      "9": 8,
-      "10": 8,
-      "11": 8,
-      "12": 8,
-      "13": 8,
-      "14": 8,
-      "15": 8,
+      "0": 2,
+      "1": 2,
+      "2": 2,
+      "3": 2,
+      "4": 2,
+      "5": 0,
+      "6": 0,
+      "7": 0,
+      "8": 0,
+      "9": 0,
+      "10": 0,
+      "11": 0,
+      "12": 0,
+      "13": 0,
+      "14": 0,
+      "15": 0,
       "16": 0,
       "17": 0,
       "18": 0,
       "19": 0,
-      "20": 99,
-      "21": 1435
+      "20": 2,
+      "21": 2
     },
     "f": {
-      "0": 99,
-      "1": 8,
-      "2": 8,
+      "0": 2,
+      "1": 0,
+      "2": 0,
       "3": 0,
-      "4": 1435
+      "4": 2
     },
     "b": {
       "0": [
-        99,
-        8
+        2,
+        0
       ],
       "1": [
-        1435,
-        1008
+        2,
+        0
       ],
       "2": [
-        1435,
-        872
+        2,
+        0
       ],
       "3": [
-        1435,
-        248
+        2,
+        0
       ],
       "4": [
-        1435,
-        40
+        2,
+        0
       ]
     },
     "inputSourceMap": {
@@ -4796,43 +4483,43 @@
       }
     },
     "s": {
-      "0": 120,
-      "1": 151,
-      "2": 151,
-      "3": 151,
-      "4": 151,
-      "5": 62,
-      "6": 62,
-      "7": 56,
-      "8": 56,
-      "9": 56,
-      "10": 56,
-      "11": 56,
-      "12": 48,
-      "13": 4,
-      "14": 4,
-      "15": 4,
-      "16": 151,
-      "17": 2999
+      "0": 2,
+      "1": 4,
+      "2": 4,
+      "3": 4,
+      "4": 4,
+      "5": 2,
+      "6": 2,
+      "7": 1,
+      "8": 1,
+      "9": 1,
+      "10": 1,
+      "11": 1,
+      "12": 1,
+      "13": 1,
+      "14": 1,
+      "15": 1,
+      "16": 4,
+      "17": 116
     },
     "f": {
-      "0": 151,
-      "1": 62,
-      "2": 48,
-      "3": 2999
+      "0": 4,
+      "1": 2,
+      "2": 1,
+      "3": 116
     },
     "b": {
       "0": [
-        151,
-        60
+        4,
+        2
       ],
       "1": [
-        2999,
-        894
+        116,
+        44
       ],
       "2": [
-        2999,
-        184
+        116,
+        6
       ]
     },
     "inputSourceMap": {
@@ -4842,10 +4529,10 @@
         "/app/src/components/LoginForm.tsx"
       ],
       "names": [],
-      "mappings": "AAoDM,cAgBM,YAhBN;AApDN,OAAO,WAAW;AAClB,SAAS,gBAAgB;AACzB,SAAS,mBAAmB;AAC5B,YAAY,SAAS;AACrB,SAAS,QAAQ,OAAO,QAAQ,YAAY,oBAAoB;AAChE,SAAS,QAAQ,YAAY;AAI7B,MAAM,mBAAmB,IAAI,OAAO;AAAA,EAClC,OAAO,IAAI,OAAO,EACf,MAAM,uBAAuB,EAC7B,SAAS,mBAAmB;AAAA,EAC/B,UAAU,IAAI,OAAO,EAClB,IAAI,GAAG,wCAAwC,EAC/C,SAAS,sBAAsB;AACpC,CAAC;AAED,wBAAwB,YAAY;AAClC,QAAM,CAAC,cAAc,eAAe,IAAI,SAAwB,IAAI;AACpE,QAAM,CAAC,WAAW,YAAY,IAAI,SAAsC,IAAI;AAC5E,QAAM,WAAW,YAAY;AAE7B,QAAM,eAAe,OAAO,WAAiB;AAC3C,QAAI;AACF,YAAM,WAAW,MAAM,MAAM,KAAK,cAAc,QAAQ;AAAA,QACtD,SAAS;AAAA,UACP,gBAAgB;AAAA,QAClB;AAAA,MACF,CAAC;AACD,sBAAgB,kDAAkD;AAClE,mBAAa,SAAS;AAGtB,YAAM,OAAO;AAAA,QACX,QAAQ,SAAS,KAAK,KAAK;AAAA,QAC3B,UAAU,SAAS,KAAK,KAAK;AAAA,MAC/B;AACA,mBAAa,QAAQ,QAAQ,KAAK,UAAU,IAAI,CAAC;AAEjD,iBAAW,MAAM;AACf,iBAAS,OAAO;AAAA,MAClB,GAAG,GAAI;AAAA,IACT,SAAS,OAAO;AACd,cAAQ,MAAM,qBAAqB,KAAK;AACxC,sBAAgB,6CAA6C;AAC7D,mBAAa,QAAQ;AAAA,IACvB;AAAA,EACF;AAEA,SACE,qBAAC,SACC;AAAA,wBAAC,QAAG,WAAU,oBAAmB,oCAAsB;AAAA,IAEtD,gBACC,oBAAC,SAAI,WAAW,eAAe,SAAS,IAAI,MAAK,SAC9C,wBACH;AAAA,IAEF;AAAA,MAAC;AAAA;AAAA,QACC,eAAe;AAAA,UACb,OAAO;AAAA,UACP,UAAU;AAAA,QACZ;AAAA,QACA;AAAA,QACA,UAAU;AAAA,QACT,WAAC,EAAE,QAAQ,QAAQ,MAClB,qBAAC,cAAW,IAAG,aACb;AAAA,+BAAC,KAAK,OAAL,EAAW,WAAU,cACpB;AAAA;AAAA,cAAC;AAAA;AAAA,gBACC,IAAI,KAAK;AAAA,gBACT,WAAW,QAAQ,SAAS,CAAC,CAAC,OAAO;AAAA,gBACrC,MAAK;AAAA,gBACL,aAAY;AAAA,gBACZ,MAAK;AAAA;AAAA,YACP;AAAA,YACA;AAAA,cAAC;AAAA;AAAA,gBACC,WAAU;AAAA,gBACV,WAAU;AAAA,gBACV,MAAK;AAAA;AAAA,YACP;AAAA,aACF;AAAA,UACA,qBAAC,KAAK,OAAL,EAAW,WAAU,iBACpB;AAAA;AAAA,cAAC;AAAA;AAAA,gBACC,IAAI,KAAK;AAAA,gBACT,WAAW,QAAQ,YAAY,CAAC,CAAC,OAAO;AAAA,gBACxC,MAAK;AAAA,gBACL,aAAY;AAAA,gBACZ,MAAK;AAAA;AAAA,YACP;AAAA,YACA;AAAA,cAAC;AAAA;AAAA,gBACC,WAAU;AAAA,gBACV,WAAU;AAAA,gBACV,MAAK;AAAA;AAAA,YACP;AAAA,aACF;AAAA,UACA,oBAAC,UAAO,WAAU,qBAAoB,MAAK,UAAS,IAAG,SAAQ,mBAE/D;AAAA,WACF;AAAA;AAAA,IAEJ;AAAA,KACF;AAEJ;"
+      "mappings": "AAoDM,cAgBM,YAhBN;AApDN,OAAO,WAAW;AAClB,SAAS,gBAAgB;AACzB,SAAS,mBAAmB;AAC5B,YAAY,SAAS;AACrB,SAAS,QAAQ,OAAO,QAAQ,YAAY,oBAAoB;AAChE,SAAS,QAAQ,YAAY;AAI7B,MAAM,mBAAmB,IAAI,OAAO;AAAA,EAClC,OAAO,IAAI,OAAO,EACf,MAAM,uBAAuB,EAC7B,SAAS,mBAAmB;AAAA,EAC/B,UAAU,IAAI,OAAO,EAClB,IAAI,GAAG,wCAAwC,EAC/C,SAAS,sBAAsB;AACpC,CAAC;AAED,wBAAwB,YAAY;AAClC,QAAM,CAAC,cAAc,eAAe,IAAI,SAAwB,IAAI;AACpE,QAAM,CAAC,WAAW,YAAY,IAAI,SAAsC,IAAI;AAC5E,QAAM,WAAW,YAAY;AAE7B,QAAM,eAAe,OAAO,WAAiB;AAC3C,QAAI;AACF,YAAM,WAAW,MAAM,MAAM,KAAK,cAAc,QAAQ;AAAA,QACtD,SAAS;AAAA,UACP,gBAAgB;AAAA,QAClB;AAAA,MACF,CAAC;AACD,sBAAgB,kDAAkD;AAClE,mBAAa,SAAS;AAGtB,YAAM,OAAO;AAAA,QACX,QAAQ,SAAS,KAAK,KAAK;AAAA,QAC3B,UAAU,SAAS,KAAK,KAAK;AAAA,MAC/B;AACA,mBAAa,QAAQ,QAAQ,KAAK,UAAU,IAAI,CAAC;AAEjD,iBAAW,MAAM;AACf,iBAAS,OAAO;AAAA,MAClB,GAAG,GAAI;AAAA,IACT,SAAS,OAAO;AACd,cAAQ,MAAM,qBAAqB,KAAK;AACxC,sBAAgB,6CAA6C;AAC7D,mBAAa,QAAQ;AAAA,IACvB;AAAA,EACF;AAEA,SACE,qBAAC,SACC;AAAA,wBAAC,QAAG,WAAU,yBAAwB,oCAAsB;AAAA,IAE3D,gBACC,oBAAC,SAAI,WAAW,eAAe,SAAS,IAAI,MAAK,SAC9C,wBACH;AAAA,IAEF;AAAA,MAAC;AAAA;AAAA,QACC,eAAe;AAAA,UACb,OAAO;AAAA,UACP,UAAU;AAAA,QACZ;AAAA,QACA;AAAA,QACA,UAAU;AAAA,QACT,WAAC,EAAE,QAAQ,QAAQ,MAClB,qBAAC,cAAW,IAAG,aACb;AAAA,+BAAC,KAAK,OAAL,EAAW,WAAU,cACpB;AAAA;AAAA,cAAC;AAAA;AAAA,gBACC,IAAI,KAAK;AAAA,gBACT,WAAW,QAAQ,SAAS,CAAC,CAAC,OAAO;AAAA,gBACrC,MAAK;AAAA,gBACL,aAAY;AAAA,gBACZ,MAAK;AAAA;AAAA,YACP;AAAA,YACA;AAAA,cAAC;AAAA;AAAA,gBACC,WAAU;AAAA,gBACV,WAAU;AAAA,gBACV,MAAK;AAAA;AAAA,YACP;AAAA,aACF;AAAA,UACA,qBAAC,KAAK,OAAL,EAAW,WAAU,iBACpB;AAAA;AAAA,cAAC;AAAA;AAAA,gBACC,IAAI,KAAK;AAAA,gBACT,WAAW,QAAQ,YAAY,CAAC,CAAC,OAAO;AAAA,gBACxC,MAAK;AAAA,gBACL,aAAY;AAAA,gBACZ,MAAK;AAAA;AAAA,YACP;AAAA,YACA;AAAA,cAAC;AAAA;AAAA,gBACC,WAAU;AAAA,gBACV,WAAU;AAAA,gBACV,MAAK;AAAA;AAAA,YACP;AAAA,aACF;AAAA,UACA,oBAAC,UAAO,WAAU,qBAAoB,MAAK,UAAS,IAAG,SAAQ,mBAE/D;AAAA,WACF;AAAA;AAAA,IAEJ;AAAA,KACF;AAEJ;"
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "28ea91abe0568a2ece3921df29afee1930cae42e"
+    "hash": "22bfebe6594f3fb360a16c088939746953b72003"
   },
   "/app/src/pages/LogRegPage.tsx": {
     "path": "C:\\Users\\gozde\\Desktop\\JSU\\Testning_Typescript\\TravelList\\frontend\\src\\pages\\LogRegPage.tsx",
@@ -5004,20 +4691,20 @@
       }
     },
     "s": {
-      "0": 91,
-      "1": 91,
-      "2": 3,
+      "0": 2,
+      "1": 2,
+      "2": 0,
       "3": 0
     },
     "f": {
-      "0": 91,
-      "1": 3,
+      "0": 2,
+      "1": 0,
       "2": 0
     },
     "b": {
       "0": [
-        3,
-        88
+        0,
+        2
       ]
     },
     "inputSourceMap": {
@@ -5031,449 +4718,5 @@
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
     "hash": "99d4fb56ad9d77a6f13700bc1fc94df155f1ddcc"
-  },
-  "/app/src/components/Carousel.tsx": {
-    "path": "/app/src/components/Carousel.tsx",
-    "statementMap": {
-      "0": {
-        "start": {
-          "line": 4,
-          "column": 24
-        },
-        "end": {
-          "line": 44,
-          "column": 1
-        }
-      },
-      "1": {
-        "start": {
-          "line": 5,
-          "column": 36
-        },
-        "end": {
-          "line": 5,
-          "column": 48
-        }
-      },
-      "2": {
-        "start": {
-          "line": 6,
-          "column": 2
-        },
-        "end": {
-          "line": 32,
-          "column": 20
-        }
-      },
-      "3": {
-        "start": {
-          "line": 7,
-          "column": 24
-        },
-        "end": {
-          "line": 28,
-          "column": 5
-        }
-      },
-      "4": {
-        "start": {
-          "line": 8,
-          "column": 6
-        },
-        "end": {
-          "line": 27,
-          "column": 7
-        }
-      },
-      "5": {
-        "start": {
-          "line": 9,
-          "column": 25
-        },
-        "end": {
-          "line": 16,
-          "column": 9
-        }
-      },
-      "6": {
-        "start": {
-          "line": 17,
-          "column": 8
-        },
-        "end": {
-          "line": 21,
-          "column": 9
-        }
-      },
-      "7": {
-        "start": {
-          "line": 18,
-          "column": 10
-        },
-        "end": {
-          "line": 20,
-          "column": 12
-        }
-      },
-      "8": {
-        "start": {
-          "line": 22,
-          "column": 21
-        },
-        "end": {
-          "line": 22,
-          "column": 42
-        }
-      },
-      "9": {
-        "start": {
-          "line": 23,
-          "column": 27
-        },
-        "end": {
-          "line": 23,
-          "column": 88
-        }
-      },
-      "10": {
-        "start": {
-          "line": 23,
-          "column": 68
-        },
-        "end": {
-          "line": 23,
-          "column": 87
-        }
-      },
-      "11": {
-        "start": {
-          "line": 24,
-          "column": 8
-        },
-        "end": {
-          "line": 24,
-          "column": 33
-        }
-      },
-      "12": {
-        "start": {
-          "line": 26,
-          "column": 8
-        },
-        "end": {
-          "line": 26,
-          "column": 55
-        }
-      },
-      "13": {
-        "start": {
-          "line": 29,
-          "column": 4
-        },
-        "end": {
-          "line": 31,
-          "column": 5
-        }
-      },
-      "14": {
-        "start": {
-          "line": 30,
-          "column": 6
-        },
-        "end": {
-          "line": 30,
-          "column": 20
-        }
-      },
-      "15": {
-        "start": {
-          "line": 33,
-          "column": 2
-        },
-        "end": {
-          "line": 43,
-          "column": 18
-        }
-      },
-      "16": {
-        "start": {
-          "line": 33,
-          "column": 97
-        },
-        "end": {
-          "line": 43,
-          "column": 13
-        }
-      },
-      "17": {
-        "start": {
-          "line": 33,
-          "column": 116
-        },
-        "end": {
-          "line": 43,
-          "column": 13
-        }
-      }
-    },
-    "fnMap": {
-      "0": {
-        "name": "(anonymous_0)",
-        "decl": {
-          "start": {
-            "line": 4,
-            "column": 24
-          },
-          "end": {
-            "line": 4,
-            "column": 25
-          }
-        },
-        "loc": {
-          "start": {
-            "line": 4,
-            "column": 45
-          },
-          "end": {
-            "line": 44,
-            "column": 1
-          }
-        },
-        "line": 4
-      },
-      "1": {
-        "name": "(anonymous_1)",
-        "decl": {
-          "start": {
-            "line": 6,
-            "column": 12
-          },
-          "end": {
-            "line": 6,
-            "column": 13
-          }
-        },
-        "loc": {
-          "start": {
-            "line": 6,
-            "column": 18
-          },
-          "end": {
-            "line": 32,
-            "column": 3
-          }
-        },
-        "line": 6
-      },
-      "2": {
-        "name": "(anonymous_2)",
-        "decl": {
-          "start": {
-            "line": 7,
-            "column": 24
-          },
-          "end": {
-            "line": 7,
-            "column": 25
-          }
-        },
-        "loc": {
-          "start": {
-            "line": 7,
-            "column": 36
-          },
-          "end": {
-            "line": 28,
-            "column": 5
-          }
-        },
-        "line": 7
-      },
-      "3": {
-        "name": "(anonymous_3)",
-        "decl": {
-          "start": {
-            "line": 23,
-            "column": 56
-          },
-          "end": {
-            "line": 23,
-            "column": 57
-          }
-        },
-        "loc": {
-          "start": {
-            "line": 23,
-            "column": 68
-          },
-          "end": {
-            "line": 23,
-            "column": 87
-          }
-        },
-        "line": 23
-      },
-      "4": {
-        "name": "(anonymous_4)",
-        "decl": {
-          "start": {
-            "line": 33,
-            "column": 65
-          },
-          "end": {
-            "line": 33,
-            "column": 66
-          }
-        },
-        "loc": {
-          "start": {
-            "line": 33,
-            "column": 97
-          },
-          "end": {
-            "line": 43,
-            "column": 13
-          }
-        },
-        "line": 33
-      },
-      "5": {
-        "name": "(anonymous_4)",
-        "decl": {
-          "start": {
-            "line": 33,
-            "column": 84
-          },
-          "end": {
-            "line": 33,
-            "column": 85
-          }
-        },
-        "loc": {
-          "start": {
-            "line": 33,
-            "column": 116
-          },
-          "end": {
-            "line": 43,
-            "column": 13
-          }
-        },
-        "line": 33
-      }
-    },
-    "branchMap": {
-      "0": {
-        "loc": {
-          "start": {
-            "line": 17,
-            "column": 8
-          },
-          "end": {
-            "line": 21,
-            "column": 9
-          }
-        },
-        "type": "if",
-        "locations": [
-          {
-            "start": {
-              "line": 17,
-              "column": 8
-            },
-            "end": {
-              "line": 21,
-              "column": 9
-            }
-          },
-          {
-            "start": {},
-            "end": {}
-          }
-        ],
-        "line": 17
-      },
-      "1": {
-        "loc": {
-          "start": {
-            "line": 29,
-            "column": 4
-          },
-          "end": {
-            "line": 31,
-            "column": 5
-          }
-        },
-        "type": "if",
-        "locations": [
-          {
-            "start": {
-              "line": 29,
-              "column": 4
-            },
-            "end": {
-              "line": 31,
-              "column": 5
-            }
-          },
-          {
-            "start": {},
-            "end": {}
-          }
-        ],
-        "line": 29
-      }
-    },
-    "s": {
-      "0": 60,
-      "1": 35,
-      "2": 35,
-      "3": 12,
-      "4": 12,
-      "5": 12,
-      "6": 8,
-      "7": 0,
-      "8": 8,
-      "9": 8,
-      "10": 40,
-      "11": 8,
-      "12": 0,
-      "13": 12,
-      "14": 12,
-      "15": 35,
-      "16": 57,
-      "17": 70
-    },
-    "f": {
-      "0": 35,
-      "1": 12,
-      "2": 12,
-      "3": 40,
-      "4": 57,
-      "5": 70
-    },
-    "b": {
-      "0": [
-        0,
-        8
-      ],
-      "1": [
-        12,
-        0
-      ]
-    },
-    "inputSourceMap": {
-      "version": 3,
-      "file": null,
-      "sources": [
-        "/app/src/components/Carousel.tsx"
-      ],
-      "names": [
-        "imageUrls"
-      ],
-      "mappings": "AAmDQ,SACE,KADF;AAnDR,SAAgB,WAAW,gBAAgB;AAC3C,SAAS,gBAAgB;AAUzB,MAAM,kBAAkD,CAAC,EAAE,YAAY,MAAM;AAC3E,QAAM,CAAC,WAAW,YAAY,IAAI,SAAmB,CAAC,CAAC;AAEvD,YAAU,MAAM;AACd,UAAM,cAAc,YAAY;AAC9B,UAAI;AACF,cAAM,WAAW,MAAM;AAAA,UACrB,gDAAgD,WAAW;AAAA,UAC3D;AAAA,YACE,SAAS;AAAA,cACP,eACE;AAAA,YACJ;AAAA,UACF;AAAA,QACF;AAEA,YAAI,CAAC,SAAS,IAAI;AAChB,gBAAM,IAAI;AAAA,YACR,gCAAgC,SAAS,UAAU;AAAA,UACrD;AAAA,QACF;AAEA,cAAM,OAAO,MAAM,SAAS,KAAK;AACjC,cAAMA,aAAY,KAAK,QACpB,MAAM,GAAG,CAAC,EACV,IAAI,CAAC,WAA0B,OAAO,KAAK,OAAO;AACrD,qBAAaA,UAAS;AAAA,MACxB,SAAS,OAAO;AACd,gBAAQ,MAAM,0BAA0B,KAAK;AAAA,MAC/C;AAAA,IACF;AAEA,QAAI,aAAa;AACf,kBAAY;AAAA,IACd;AAAA,EACF,GAAG,CAAC,WAAW,CAAC;AAEhB,SACE,oBAAC,YACE,oBAAU,IAAI,CAAC,KAAK,UACnB,qBAAC,SAAS,MAAT,EAA0B,OAAO,EAAE,WAAW,IAAI,GACjD;AAAA;AAAA,MAAC;AAAA;AAAA,QACC,KAAK;AAAA,QACL,KAAK,YAAY,WAAW,IAAI,QAAQ,CAAC;AAAA,QACzC,OAAO,EAAE,OAAO,QAAQ,QAAQ,QAAQ,WAAW,IAAI;AAAA;AAAA,IACzD;AAAA,IACA,oBAAC,SAAS,SAAT,EACC,8BAAC,QAAI,aAAG,QAAQ,CAAC,IAAG,GACtB;AAAA,OARkB,KASpB,CACD,GACH;AAEJ;AAEA,eAAe;"
-    },
-    "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "adb279c500cad52fe7ab0316753482d557d9a620"
   }
 }
