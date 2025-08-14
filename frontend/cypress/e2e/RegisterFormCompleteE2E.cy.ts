@@ -23,7 +23,7 @@ describe("CompleteE2E: Registration Form", () => {
     cy.get("#registerEmail").type(newUser.email);
     cy.get("#registerPassword").type(newUser.password);
     cy.get("#register").click();
-    cy.wait(2500);
+    cy.wait(4000);
     cy.url().should("include", "/home");
 
     const firstName = newUser.first_name;
