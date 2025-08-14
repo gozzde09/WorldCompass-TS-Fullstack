@@ -1,5 +1,5 @@
 import { defineConfig } from "cypress";
-import codeCoverage from "@cypress/code-coverage/task";
+import codeCoverage from "@cypress/code-coverage/task.js";
 
 import createBundler from "@bahmutov/cypress-esbuild-preprocessor";
 import { addCucumberPreprocessorPlugin } from "@badeball/cypress-cucumber-preprocessor";
