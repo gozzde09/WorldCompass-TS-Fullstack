@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
+    "build-frontend": "npm run --prefix ../frontend build && rm -Rf dist && mv ../frontend/dist .",
     "build": "npx tsc",
     "dev": "concurrently \"nodemon index.js\" \"npx tsc --watch\"",
     "start": "node index.js",
