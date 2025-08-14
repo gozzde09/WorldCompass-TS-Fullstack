@@ -13,7 +13,7 @@ export default function HomePage() {
   const [visitedCountries, setVisitedCountries] = useState<string[]>([]);
   const [wantedCountries, setWantedCountries] = useState<string[]>([]);
 
-  // Visited ve wanted countries
+  // Visited and wanted countries
   const fetchVisitedAndWantedCountries = useCallback(async () => {
     try {
       const { data } = await axios.get(`/api/travellist/${userId}`);
