@@ -27,7 +27,7 @@ describe("CompleteE2E: Registration Form", () => {
     cy.url().should("include", "/home");
 
     const firstName = newUser.first_name;
-    cy.get("#welcome").should("contain", `Welcome,${firstName}!`);
+    cy.get("#welcome").should("contain", `Welcome, ${firstName}!`);
 
     // Användare sparades i localStorage
     cy.window().then(() => {
