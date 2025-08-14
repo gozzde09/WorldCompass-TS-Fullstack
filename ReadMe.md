@@ -35,7 +35,7 @@ GitHub Actions
 2- Starta Docker Desktop.
 3- Kör `docker compose up --build -d` i projektets root-mapp. Ibland database visas unhealthy, då kör bara igen kommandot. :)
 4- Applikationen är nu tillgänglig på `http://localhost/`. Tester skrevs enligt denna adressen.
-Projektet är här också på gång via Azure : http://4.223.138.28/
+Projektet är här också på gång via render : https://worldcompass-ts-fullstack.onrender.com/
 Ni kan logga in med
 email: `test@example.com`
 lösenord:`test`
