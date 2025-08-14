@@ -17,7 +17,7 @@ describe("CompleteE2E: Registration Form", () => {
       .should("be.visible");
   });
   // Registrerade and loggade användare rörelser i frontend
-  it("verifies the user redirects to the homepage, sees welcome message and appears in te local storage on the FRONTEND", () => {
+  it("verifies the user redirects to the homepage, sees welcome message and appears in the local storage on the FRONTEND", () => {
     cy.get("#registerFirstName").type(newUser.first_name);
     cy.get("#registerLastName").type(newUser.last_name);
     cy.get("#registerEmail").type(newUser.email);
