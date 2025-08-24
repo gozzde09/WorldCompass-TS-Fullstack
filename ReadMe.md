@@ -32,6 +32,7 @@ Code Coverage
 GitHub Actions
 
 ⚡ Installation
+
 1- Run ´npm install´ manually in both frontend and backend directories.
 
 2- Start Docker Desktop 🐳.
@@ -43,11 +44,15 @@ Sometimes the database shows as unhealthy; if so, run the command again
 - Tests are written for this address.
 
 🧪 Tests
+
 1- Start Cypress a `npx cypress open` in the frontend folder.
+
 2- Headless versions in the console in the frontend folder:
 `npm run test:component --headless`
 `npm run test:e2e`
+
 3- Check GitHub Actions for automated testing.
+
 4- Code coverage report is available in HTML (terminal may not show report via Docker).
 Open at: `http://localhost/frontend/coverage/lcov-report/index.html`
 
