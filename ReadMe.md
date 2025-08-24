@@ -33,9 +33,12 @@ GitHub Actions
 
 ⚡ Installation
 1- Run ´npm install´ manually in both frontend and backend directories.
+
 2- Start Docker Desktop 🐳.
+
 3- Run ´docker compose up --build -d´ in the project root folder.
 Sometimes the database shows as unhealthy; if so, run the command again
+
 4- The application will now be available at http://localhost/.
 - Tests are written for this address.
 
