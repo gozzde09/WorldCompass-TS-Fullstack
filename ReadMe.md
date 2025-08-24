@@ -1,13 +1,15 @@
-# TravelList World Compass
+🌍 TravelList – World Compass
+Users can register and log in to the app.
+This app allows users to mark countries they have visited or want to visit on a map.
 
-Användare kan registrera sig och logga in appen.
-En app som låter användare välja sina besökta / vill besöka länder på kartan.
+DEMO : https://worldcompass-ts-fullstack.onrender.com/
 
-## Använda verktyg
+https://github.com/user-attachments/assets/f5c9957c-2956-4cce-9a97-13cb6752a06d
 
-Docker Compose
+🛠️ Tools Used
+- Docker Compose
 
-`BACKEND`
+- `BACKEND`
 PostgreSQL -dotenv - pg
 Node.js- Nodemon
 Express - Cors
@@ -15,7 +17,7 @@ Json webtoken
 Typescript
 File System -fs
 
-`FRONTEND`
+- `FRONTEND`
 Typescript - React - Vite
 React. Bootstrap - Icon - Router -Lazy- preload
 Formik- Yup --validation
@@ -23,31 +25,26 @@ Leaflet --karta
 Axios
 Local Storage
 
-`TESTNING`
+- `TESTNING`
 Cypress TDD - Komplett E2E- Component
 Cucumber - BDD + TDD
 Code Coverage
 GitHub Actions
 
-## Installation
+⚡ Installation
+1- Run ´npm install´ manually in both frontend and backend directories.
+2- Start Docker Desktop 🐳.
+3- Run ´docker compose up --build -d´ in the project root folder.
+Sometimes the database shows as unhealthy; if so, run the command again
+4- The application will now be available at http://localhost/.
+- Tests are written for this address.
 
-1- Kör `npm install` manuellt i både frontend- och backend-mapparna.
-2- Starta Docker Desktop.
-3- Kör `docker compose up --build -d` i projektets root-mapp. Ibland database visas unhealthy, då kör bara igen kommandot. :)
-4- Applikationen är nu tillgänglig på `http://localhost/`. Tester skrevs enligt denna adressen.
-Projektet är här också på gång via render : https://worldcompass-ts-fullstack.onrender.com/
-Ni kan logga in med
-email: `test@example.com`
-lösenord:`test`
-
-## Tests
-
-1- Starta Cypress genom att köra `npx cypress open` i i frontend mappen.
-2- Eller headless versioner i consolen i frontend mappen :
+🧪 Tests
+1- Start Cypress a `npx cypress open` in the frontend folder.
+2- Headless versions in the console in the frontend folder:
 `npm run test:component --headless`
 `npm run test:e2e`
-3- Ni kan kolla GitHub actions också.
-4- Code Coverage rapport syns i html version, terminalen visar inte rapporten via command pga Docker, antar jag. Eftersom utan Docker funkade den, när jag testade.
-`http://localhost/frontend/coverage/lcov-report/index.html`
+3- Check GitHub Actions for automated testing.
+4- Code coverage report is available in HTML (terminal may not show report via Docker).
+Open at: `http://localhost/frontend/coverage/lcov-report/index.html`
 
-# Gözde Akgün JSU23
